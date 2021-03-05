@@ -170,7 +170,7 @@ $ ls
 {: .bash}
 
 ~~~
-R  r_data  shell_data
+16s Z1_16S_filt_align-paf dc_workshop.tar.gz  shell_data  R dc_workshop r_data
 ~~~
 {: .output}
 
@@ -278,6 +278,8 @@ for storing information about sequencing reads and their quality.
 We will be learning more about FASTQ files in a later lesson.
 
 ### Shortcut: Tab Completion
+
+Usually the key Tab is located on the left side of the keyboard just above the "Shift" key or "Mayus" key. 
 
 Typing out file or directory names can waste a
 lot of time and it's easy to make typing mistakes. Instead we can use tab complete 
