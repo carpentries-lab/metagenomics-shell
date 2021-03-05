@@ -323,7 +323,7 @@ $ ls ~
 {: .bash}
 
 ~~~
-R  r_data  shell_data
+16s Z1_16S_filt_align-paf dc_workshop.tar.gz  shell_data  R dc_workshop r_data
 ~~~
 {: .output}
 
