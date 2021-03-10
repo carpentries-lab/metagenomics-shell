@@ -24,21 +24,21 @@ We've also learned how to use `cd` to change locations and `ls` to list the cont
 of a directory. Now we're going to learn some additional commands for moving around 
 within our file system.
 
-Use the commands we've learned so far to navigate to the `shell_data/untrimmed_fastq` directory, if
+Use the commands we've learned so far to navigate to the `dc_workshop/data` directory, if
 you're not already there. 
 
 ~~~
 $ cd
-$ cd shell_data
-$ cd untrimmed_fastq
+$ cd dc_workshop
+$ cd data
 ~~~
 {: .bash}
 
 What if we want to move back up and out of this directory and to our top level 
-directory? Can we type `cd shell_data`? Try it and see what happens.
+directory? Can we type `cd dc_workshop`? Try it and see what happens.
 
 ~~~
-$ cd shell_data
+$ cd dc_workshop
 ~~~
 {: .bash}
 
@@ -47,7 +47,7 @@ $ cd shell_data
 ~~~
 {: .output}
 
-Your computer looked for a directory or file called `shell_data` within the 
+Your computer looked for a directory or file called `dc_workshop` within the 
 directory you were already in. It didn't know you wanted to look at a directory level
 above the one you were located in. 
 
@@ -68,7 +68,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/dcuser/shell_data
+/home/dcuser/dc_workshop
 ~~~
 {: .output}
 
@@ -78,7 +78,7 @@ $ ls
 {: .bash}
 
 ~~~
-sra_metadata  untrimmed_fastq
+assembly  data	metadata  report  taxonomy
 ~~~
 {: .output}
 
@@ -87,7 +87,7 @@ From this output, we can see that `..` did indeed take us back one level in our 
 You can chain these together like so:
 
 ~~~
-$ ls ../../
+$ cd ../../
 ~~~
 {: .bash}
 
@@ -95,7 +95,7 @@ prints the contents of `/home`, which is one level up from your root directory.
 
 > ## Finding hidden directories
 >
-> First navigate to the `shell_data` directory. There is a hidden directory within this directory. Explore the options for `ls` to 
+> First navigate to the `dc_workshop` directory. There is a hidden directory within this directory. Explore the options for `ls` to 
 > find out how to see hidden directories. List the contents of the directory and 
 > identify the name of the text file in that directory.
 > 
@@ -118,7 +118,7 @@ prints the contents of `/home`, which is one level up from your root directory.
 > > {: .bash}
 > > 
 > > ~~~
-> > .  ..  .hidden	sra_metadata  untrimmed_fastq
+> > .  ..  .hidden	assembly  assembly_JC1A  data  metadata  report  taxonomy
 > > ~~~
 > > {: .output}
 > > 
@@ -162,16 +162,16 @@ $ cd
 Then enter the command:
 
 ~~~
-$ ls shell_data
+$ ls dc_workshop
 ~~~
 {: .bash}
 
 ~~~
-sra_metadata  untrimmed_fastq
+assembly  assembly_JC1A  data  metadata  report  taxonomy
 ~~~
 {: .output}
 
-This will list the contents of the `shell_data` directory without
+This will list the contents of the `dc_workshop` directory without
 you needing to navigate there.
 
 The `cd` command works in a similar way.
@@ -180,28 +180,28 @@ Try entering:
 
 ~~~
 $ cd
-$ cd shell_data/untrimmed_fastq
+$ cd dc_workshop/data
 ~~~
 {: .bash}
 
-This will take you to the `untrimmed_fastq` directory without having to go through
+This will take you to the `data` directory without having to go through
 the intermediate directory.
 
 > ## Navigating practice
 > 
-> Navigate to your home directory. From there, list the contents of the `untrimmed_fastq` 
+> Navigate to your home directory. From there, list the contents of the `data` 
 > directory. 
 > 
 > > ## Solution
 > >
 > > ~~~
 > > $ cd
-> > $ ls shell_data/untrimmed_fastq/
+> > $ ls dc_workshop/data/
 > > ~~~
 > > {: .bash}
 > > 
 > > ~~~
-> > SRR097977.fastq  SRR098026.fastq 
+> > assembly  assembly_JC1A  data  metadata  report  taxonomy
 > > ~~~
 > > {: .output}
 > > 
@@ -306,12 +306,12 @@ navigate amongst them.
 
 There are some shortcuts which you should know about. Dealing with the
 home directory is very common. The tilde character,
-`~`, is a shortcut for your home directory. Navigate to the `shell_data`
+`~`, is a shortcut for your home directory. Navigate to the `dc_workshop`
 directory:
 
 ~~~
 $ cd
-$ cd shell_data
+$ cd dc_workshop
 ~~~
 {: .bash}
 
@@ -323,7 +323,7 @@ $ ls ~
 {: .bash}
 
 ~~~
-16s Z1_16S_filt_align-paf dc_workshop.tar.gz  shell_data  R dc_workshop r_data
+16s  Z1_16S_filt_align.paf  dc_workshop.tar.gz	rrn_tax.txt R    dc_workshop	    r_data
 ~~~
 {: .output}
 
