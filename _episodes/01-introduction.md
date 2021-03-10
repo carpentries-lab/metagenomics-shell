@@ -177,13 +177,13 @@ $ ls
 `ls` prints the names of the files and directories in the current directory in
 alphabetical order,
 arranged neatly into columns. 
-We'll be working within the `shell_data` subdirectory, and creating new subdirectories, throughout this workshop.  
+We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, throughout this workshop.  
 
 The command to change locations in our file system is `cd` followed by a
 directory name to change our working directory.
 `cd` stands for "change directory".
 
-Let's say we want to navigate to the `shell_data` directory we saw above.  We can
+Let's say we want to navigate to the `dc_workshop` directory we saw above.  We can
 use the following command to get there:
 
 ~~~
@@ -243,9 +243,13 @@ to quit.
 > > {: .bash}
 > > 
 > > ~~~
-> > total 8
-> > drwxr-x--- 2 dcuser dcuser 4096 Jul 30  2015 sra_metadata
-> > drwxr-xr-x 2 dcuser dcuser 4096 Nov 15  2017 untrimmed_fastq
+> > total 24
+> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:33 assembly
+> > drwxrwxr-x 10 dcuser dcuser 4096 Mar 10 21:03 assembly_JC1A
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar 10 21:11 data
+> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 metadata
+> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 report
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonom
 > > ~~~
 > > {: .output}
 > > 
@@ -260,7 +264,7 @@ No one can possibly learn all of these arguments, that's why the manual page
 is for. You can (and should) refer to the manual page or other help files
 as needed.
 
-Let's go into the `untrimmed_fastq` directory and see what is in there.
+Let's go into the `data` directory and see what is in there.
 
 ~~~
 $ cd data
