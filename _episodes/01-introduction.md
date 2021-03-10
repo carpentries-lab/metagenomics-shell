@@ -170,7 +170,7 @@ $ ls
 {: .bash}
 
 ~~~
-16s Z1_16S_filt_align-paf dc_workshop.tar.gz  shell_data  R dc_workshop r_data
+16s Z1_16S_filt_align-paf dc_workshop.tar.gz  R dc_workshop r_data
 ~~~
 {: .output}
 
@@ -187,7 +187,7 @@ Let's say we want to navigate to the `shell_data` directory we saw above.  We ca
 use the following command to get there:
 
 ~~~
-$ cd shell_data
+$ cd dc_workshop
 ~~~
 {: .bash}
 
@@ -199,7 +199,7 @@ $ ls
 {: .bash}
 
 ~~~
-sra_metadata  untrimmed_fastq
+assembly  data	metadata  report  taxonomy
 ~~~
 {: .output}
 
@@ -212,7 +212,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-sra_metadata/  untrimmed_fastq/
+assembly/  data/  metadata/  report/  taxonomy/
 ~~~
 {: .output}
 
@@ -263,18 +263,18 @@ as needed.
 Let's go into the `untrimmed_fastq` directory and see what is in there.
 
 ~~~
-$ cd untrimmed_fastq
+$ cd data
 $ ls -F
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq  SRR098026.fastq
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4_R1.fastq.gz  JP4_R2.fastq.gz
 ~~~
 {: .output}
 
-This directory contains two files with `.fastq` extensions. FASTQ is a format
-for storing information about sequencing reads and their quality.
+This directory contains four files with `.fastq.gz` extensions. FASTQ is a format
+for storing information about sequencing reads and their quality. GZ is an archive file compressed.
 We will be learning more about FASTQ files in a later lesson.
 
 ### Shortcut: Tab Completion
@@ -297,18 +297,18 @@ $ cd
 then enter:
 
 ~~~
-$ cd she<tab>
+$ cd dc<tab>
 ~~~
 {: .bash}
 
 The shell will fill in the rest of the directory name for
-`shell_data`.
+`dc_workshop`.
 
-Now change directories to `untrimmed_fastq` in `shell_data`
+Now change directories to `data` in `dc_workshop`
 
 ~~~
-$ cd shell_data
-$ cd untrimmed_fastq
+$ cd dc_workshop
+$ cd data
 ~~~
 {: .bash}
 
@@ -316,28 +316,27 @@ Using tab complete can be very helpful. However, it will only autocomplete
 a file or directory name if you've typed enough characters to provide
 a unique identifier for the file or directory you are trying to access.
 
-If we navigate back to our `untrimmed_fastq` directory and try to access one
-of our sample files:
+If we navigate back to our `data` directory and try to access one of our sample files:
 
 ~~~
 $ cd
-$ cd shell_data
-$ cd untrimmed_fastq
-$ ls SR<tab>
+$ cd dc_workshop
+$ cd data
+$ ls JC<tab>
 ~~~
 {: .bash}
 
-The shell auto-completes your command to `SRR09`, because all file names in 
+The shell auto-completes your command to `JC1A_R`, because there is another file name in 
 the directory begin with this prefix. When you hit
 <kbd>Tab</kbd> again, the shell will list the possible choices.
 
 ~~~
-$ ls SRR09<tab><tab>
+$ ls JC1A_R<tab><tab>
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq  SRR098026.fastq
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz 
 ~~~
 {: .output}
 
