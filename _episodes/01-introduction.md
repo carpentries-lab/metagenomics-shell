@@ -170,7 +170,7 @@ $ ls
 {: .bash}
 
 ~~~
-16s Z1_16S_filt_align-paf dc_workshop.tar.gz  R dc_workshop r_data
+dc_workshop.tar.gz  R  r_data
 ~~~
 {: .output}
 
@@ -199,7 +199,7 @@ $ ls
 {: .bash}
 
 ~~~
-assembly  data	metadata  report  taxonomy
+assembly  data	metadata  report  taxonomy  16s
 ~~~
 {: .output}
 
@@ -212,7 +212,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-assembly/  data/  metadata/  report/  taxonomy/
+assembly/  data/  metadata/  report/  taxonomy/ 16s/
 ~~~
 {: .output}
 
