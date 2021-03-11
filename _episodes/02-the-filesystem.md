@@ -78,7 +78,7 @@ $ ls
 {: .bash}
 
 ~~~
-assembly  data	metadata  report  taxonomy
+assembly  data	metadata  report  taxonomy  16s
 ~~~
 {: .output}
 
@@ -167,7 +167,7 @@ $ ls dc_workshop
 {: .bash}
 
 ~~~
-assembly  assembly_JC1A  data  metadata  report  taxonomy
+assembly  assembly_JC1A  data  metadata  report  taxonomy 16s
 ~~~
 {: .output}
 
@@ -201,7 +201,7 @@ the intermediate directory.
 > > {: .bash}
 > > 
 > > ~~~
-> > assembly  assembly_JC1A  data  metadata  report  taxonomy
+> > assembly  assembly_JC1A  data  metadata  report  taxonomy 16s
 > > ~~~
 > > {: .output}
 > > 
@@ -323,7 +323,7 @@ $ ls ~
 {: .bash}
 
 ~~~
-16s  Z1_16S_filt_align.paf  dc_workshop.tar.gz	rrn_tax.txt R    dc_workshop	    r_data
+dc_workshop.tar.gz  R  r_data
 ~~~
 {: .output}
 
