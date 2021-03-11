@@ -29,10 +29,10 @@ have two results files, which are stored in our `untrimmed_fastq` directory.
 
 ### Wildcards
 
-Navigate to your `untrimmed_fastq` directory.
+Navigate to your `data` directory.
 
 ~~~
-$ cd ~/shell_data/untrimmed_fastq
+$ cd ~/dc_workshop/data
 ~~~
 {: .bash}
 
@@ -45,7 +45,7 @@ $ ls *.fastq
 {: .bash}
 
 ~~~
-SRR097977.fastq  SRR098026.fastq
+JC1A_R1.fastq  JC1A_R2.fastq
 ~~~
 {: .output}
 
@@ -55,16 +55,16 @@ Thus, `*.fastq` matches every file that ends with `.fastq`.
 This command: 
 
 ~~~
-$ ls *977.fastq
+$ ls *R1.fastq
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq
+JC1A_R1.fastq
 ~~~
 {: .output}
 
-lists only the file that ends with `977.fastq`.
+lists only the file that ends with `R1.fastq`.
 
 This command:
 
@@ -129,7 +129,7 @@ Lists every file in `/usr/bin` that ends in the characters `.sh`.
 > {: .bash}
 > 
 > ~~~
-> SRR097977.fastq SRR098026.fastq
+> JCA1_R1.fastq JCA1_R2.fastq
 > ~~~
 > {: .output}
 > 
@@ -225,26 +225,26 @@ contents of directories, but how do we look at the contents of files?
 One way to examine a file is to print out all of the
 contents using the program `cat`. 
 
-Enter the following command from within the `untrimmed_fastq` directory: 
+Enter the following command from within the `data` directory: 
 
 ~~~
-$ cat SRR098026.fastq
+$ cat JC1A_R1.fastq
 ~~~
 {: .bash}
 
-This will print out all of the contents of the `SRR098026.fastq` to the screen.
+This will print out all of the contents of the `JC1A.fastq` to the screen.
 
 
 > ## Exercise
 > 
-> 1. Print out the contents of the `~/shell_data/untrimmed_fastq/SRR097977.fastq` file. What is the last line of the file? 
+> 1. Print out the contents of the `~/dc_workshop/data/JC1A_R2.fastq` file. What is the last line of the file? 
 > 2.  From your home directory, and without changing directories,
 > use one short command to print the contents of all of the files in
-> the `~/shell_data/untrimmed_fastq` directory.
+> the `~/dc_workshop/data` directory.
 > 
 > > ## Solution
 > > 1. The last line of the file is `C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$`.
-> > 2. `cat ~/shell_data/untrimmed_fastq/*`
+> > 2. `cat ~/dc_workshop/data/`
 > {: .solution}
 {: .challenge}
 
@@ -256,7 +256,7 @@ are identical to the `man` program.
 Enter the following command:
 
 ~~~
-$ less SRR097977.fastq
+$ less JC1A_R2.fastq
 ~~~
 {: .bash}
 
@@ -309,11 +309,22 @@ The commands are `head` and `tail` and they let you look at
 the beginning and end of a file, respectively.
 
 ~~~
-$ head SRR098026.fastq
+$ head JC1A_R2.fastq
 ~~~
 {: .bash}
 
 ~~~
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
+CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGGCGGCGATCAGGCAGCGCAGCAGCAGGAGCCACCAGGGCGTGCGGTCGGGCGTCCGTTCGGCGTCCTCGCGCCCCAGCAGCAGGCGCACGCCAGGGAATCCGACCCGCCGCCGGCTCGGCCGCGTCNCCCGCNCCCGCCCCCCGAGCACCCGNAGCCNCNCCACCGCCGCCC
++
+1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B/>EF/EGHHHHHHG?C##???/FE/ECHCE?C<FGGGGCCCGGGG@?AE.BFFEAB-9@@@FFFFFEEEEFBFF--99A-;@B=@A@@?@@>-@@--/B--@--@@-F----;@--:F---9-AB9=-@-9E-99A-;:BF-9-@@-;@-@#############################################################
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:15782:2187 2:N:0:TCGAAG
+CAACCGGCTGATCCTCGACGCCATCGAGGCGACCGGCGCCGGCGCCGACGGGCTGATCACCGCCGCCGAGGTCGTCGCGATCAACGCGGCGATCCGCGGCGACGCGACGCCCCTCGCCGACTTCGTCGACCTGCACGGCGACGACGAGGAGGGCCTCGAGACCGGCTTCCCCCTGATCCAGGGCGACGGCGCCGCGACGCAGCTCGGCGGGTTCCACCCTCCTCACCGGGCCGCCGCCGGCTTCTACCCGA
++
+BBBBBBBBDBFFGGFFEEGEFG2FHGFEGCA?EEGCE@EFEEE/EEE@EDCFDCAC2G2CG?CC/CFG?C?DHFCGCGFD-C.0;DFA-AD;AFFFF;DF-BB--@;>9D-@DAD->>=-@-9FFBDCFFFFB?.FE@---;@9@--9@9AD;D?.F.9..AE;C;-;;B.;D##############################################################################
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:11745:2196 2:N:0:NCGAAG
+CGAAAAGCCGCGCGCCGACCTGGGCGTCGAGCGCCGCGCCGCTCCAACGAACGCCAGGCGATCCGAGCGCGGCGGCGATGGCACCCGGATCGAGCCCGGTAAAGTCGGCCCGTAGGTCGAGGCCGCCGCCGCCAGGCGCCACTTCGAGCCGTGGGAGATGCAACGTTAGCGGCGCCGCCCCGTCGGCCGTCTCGAGCAAAATGCGCGTGTCGGTGAGCCGCCGGTGCTCCGGCAACCGCATCCTGCGCCAG
+
 @SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
 NNNNNNNNNNNNNNNNCNNNNNNNNNNNNNNNNNN
 +SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
@@ -328,7 +339,7 @@ NNNNNNNNNNNNNNNNANNNNNNNNNNNNNNNNNN
 {: .output}
 
 ~~~
-$ tail SRR098026.fastq
+$ tail JC1A_R2.fastq
 ~~~
 {: .bash}
 
@@ -350,22 +361,22 @@ The `-n` option to either of these commands can be used to print the
 first or last `n` lines of a file. 
 
 ~~~
-$ head -n 1 SRR098026.fastq
+$ head -n 1 JC1A_R2.fastq
 ~~~
 {: .bash}
 
 ~~~
-@SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
 ~~~
 {: .output}
 
 ~~~
-$ tail -n 1 SRR098026.fastq
+$ tail -n 1 JC1A_R2.fastq
 ~~~
 {: .bash}
 
 ~~~
-A!@B!BBB@ABAB#########!!!!!!!######
+AAA#>>A#1>AAGGGGGGGG#ABFEFGGHGEFGEGGGEGFHHHGGGGGGGGEEEEEGCG?EGHHHG@CC#??#???FFG############################################################################################################################################################################
 ~~~
 {: .output}
 
@@ -387,15 +398,15 @@ We can view the first complete read in one of the files our dataset by using `he
 the first four lines.
 
 ~~~
-$ head -n 4 SRR098026.fastq
+$ head -n 4 JC1A_R2.fastq
 ~~~
 {: .bash}
 
 ~~~
-@SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-NNNNNNNNNNNNNNNNCNNNNNNNNNNNNNNNNNN
-+SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
+CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGGCGGCGATCAGGCAGCGCAGCAGCAGGAGCCACCAGGGCGTGCGGTCGGGCGTCCGTTCGGCGTCCTCGCGCCCCAGCAGCAGGCGCACGCCAGGGAATCCGACCCGCCGCCGGCTCGGCCGCGTCNCCCGCNCCCGCCCCCCGAGCACCCGNAGCCNCNCCACCGCCGCCC
++
+1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B/>EF/EGHHHHHHG?C##???/FE/ECHCE?C<FGGGGCCCGGGG@?AE.BFFEAB-9@@@FFFFFEEEEFBFF--99A-;@B=@A@@?@@>-@@--/B--@--@@-F----;@--:F---9-AB9=-@-9E-99A-;:BF-9-@@-;@-@#############################################################
 ~~~
 {: .output}
 
@@ -435,10 +446,10 @@ much signal was captured for the base incorporation.
 Looking back at our read: 
 
 ~~~
-@SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-NNNNNNNNNNNNNNNNCNNNNNNNNNNNNNNNNNN
-+SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
+CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNT
++
+1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B
 ~~~
 {: .output}
 
@@ -463,20 +474,20 @@ and change the file permissions so that we can read from, but not write to, the 
 
 First, let's make a copy of one of our FASTQ files using the `cp` command. 
 
-Navigate to the `shell_data/untrimmed_fastq` directory and enter:
+Navigate to the `dc_workshop/data` directory and enter:
 
 ~~~
-$ cp SRR098026.fastq SRR098026-copy.fastq
+$ cp JC1A_R2.fastq JC1A_R2-copy.fastq
 $ ls -F
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq  SRR098026-copy.fastq  SRR098026.fastq
+JC1A_R2.fastq  JC1A_R2-copy.fastq  JC1A_R1.fastq
 ~~~
 {: .output}
 
-We now have two copies of the `SRR098026.fastq` file, one of them named `SRR098026-copy.fastq`. We'll move this file to a new directory
+We now have two copies of the `JC1A_R2.fastq` file, one of them named `JC1A_R2-copy.fastq`. We'll move this file to a new directory
 called `backup` where we'll store our backup data files.
 
 ### Creating Directories
@@ -495,13 +506,13 @@ We can now move our backup file to this directory. We can
 move files around using the command `mv`. 
 
 ~~~
-$ mv SRR098026-copy.fastq backup
+$ mv JC1A_R2-copy.fastq backup
 $ ls backup
 ~~~
 {: .bash}
  
 ~~~
-SRR098026-copy.fastq
+JC1A_R2-copy.fastq
 ~~~
 {: .output}
 
@@ -509,13 +520,13 @@ The `mv` command is also how you rename files. Let's rename this file to make it
 
 ~~~
 $ cd backup
-$ mv SRR098026-copy.fastq SRR098026-backup.fastq
+$ mv JC1A_R2-copy.fastq JC1A_R2-backup.fastq
 $ ls
 ~~~
 {: .bash}
 
 ~~~
-SRR098026-backup.fastq
+JC1A_R2-backup.fastq
 ~~~
 {: .output}
 
@@ -533,7 +544,7 @@ $ ls -l
 {: .bash}
 
 ~~~
--rw-r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 SRR098026-backup.fastq
+-rw-r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
 ~~~
 {: .output}
 
@@ -553,13 +564,13 @@ talk more about this in [a later lesson](http://www.datacarpentry.org/shell-geno
 Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
 
 ~~~
-$ chmod -w SRR098026-backup.fastq
+$ chmod -w JC1A_R2-backup.fastq
 $ ls -l 
 ~~~
 {: .bash}
 
 ~~~
--r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 SRR098026-backup.fastq
+-r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
 ~~~
 {: .output}
 
@@ -568,14 +579,14 @@ $ ls -l
 To prove to ourselves that you no longer have the ability to modify this file, try deleting it with the `rm` command.
 
 ~~~
-$ rm SRR098026-backup.fastq
+$ rm JC1A_R2-backup.fastq
 ~~~
 {: .bash}
 
 You'll be asked if you want to override your file permissions.
 
 ~~~
-rm: remove write-protected regular file ‘SRR098026-backup.fastq’? 
+rm: remove write-protected regular file ‘JC1A_R2-backup.fastq’? 
 ~~~
 {: .output}
 
@@ -602,7 +613,7 @@ you will be asked whether you want to override your permission settings.
 
 > ## Exercise
 >
-> Starting in the `shell_data/untrimmed_fastq/` directory, do the following:
+> Starting in the `dc_workshop/data/` directory, do the following:
 > 1. Make sure that you have deleted your backup directory and all files it contains.  
 > 2. Create a copy of each of your FASTQ files. (Note: You'll need to do this individually for each of the two FASTQ files. We haven't 
 > learned yet how to do this
@@ -613,14 +624,14 @@ you will be asked whether you want to override your permission settings.
 > > ## Solution
 > >
 > > 1. `rm -r backup`  
-> > 2. `cp SRR098026.fastq SRR098026-backup.fastq` and `cp SRR097977.fastq SRR097977-backup.fastq`  
+> > 2. `cp JC1A_R1.fastq JC1A_R1-backup.fastq` and `cp JC1A_R2.fastq JC1A_R2-backup.fastq`  
 > > 3. `mkdir backup` and `mv *-backup.fastq backup`
 > > 4. `chmod -w backup/*-backup.fastq`   
 > > It's always a good idea to check your work with `ls -l backup`. You should see something like: 
 > > 
 > > ~~~
-> > -r--r--r-- 1 dcuser dcuser 47552 Nov 15 23:06 SRR097977-backup.fastq
-> > -r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:06 SRR098026-backup.fastq
+> > -r--r--r-- 1 dcuser dcuser 47552 Nov 15 23:06 JC1A_R1-backup.fastq
+> > -r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:06 JC1A_R2-backup.fastq
 > > ~~~
 > > {: .output}
 > {: .solution}
