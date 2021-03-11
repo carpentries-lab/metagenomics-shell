@@ -44,7 +44,7 @@ We'll search for strings inside of our fastq files. Let's first make sure we are
 directory.
 
 ~~~
-$ cd ~/shell_data/untrimmed_fastq
+$ cd ~/dc_workshop/data
 ~~~
 {: .bash}
 
@@ -61,13 +61,13 @@ Suppose we want to see how many reads in our file have really bad segments conta
 > 
 {: .callout}
 
-Let's search for the string NNNNNNNNNN in the SRR098026 file.
+Let's search for the string NNNNNNNNNN in the JC1A_R2.fastq file.
 ~~~
 $ grep NNNNNNNNNN SRR098026.fastq
 ~~~
 {: .bash}
 
-This command returns a lot of output to the terminal. Every single line in the SRR098026 
+This command returns a lot of output to the terminal. Every single line in the JC1A_R2.fastq 
 file that contains at least 10 consecutive Ns is printed to the terminal, regardless of how long or short the file is. 
 We may be interested not only in the actual sequence which contains this string, but 
 in the name (or identifier) of that sequence. We discussed in a previous lesson 
@@ -88,16 +88,16 @@ $ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq
 One of the sets of lines returned by this command is: 
 
 ~~~
-@SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-+SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:2111:5300:24013 2:N:0:TCGAAG
+NNNNNNNNNNNCNANNANNNNNCGCCGGTGTTCTNCTGGGGNACGGANACCGAGTAGATCGGAACAGCGTCGTGGAGNGAAAGAGTGTAGATCCCGGTGGGCGGCGTATCATTAAAAAAAAAACCTGCTGGTCCTTGTCTC
++
+AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//????########################################################################################################################################################################
 ~~~
 {: .output}
 
 > ## Exercise
 >
-> 1. Search for the sequence `GNATNACCACTTCC` in the `SRR098026.fastq` file.
+> 1. Search for the sequence `GATCGAGAGGGGATAGGCG` in the `JC1A_R2.fastq` file.
 > Have your search return all matching lines and the name (or identifier) for each sequence
 > that contains a match.
 > 
@@ -106,7 +106,7 @@ CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 > that contains a match.
 > 
 > > ## Solution  
-> > 1. `grep -B1 GNATNACCACTTCC SRR098026.fastq`  
+> > 1. `grep -B1 GATCGAGAGGGGATAGGCG JC1A_R2.fastq`  
 > > 2. `grep -B1 AAGTT *.fastq`
 > >
 > {: .solution}
@@ -131,7 +131,7 @@ in our FASTQ files that contain
 'NNNNNNNNNN' to another file called `bad_reads.txt`.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 ~~~
 {: .bash}
 
@@ -182,13 +182,13 @@ four to get the number of sequences that match our search pattern.
 
 > ## Exercise
 >
-> How many sequences in `SRR098026.fastq` contain at least 3 consecutive Ns?
+> How many sequences in `JC1A_R2.fastq` contain at least 3 consecutive Ns?
 >
 >> ## Solution
 >>  
 >>
 >> ~~~
->> $ grep NNN SRR098026.fastq > bad_reads.txt
+>> $ grep NNN JC1A_R2.fastq > bad_reads.txt
 >> $ wc -l bad_reads.txt
 >> ~~~
 >> {: .bash}
@@ -208,7 +208,7 @@ This is called "overwriting" and, just like you don't want to overwrite your vid
 of your kid's first birthday party, you also want to avoid overwriting your data files.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
@@ -219,7 +219,7 @@ $ wc -l bad_reads.txt
 {: .output}
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR097977.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
@@ -230,14 +230,14 @@ $ wc -l bad_reads.txt
 {: .output}
 
 Here, the output of our second  call to `wc` shows that we no longer have any lines in our `bad_reads.txt` file. This is 
-because the second file we searched (`SRR097977.fastq`) does not contain any lines that match our
+because the second file we searched (`JC1A_R2.fastq`) does not contain any lines that match our
 search sequence. So our file was overwritten and is now empty.
 
 We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will 
 append new output to the end of a file, rather than overwriting it.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
@@ -248,7 +248,7 @@ $ wc -l bad_reads.txt
 {: .output}
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR097977.fastq >> bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq >> bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
@@ -312,7 +312,7 @@ look at it, like we can with `less`. Well it turns out that we can! We can redir
 from our `grep` call through the `less` command.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq | less
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq | less
 ~~~
 {: .bash}
 
@@ -383,7 +383,7 @@ $ for filename in *.fastq
 {: .bash}
 
 The for loop begins with the formula `for <variable> in <group to iterate over>`. In this case, the word `filename` is designated 
-as the variable to be used over each iteration. In our case `SRR097977.fastq` and `SRR098026.fastq` will be substituted for `filename` 
+as the variable to be used over each iteration. In our case `JC1A_R1.fastq` and `JC1A_R2.fastq` will be substituted for `filename` 
 because they fit the pattern of ending with .fastq in directory we've specified. The next line of the for loop is `do`. The next line is 
 the code that we want to execute. We are telling the loop to print the first two lines of each variable we iterate over. Finally, the
 word `done` ends the loop.
@@ -406,26 +406,26 @@ every time the loop iterates, so it would only have text from the last variable 
 Basename is a function in UNIX that is helpful for removing a uniform part of a name from a list of files. In this case, we will use basename to remove the `.fastq` extension from the files that we’ve been working with. 
 
 ~~~
-$ basename SRR097977.fastq .fastq
+$ basename JC1A_R2.fastq .fastq
 ~~~
 {: .bash}
 
 We see that this returns just the SRR accession, and no longer has the .fastq file extension on it.
 
 ~~~
-SRR097977
+JC1A_R2
 ~~~
 {: .output}
 
 If we try the same thing but use `.fasta` as the file extension instead, nothing happens. This is because basename only works when it exactly matches a string in the file.
 
 ~~~
-$ basename SRR097977.fastq .fasta
+$ basename JC1A_R2.fastq .fasta
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq
+JC1A_R2.fastq
 ~~~
 {: .output}
 
