@@ -199,7 +199,7 @@ $ ls
 {: .bash}
 
 ~~~
-assembly  data	metadata  report  taxonomy  16s
+16s assembly  data	metadata  report  taxonomy  
 ~~~
 {: .output}
 
@@ -212,7 +212,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-assembly/  data/  metadata/  report/  taxonomy/ 16s/
+16s/ assembly/  data/  metadata/  report/  taxonomy/ 
 ~~~
 {: .output}
 
@@ -243,7 +243,8 @@ to quit.
 > > {: .bash}
 > > 
 > > ~~~
-> > total 24
+> > total 28
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  3 20:21 16s
 > > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:33 assembly
 > > drwxrwxr-x 10 dcuser dcuser 4096 Mar 10 21:03 assembly_JC1A
 > > drwxr-xr-x  2 dcuser dcuser 4096 Mar 10 21:11 data
