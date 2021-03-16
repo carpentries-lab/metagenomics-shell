@@ -37,17 +37,17 @@ window.onload = set_page_view_defaults;
 
 ## Writing files
 
-We've been able to do a lot of work with files that already exist, but what if we want to write our own files? We're not going to type in a FASTA file, but we'll see as we go through other tutorials, there are a lot of reasons we'll want to write a file, or edit an existing file.
+We've been able to do a lot of work with files that already exist, but what if we want to write our own files. We're not going to type in a FASTA file, but we'll see as we go through other tutorials, there are a lot of reasons we'll want to write a file, or edit an existing file.
 
-To add text to files, we're going to use a text editor called Nano. We're going to create a file to take notes about what we've been doing with the data files in `~/shell_data/untrimmed_fastq`.
+To add text to files, we're going to use a text editor called Nano. We're going to create a file to take notes about what we've been doing with the data files in `~/dc_workshopd/data`.
 
-This is good practice when working in bioinformatics. We can create a file called `README.txt` that describes the data files in the directory or documents how the files in that directory were generated.  As the name suggests, it's a file that we or others should read to understand the information in that directory.
+This is good practice when working in bioinformatics. We can create a file called a `README.txt` that describes the data files in the directory or documents how the files in that directory were generated.  As the name suggests it's a file that we or others should read to understand the information in that directory.
 
-Let's change our working directory to `~/shell_data/untrimmed_fastq` using `cd`,
+Let's change our working directory to `~/dc_workshop/data` using `cd`,
 then run `nano` to create a file called `README.txt`:
 
 ~~~
-$ cd ~/shell_data/untrimmed_fastq
+$ cd ~/dc_workshop/data
 $ nano README.txt
 ~~~
 {: .bash}
@@ -119,7 +119,7 @@ Now you've written a file. You can take a look at it with `less` or `cat`, or op
 > > ## Solution
 > > 
 > > Use `nano README.txt` to open the file.  
-> > Add today's date and then use <kbd>Ctrl</kbd>-<kbd>X</kbd> followed by `y` and <kbd>Enter</kbd> to save.
+> > Add today's date and then use <kbd>Ctrl</kbd>-<kbd>X</kbd> to exit and `y` to save.
 > >
 > {: .solution}
 >
@@ -131,26 +131,19 @@ A really powerful thing about the command line is that you can write scripts. Sc
 
 One thing we will commonly want to do with sequencing results is pull out bad reads and write them to a file to see if we can figure out what's going on with them. We're going to look for reads with long sequences of N's like we did before, but now we're going to write a script, so we can run it each time we get new sequences, rather than type the code in by hand each time.
 
+Bad reads have a lot of N's, so we're going to look for  `NNNNNNNNNN` with `grep`. We want the whole FASTQ record, so we're also going to get the one line above the sequence and the two lines below. We also want to look in all the files that end with `.fastq`, so we're going to use the `*` wildcard.
+
+~~~
+grep -B1 -A2 NNNNNNNNNN *.fastq > scripted_bad_reads.txt
+~~~
+{: .bash}
+
 We're going to create a new file to put this command in. We'll call it `bad-reads-script.sh`. The `sh` isn't required, but using that extension tells us that it's a shell script.
 
 ~~~
 $ nano bad-reads-script.sh
 ~~~
 {: .bash}
-
-Bad reads have a lot of N's, so we're going to look for  `NNNNNNNNNN` with `grep`. We want the whole FASTQ record, so we're also going to get the one line above the sequence and the two lines below. We also want to look in all the files that end with `.fastq`, so we're going to use the `*` wildcard.
-
-~~~
-grep -B1 -A2 -h NNNNNNNNNN *.fastq | grep -v '^--' > scripted_bad_reads.txt
-~~~
-{: .bash}
-
-> ## Custom `grep` control
->
-> We introduced the `-v` option in [the previous episode](http://www.datacarpentry.org/shell-genomics/04-redirection/), now we 
-> are using `-h` to "Suppress the prefixing of file names on output" according to the documentation shown by `man grep`.
-> 
-{: .callout}
 
 Type your `grep` command into the file and save it as before. Be careful that you did not add the `$` at the beginning of the line.
 
@@ -169,20 +162,11 @@ It will look like nothing happened, but now if you look at `scripted_bad_reads.t
 > We want the script to tell us when it's done.  
 > 1. Open `bad-reads-script.sh` and add the line `echo "Script finished!"` after the `grep` command and save the file.  
 > 2. Run the updated script.
->
-> > ## Solution
-> > 
-> >    ```
-> >   $ bash bad-reads-script.sh
-> >   Script finished!
-> >   ```
-> >
-> {: .solution}
 {: .challenge}
 
 ## Making the script into a program
 
-We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead, we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](http://www.datacarpentry.org/shell-genomics/03-working-with-files/).
+We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](http://www.datacarpentry.org/shell-genomics/03-working-with-files/).
 
 First, let's look at the current permissions.
 
@@ -242,7 +226,7 @@ the same behaviour, but they are mostly interchangeable.
  - ``wget`` is short for "world wide web get", and it's basic function is to *download*
  web pages or data at a web address.
 
- - ``cURL`` is a pun, it is supposed to be read as "see URL", so its basic function is
+ - ``cURL`` is a pun, it is suppose to be read as "see URL", so it's basic function is
  to *display* webpages or data at a web address.
 
 Which one you need to use mostly depends on your operating system, as most computers will
@@ -252,7 +236,7 @@ Let's say you want to download some data from Ensembl. We're going to download a
 tab-delimited file that just tells us what data is available on the Ensembl bacteria server.
 Before we can start our download, we need to know whether we're using ``curl`` or ``wget``.
 
-To see which program you have, type:
+To see which program you have type:
  
 ~~~
 $ which curl
@@ -289,7 +273,7 @@ $
 
 This output means that you have ``curl`` installed, but not ``wget``.
 
-Once you know whether you have ``curl`` or ``wget``, use one of the
+Once you know whether you have ``curl`` or ``wget`` use one of the
 following commands to download the file:
 
 ~~~
@@ -326,7 +310,7 @@ using a transfer program, it needs to be installed on your local machine, not yo
 
 ## Transferring Data Between your Local Machine and the Cloud
 
-These directions are platform specific, so please follow the instructions for your system:
+These directions are platform specific so please follow the instructions for your system:
 
 **Please select the platform you wish to use for the exercises: <select id="id_platform" name="platformlist" onchange="change_content_by_platform('id_platform');return false;"><option value="unix" id="id_unix" selected> UNIX </option><option value="win" id="id_win" selected> Windows </option></select>**
 
@@ -346,14 +330,14 @@ scp <file I want to move> <where I want to move it>
 {: .bash}
 
 Note that you are always running `scp` locally, but that *doesn't* mean that
-you can only move files from your local computer. In order to move a file from your local computer to an AWS instance, the command would look like this:
+you can only move files from your local computer. A command like:
 
 ~~~
 $ scp <local file> <AWS instance>
 ~~~
 {: .bash}
 
-To move it back to your local computer, you re-order the `to` and `from` fields:
+To move it back, you just re-order the to and from fields:
 
 ~~~
 $ scp <AWS instance> <local file>
@@ -362,7 +346,7 @@ $ scp <AWS instance> <local file>
 
 #### Uploading Data to your Virtual Machine with scp
 
-Open the terminal and use the `scp` command to upload a file (e.g. local_file.txt) to the dcuser home directory:
+1. Open the terminal and use the `scp` command to upload a file (e.g. local_file.txt) to the dcuser home directory:
 
 ~~~
 $  scp local_file.txt dcuser@ip.address:/home/dcuser/
@@ -371,9 +355,9 @@ $  scp local_file.txt dcuser@ip.address:/home/dcuser/
 
 #### Downloading Data from your Virtual Machine with scp
 
-Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/shell_data/scripted_bad_reads.txt.
+Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/data/scripted_bad_reads.txt.
 
-**Tip:** If you are looking for another (or any really) text file in your home directory to use instead, try:
+**Tip:** If you are looking for another (or any really) text file in your home directory to use instead try
 
 ~~~
 $ find ~ -name *.txt
@@ -381,10 +365,10 @@ $ find ~ -name *.txt
 {: .bash}
 
 
-Download the bad reads file in ~/shell_data/scripted_bad_reads.txt to your home ~/Download directory using the following command **(make sure you substitute dcuser@ip.address with your remote login credentials)**:
+1. Download the bad reads file in ~/data/scripted_bad_reads.txt to your home ~/Download directory using the following command **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**:
 
 ~~~
-$ scp dcuser@ip.address:/home/dcuser/shell_data/untrimmed_fastq/scripted_bad_reads.txt ~/Downloads
+$ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/scripted_bad_reads.txt. ~/Downloads
 ~~~
 {: .bash}
 
@@ -405,14 +389,14 @@ your Downloads folder is appropriate.
 3. Open the windows [PowerShell](https://en.wikipedia.org/wiki/Windows_PowerShell);
 go to your start menu/search enter the term **'cmd'**; you will be able to start the shell
 (the shell should start from C:\Users\your-pc-username>).
-4. Change to the Downloads directory:
+4. Change to the download directory
 
 ~~~
 > cd Downloads
 ~~~
 {: .bash}
 
-5. Locate a file on your computer that you wish to upload (be sure you know the path). Then upload it to your remote machine **(you will need to know your AMI instance address (which starts with ec2), and login credentials)**. You will be prompted to enter a password, and then your upload will begin. **(make sure you substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
+5. Locate a file on your computer that you wish to upload (be sure you know the path). Then upload it to your remote machine **(you will need to know your AMI instance address (which starts with ec2), and login credentials)**. You will be prompted to enter a password, and then your upload will begin. **(make sure you use substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
 
 ~~~
 C:\User\your-pc-username\Downloads> pscp.exe local_file.txt dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/
@@ -422,10 +406,10 @@ C:\User\your-pc-username\Downloads> pscp.exe local_file.txt dcuser@ec2-54-88-126
 ### Downloading Data from your Virtual Machine with PSCP
 
 1. Follow the instructions in the Upload section to download (if needed) and access the *PSCP* program (steps 1-3)
-2. Download the text file to your current working directory (represented by a .) using the following command **(make sure you substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
+2. Download the text file using the following command **(make sure you use substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
 
 ~~~
-C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/shell_data/untrimmed_fastq/scripted_bad_reads.txt .
+C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data/scripted_bad_reads.txt.
 
 C:\User\your-pc-username\Downloads
 ~~~
