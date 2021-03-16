@@ -26,7 +26,7 @@ which allows you to control your computer using commands entered
 with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard combination.
 
-There are many reasons to learn about the shell:
+There are many reasons to learn about the shell.
 
 * Many bioinformatics tools can only be used through a command line interface, or 
 have extra capabilities in the command line version that are not available in the GUI.
@@ -55,7 +55,7 @@ on your computer. If you're using Windows, you'll need to download a separate pr
 
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data. Some of the data we're going to be working with is quite large, and
-we're also going to be using several bioinformatic packages in later
+we're also going to be using several bioinformatics packages in later
 lessons to work with this data. To avoid having to spend time 
 downloading the data and downloading and installing all of the software,
 we're going to be working with data on a remote server. 
@@ -109,11 +109,6 @@ This will scroll your screen down to give you a fresh screen and will make it ea
 You haven't lost any of the information on your screen. If you scroll up, you can see everything that has been output to your screen
 up until this point.
 
-> ## Tip
->
-> If you like to use hot-key combinations you might be interested to know that clearing the console can also be achieved by pressing `Ctrl+L`. Feel free to try it and see for yourself.
-{: .callout}
-
 ## Navigating your file system
 
 The part of the operating system responsible for managing files and directories
@@ -126,25 +121,13 @@ which hold files or other directories.
 Several commands are frequently used to create, inspect, rename, and delete files and directories.
 
 > ## Preparation Magic
-> You may have a prompt (the characters to the left of the cursor) that looks different from the `$` sign character used here.
-> If you would like to change your prompt to match the example prompt, first type the command:
-> `echo $PS1`
-> into your shell, followed by pressing the <kbd>Enter</kbd> key.
 >
-> This will print the bash special characters that are currently defining your prompt.
-> To change the prompt to a `$` (followed by a space), enter the command:
+> If you type the command:
 > `PS1='$ '`
-> Your window should look like our example in this lesson.  
-> 
-> To change back to your original prompt, type in the output of the previous command `echo $PS1` (this will be different depending on the
-> original configuration) between the quotes in the following command:
-> `PS1=""`
-> 
-> For example, if the output of `echo $PS1` was `\u@\h:\w $ `, 
-> then type those characters between the quotes in the above command: `PS1="\u@\h:\w $ "`.
-> Alternatively, you can reset your original prompt by exiting the shell and opening a new session.
-> 
-> This isn't necessary to follow along (in fact, your prompt may have other helpful information you want to know about).  This is up to you!  
+> into your shell, followed by pressing the <kbd>Enter</kbd> key,
+> your window should look like our example in this lesson.  
+> This isn't necessary to follow along (in fact, your prompt may have
+> other helpful information you want to know about).  This is up to you!  
 {: .callout}
 
 ~~~
@@ -162,7 +145,7 @@ Let's find out where we are by running a command called `pwd`
 At any moment, our **current working directory**
 is our current default directory,
 i.e.,
-the directory that the computer assumes we want to run commands in,
+the directory that the computer assumes we want to run commands in
 unless we explicitly specify something else.
 Here,
 the computer's response is `/home/dcuser`,
@@ -187,24 +170,24 @@ $ ls
 {: .bash}
 
 ~~~
-R  r_data  shell_data
+dc_workshop.tar.gz  R  r_data
 ~~~
 {: .output}
 
 `ls` prints the names of the files and directories in the current directory in
 alphabetical order,
 arranged neatly into columns. 
-We'll be working within the `shell_data` subdirectory, and creating new subdirectories, throughout this workshop.  
+We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, throughout this workshop.  
 
-The command to change locations in our file system is `cd`, followed by a
+The command to change locations in our file system is `cd` followed by a
 directory name to change our working directory.
 `cd` stands for "change directory".
 
-Let's say we want to navigate to the `shell_data` directory we saw above.  We can
+Let's say we want to navigate to the `dc_workshop` directory we saw above.  We can
 use the following command to get there:
 
 ~~~
-$ cd shell_data
+$ cd dc_workshop
 ~~~
 {: .bash}
 
@@ -216,7 +199,7 @@ $ ls
 {: .bash}
 
 ~~~
-sra_metadata  untrimmed_fastq
+16s assembly  data	metadata  report  taxonomy  
 ~~~
 {: .output}
 
@@ -229,7 +212,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-sra_metadata/  untrimmed_fastq/
+16s/ assembly/  data/  metadata/  report/  taxonomy/ 
 ~~~
 {: .output}
 
@@ -243,10 +226,8 @@ $ man ls
 ~~~
 {: .bash}
 
-`man` (short for manual) displays detailed documentation (also referred as man page or man file)
-for `bash` commands. It is a powerful resource to explore `bash` commands, understand
-their usage and flags. Some manual files are very long. You can scroll through the
-file using your keyboard's down arrow or use the <kbd>Space</kbd> key to go forward one page
+Some manual files are very long. You can scroll through the file using
+your keyboard's down arrow or use the <kbd>Space</kbd> key to go forward one page
 and the <kbd>b</kbd> key to go backwards one page. When you are done reading, hit <kbd>q</kbd>
 to quit.
 
@@ -262,9 +243,14 @@ to quit.
 > > {: .bash}
 > > 
 > > ~~~
-> > total 8
-> > drwxr-x--- 2 dcuser dcuser 4096 Jul 30  2015 sra_metadata
-> > drwxr-xr-x 2 dcuser dcuser 4096 Nov 15  2017 untrimmed_fastq
+> > total 28
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  3 20:21 16s
+> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:33 assembly
+> > drwxrwxr-x 10 dcuser dcuser 4096 Mar 10 21:03 assembly_JC1A
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar 10 21:11 data
+> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 metadata
+> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 report
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonom
 > > ~~~
 > > {: .output}
 > > 
@@ -275,28 +261,30 @@ to quit.
 > {: .solution}
 {: .challenge}
 
-No one can possibly learn all of these arguments, that's what the manual page
+No one can possibly learn all of these arguments, that's why the manual page
 is for. You can (and should) refer to the manual page or other help files
 as needed.
 
-Let's go into the `untrimmed_fastq` directory and see what is in there.
+Let's go into the `data` directory and see what is in there.
 
 ~~~
-$ cd untrimmed_fastq
+$ cd data
 $ ls -F
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq  SRR098026.fastq
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4_R1.fastq.gz  JP4_R2.fastq.gz
 ~~~
 {: .output}
 
-This directory contains two files with `.fastq` extensions. FASTQ is a format
-for storing information about sequencing reads and their quality.
+This directory contains four files with `.fastq.gz` extensions. FASTQ is a format
+for storing information about sequencing reads and their quality. GZ is an archive file compressed.
 We will be learning more about FASTQ files in a later lesson.
 
 ### Shortcut: Tab Completion
+
+Usually the key Tab is located on the left side of the keyboard just above the "Shift" key or "Mayus" key. 
 
 Typing out file or directory names can waste a
 lot of time and it's easy to make typing mistakes. Instead we can use tab complete 
@@ -314,18 +302,18 @@ $ cd
 then enter:
 
 ~~~
-$ cd she<tab>
+$ cd dc<tab>
 ~~~
 {: .bash}
 
 The shell will fill in the rest of the directory name for
-`shell_data`.
+`dc_workshop`.
 
-Now change directories to `untrimmed_fastq` in `shell_data`
+Now change directories to `data` in `dc_workshop`
 
 ~~~
-$ cd shell_data
-$ cd untrimmed_fastq
+$ cd dc_workshop
+$ cd data
 ~~~
 {: .bash}
 
@@ -333,25 +321,27 @@ Using tab complete can be very helpful. However, it will only autocomplete
 a file or directory name if you've typed enough characters to provide
 a unique identifier for the file or directory you are trying to access.
 
-For example, if we now try to list the files which names start with `SR`
-by using tab complete:  
+If we navigate back to our `data` directory and try to access one of our sample files:
 
 ~~~
-$ ls SR<tab>
+$ cd
+$ cd dc_workshop
+$ cd data
+$ ls JC<tab>
 ~~~
 {: .bash}
 
-The shell auto-completes your command to `SRR09`, because all file names in 
+The shell auto-completes your command to `JC1A_R`, because there is another file name in 
 the directory begin with this prefix. When you hit
 <kbd>Tab</kbd> again, the shell will list the possible choices.
 
 ~~~
-$ ls SRR09<tab><tab>
+$ ls JC1A_R<tab><tab>
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq  SRR098026.fastq
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz 
 ~~~
 {: .output}
 
@@ -364,7 +354,7 @@ $ pw<tab><tab>
 {: .bash}
 
 ~~~
-pwck      pwconv    pwd       pwdx      pwunconv
+pwd         pwd_mkdb    pwhich      pwhich5.16  pwhich5.18  pwpolicy
 ~~~
 {: .output}
 
@@ -376,7 +366,7 @@ We now know how to move around our file system using the command line.
 This gives us an advantage over interacting with the file system through
 a GUI as it allows us to work on a remote server, carry out the same set of operations 
 on a large number of files quickly, and opens up many opportunities for using 
-bioinformatic software that is only available in command line versions. 
+bioinformatics software that is only available in command line versions. 
 
 In the next few episodes, we'll be expanding on these skills and seeing how 
 using the command line shell enables us to make our workflow more efficient and reproducible.
