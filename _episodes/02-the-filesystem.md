@@ -146,47 +146,6 @@ prints the contents of `/home`, which is one level up from your root directory.
 > {: .solution}
 {: .challenge}
 
-## Examining the contents of other directories
-
-By default, the `ls` commands lists the contents of the working
-directory (i.e. the directory you are in). You can always find the
-directory you are in using the `pwd` command. However, you can also
-give `ls` the names of other directories to view. Navigate to your
-home directory if you are not already there.
-
-~~~
-$ cd
-~~~
-{: .bash}
-
-Then enter the command:
-
-~~~
-$ ls dc_workshop
-~~~
-{: .bash}
-
-~~~
-assembly  assembly_JC1A  data  metadata  report  taxonomy 16s
-~~~
-{: .output}
-
-This will list the contents of the `dc_workshop` directory without
-you needing to navigate there.
-
-The `cd` command works in a similar way.
-
-Try entering:
-
-~~~
-$ cd
-$ cd dc_workshop/data
-~~~
-{: .bash}
-
-This will take you to the `data` directory without having to go through
-the intermediate directory.
-
 > ## Navigating practice
 > 
 > Navigate to your home directory. From there, list the contents of the `data` 
