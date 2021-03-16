@@ -204,22 +204,23 @@ From the `nano` screen, you can use your cursor to navigate, type, and delete an
 > 
 > | key     | action |
 > | ------- | ---------- |
-> | <kbd>Ctrl</kbd>-<kbd>Space</kbd> OR <kbd>Ctrl</kbd>-<kbd>→</kbd> | to move forward one word |
-> | <kbd>Alt</kbd>-<kbd>Space</kbd> OR <kbd>Esc</kbd>-<kbd>Space</kbd> OR <kbd>Ctrl</kbd>-<kbd>←</kbd> | to move back one word |
+> | <kbd>Ctrl</kbd>-<kbd>Space</kbd> | to move forward one word |
+> | <kbd>Alt</kbd>-<kbd>Space</kbd> | to move back one word |
 > | <kbd>Ctrl</kbd>-<kbd>A</kbd> | to move to the beginning of the current line |
 > | <kbd>Ctrl</kbd>-<kbd>E</kbd> | to move to the end of the current line |
 > | <kbd>Ctrl</kbd>-<kbd>W</kbd> | to search |
 > 
 {: .callout}
 
-Add a date line and comment to the line where you have created the directory. Recall that any
-text on a line after a `#` is ignored by bash when evaluating the text as code. For example:   
+Add a date line and comment to the line where you have created the directory, for example:   
 
 ~~~
 # 2017_10_27   
 # Created sample directories for the Data Carpentry workshop  
 ~~~
 {: .bash}
+
+`bash` treats the `#` character as a comment character. Any text on a line after a `#` is ignored by bash when evaluating the text as code.
 
 Next, remove any lines of the history that are not relevant by navigating to those lines and using your 
 delete key. Save your file and close `nano`.
@@ -262,7 +263,7 @@ $ ls
 {: .bash}
 
 ~~~
-shell_data	dc_workshop dc_workshop_log_2017_10_27.sh
+dc_workshop dc_workshop_log_2017_10_27.txt
 ~~~
 {: .output}
 
