@@ -327,55 +327,12 @@ the commands inside the loop are executed, before moving on to  the next item in
 the variable's value by putting `$` in front of it. The `$` tells the shell interpreter to treat the **variable**
 as a variable name and substitute its value in its place, rather than treat it as text or an external command. In shell programming, this is usually called "expanding" the variable.
 
-Sometimes, we want to expand a variable without any whitespace to its right.
-Suppose we have a variable named `foo` that contains the text `abc`, and would
-like to expand `foo` to create the text `abcEFG`.
-
-~~~
-$ foo=abc
-$ echo foo is $foo
-foo is abc
-$ echo foo is $fooEFG      # doesn't work
-foo is
-~~~
-{: .bash}
-
-The interpreter is trying to expand a variable named `fooEFG`, which (probably)
-doesn't exist. We can avoid this problem by enclosing the variable name in 
-braces (`{` and `}`, sometimes called "squiggle braces").
-
-~~~
-$ foo=abc
-$ echo foo is $foo
-foo is abc
-$ echo foo is ${foo}EFG      # now it works!
-foo is abcEFG
-~~~
-{: .bash}
-
-Let's write a for loop to show us the first two lines of the fastq files we downloaded earlier. You will notice shell prompt changes from `$` to `>` and back again as we were typing in our loop. The second prompt, `>`, is different to remind us that we haven’t finished typing a complete command yet. A semicolon, `;`, can be used to separate two commands written on a single line.
-
 ~~~
 $ cd ../untrimmed_fastq/
 ~~~
 {: .bash}
 
-~~~
-$ for filename in *.fastq
-> do
-> head -n 2 ${filename}
-> done
-~~~
-{: .bash}
-
-The for loop begins with the formula `for <variable> in <group to iterate over>`. In this case, the word `filename` is designated 
-as the variable to be used over each iteration. In our case `JC1A_R1.fastq` and `JC1A_R2.fastq` will be substituted for `filename` 
-because they fit the pattern of ending with .fastq in directory we've specified. The next line of the for loop is `do`. The next line is 
-the code that we want to execute. We are telling the loop to print the first two lines of each variable we iterate over. Finally, the
-word `done` ends the loop.
-
-After executing the loop, you should see the first two lines of both fastq files printed to the terminal. Let's create a loop that 
-will save this information to a file.
+Let's write a for loop to show us the first two lines of the fastq files we downloaded earlier. You will notice shell prompt changes from `$` to `>` and back again as we were typing in our loop. The second prompt, `>`, is different to remind us that we haven’t finished typing a complete command yet. A semicolon, `;`, can be used to separate two commands written on a single line.
 
 ~~~
 $ for filename in *.fastq
@@ -384,6 +341,12 @@ $ for filename in *.fastq
 > done
 ~~~
 {: .bash}
+
+The for loop begins with the formula `for <variable> in <group to iterate over>`. In this case, the word `filename` is designated 
+as the variable to be used over each iteration. In our case `JC1A_R1.fastq` and `JC1A_R2.fastq` will be substituted for `filename` 
+because they fit the pattern of ending with .fastq in directory we've specified. The next line of the for loop is `do`. The next line is 
+the code that we want to execute. We are telling the loop to print the first two lines of each variable we iterate over and save the information
+to a file. Finally, the word `done` ends the loop.
 
 Note that we are using `>>` to append the text to our `seq_info.txt` file. If we used `>`, the `seq_info.txt` file would be rewritten
 every time the loop iterates, so it would only have text from the last variable used. Instead, `>>` adds to the end of the file.
@@ -459,23 +422,3 @@ $ for filename in *.txt
 > done
 ~~~
 {: .bash}
-
-
-> ## Exercise
->
-> Remove `_2019` from all of the `.txt` files. 
->
->> ## Solution
->>  
->>
->> ~~~
->> $ for filename in *_2019.txt
->> > do
->> > name=$(basename ${filename} _2019.txt)
->> > mv ${filename} ${name}.txt
->> > done
->> ~~~
->> {: .bash}
->>
-> {: .solution}
-{: .challenge}
