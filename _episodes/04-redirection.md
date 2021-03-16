@@ -160,7 +160,7 @@ $ wc bad_reads.txt
 {: .bash}
 
 ~~~
-  537  1073 23217 bad_reads.txt
+  402   489 50076 bad_reads.txt
 ~~~
 {: .output}
 
@@ -173,7 +173,7 @@ $ wc -l bad_reads.txt
 {: .bash}
 
 ~~~
-537 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
@@ -194,7 +194,7 @@ four to get the number of sequences that match our search pattern.
 >> {: .bash}
 >> 
 >> ~~~
->> 249
+>596 bad_reads.txt
 >> ~~~
 >> {: .output}
 >>
@@ -214,24 +214,10 @@ $ wc -l bad_reads.txt
 {: .bash}
 
 ~~~
-537 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
-~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
-$ wc -l bad_reads.txt
-~~~
-{: .bash}
-
-~~~
-0 bad_reads.txt
-~~~
-{: .output}
-
-Here, the output of our second  call to `wc` shows that we no longer have any lines in our `bad_reads.txt` file. This is 
-because the second file we searched (`JC1A_R2.fastq`) does not contain any lines that match our
-search sequence. So our file was overwritten and is now empty.
 
 We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will 
 append new output to the end of a file, rather than overwriting it.
@@ -243,7 +229,7 @@ $ wc -l bad_reads.txt
 {: .bash}
 
 ~~~
-537 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
@@ -254,7 +240,7 @@ $ wc -l bad_reads.txt
 {: .bash}
 
 ~~~
-537 bad_reads.txt
+804 bad_reads.txt
 ~~~
 {: .output}
 
@@ -263,13 +249,13 @@ The output of our second call to `wc` shows that we have not overwritten our ori
 We can also do this with a single line of code by using a wildcard. 
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN *.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-537 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
