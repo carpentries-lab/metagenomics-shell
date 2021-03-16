@@ -63,7 +63,7 @@ Suppose we want to see how many reads in our file have really bad segments conta
 
 Let's search for the string NNNNNNNNNN in the JC1A_R2.fastq file.
 ~~~
-$ grep NNNNNNNNNN SRR098026.fastq
+$ grep NNNNNNNNNN JC1A_R2.fastq
 ~~~
 {: .bash}
 
@@ -81,7 +81,7 @@ each match. The `-A` argument returns a specific number of lines after each matc
 matching line, so we add `-B1 -A2` to our grep command.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq
 ~~~
 {: .bash}
 
