@@ -66,104 +66,6 @@ JC1A_R1.fastq
 
 lists only the file that ends with `R1.fastq`.
 
-This command:
-
-~~~
-$ ls /usr/bin/*.sh
-~~~
-{: .bash}
-
-~~~
-/usr/bin/amuFormat.sh  /usr/bin/gettext.sh  /usr/bin/gvmap.sh
-~~~
-{: .output}
-
-Lists every file in `/usr/bin` that ends in the characters `.sh`.
-
-> ## Home vs. Root
-> 
-> The `/` character is another navigational shortcut and refers to your root directory.
-> The root directory is the highest level directory in your file system and contains
-> files that are important for your computer to perform its daily work, but which you usually won't
-> have to interact with directly. In our case,
-> the root directory is two levels above our home directory, so `cd` or `cd ~` will take you to `/home/dcuser`
-> and `cd /` will take you to `/`, which is equivalent to `~/../../`. Try not to worry if this is confusing,
-> it will all become clearer with practice.
-> 
-> While you will be using the root at the beginning of your absolute paths, it is important that you avoid 
-> working with data in these higher-level directories, as your commands can permanently alter files that the 
-> operating system needs to function. In many cases, trying to run commands in root directories will require 
-> special permissions which are not discussed here, so it's best to avoid it and work within your home directory.
-{: .callout}
-
-> ## Exercise
-> Do each of the following tasks from your current directory using a single
-> `ls` command for each.
-> 
-> 1.  List all of the files in `/usr/bin` that start with the letter 'c'.
-> 2.  List all of the files in `/usr/bin` that contain the letter 'a'. 
-> 3.  List all of the files in `/usr/bin` that end with the letter 'o'.
->
-> Bonus: List all of the files in `/usr/bin` that contain the letter 'a' or the
-> letter 'c'.
-> 
-> Hint: The bonus question requires a Unix wildcard that we haven't talked about
-> yet. Trying searching the internet for information about Unix wildcards to find
-> what you need to solve the bonus problem.
-> 
-> > ## Solution
-> > 1. `ls /usr/bin/c*`
-> > 2. `ls /usr/bin/*a*`
-> > 3. `ls /usr/bin/*o`  
-> > Bonus: `ls /usr/bin/*[ac]*`
-> > 
-> {: .solution}
-{: .challenge}
-
-> ## Exercise
-> We can use the command `echo` to see how the wildcard character is interpreted by the shell.
-> 
-> ~~~
-> $ echo *.fastq
-> ~~~
-> {: .bash}
-> 
-> ~~~
-> JCA1_R1.fastq JCA1_R2.fastq
-> ~~~
-> {: .output}
-> 
-> The `*` is expanded to include any file that ends with `.fastq`. We can see that the output of
-> `echo *.fastq` is the same as of `ls *.fastq`.
-> 
-> What would the output look like if the wildcard could *not* be matched? Compare the outputs of
-> `echo *.missing` and `ls *.missing`.
-> 
-> > ## Solution
-> > ~~~
-> > $ echo *.missing
-> > ~~~
-> > {: .bash}
-> > 
-> > ~~~
-> > *.missing
-> > ~~~
-> > {: .output}
-> > 
-> > ~~~
-> > $ ls *.missing
-> > ~~~
-> > {: .bash}
-> > 
-> > ~~~
-> > ls: cannot access '*.missing': No such file or directory
-> > ~~~
-> > {: .output}
-> > 
-> {: .solution}
-{: .challenge}
-
-
 ## Command History
 
 If you want to repeat a command that you've run recently, you can access previous
@@ -207,16 +109,6 @@ $ !260
 Type `!` (exclamation point) and then the number of the command from your history.
 You will be glad you learned this when you need to re-run very complicated commands.
 
-> ## Exercise
-> Find the line number in your history for the command that listed all the .sh
-> files in `/usr/bin`. Rerun that command.
->
-> > ## Solution
-> > First type `history`. Then use `!` followed by the line number to rerun that command.
-> {: .solution}
-{: .challenge}
-
-
 ## Examining Files
 
 We now know how to switch directories, run programs, and look at the
@@ -232,7 +124,7 @@ $ cat JC1A_R1.fastq
 ~~~
 {: .bash}
 
-This will print out all of the contents of the `JC1A.fastq` to the screen.
+This will print out all of the content of the `JC1A.fastq` to the screen.
 
 
 > ## Exercise
@@ -325,16 +217,6 @@ BBBBBBBBDBFFGGFFEEGEFG2FHGFEGCA?EEGCE@EFEEE/EEE@EDCFDCAC2G2CG?CC/CFG?C?DHFCGCGFD
 @MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:11745:2196 2:N:0:NCGAAG
 CGAAAAGCCGCGCGCCGACCTGGGCGTCGAGCGCCGCGCCGCTCCAACGAACGCCAGGCGATCCGAGCGCGGCGGCGATGGCACCCGGATCGAGCCCGGTAAAGTCGGCCCGTAGGTCGAGGCCGCCGCCGCCAGGCGCCACTTCGAGCCGTGGGAGATGCAACGTTAGCGGCGCCGCCCCGTCGGCCGTCTCGAGCAAAATGCGCGTGTCGGTGAGCCGCCGGTGCTCCGGCAACCGCATCCTGCGCCAG
 
-@SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-NNNNNNNNNNNNNNNNCNNNNNNNNNNNNNNNNNN
-+SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
-@SRR098026.2 HWUSI-EAS1599_1:2:1:0:312 length=35
-NNNNNNNNNNNNNNNNANNNNNNNNNNNNNNNNNN
-+SRR098026.2 HWUSI-EAS1599_1:2:1:0:312 length=35
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
-@SRR098026.3 HWUSI-EAS1599_1:2:1:0:570 length=35
-NNNNNNNNNNNNNNNNANNNNNNNNNNNNNNNNNN
 ~~~
 {: .output}
 
@@ -530,49 +412,6 @@ JC1A_R2-backup.fastq
 ~~~
 {: .output}
 
-### File Permissions
-
-We've now made a backup copy of our file, but just because we have two copies doesn't make us safe. We can still accidentally delete or 
-overwrite both copies. To make sure we can't accidentally mess up this backup file, we're going to change the permissions on the file so
-that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
-
-View the current permissions on a file using the `-l` (long) flag for the `ls` command. 
-
-~~~
-$ ls -l
-~~~
-{: .bash}
-
-~~~
--rw-r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
-~~~
-{: .output}
-
-The first part of the output for the `-l` flag gives you information about the file's current permissions. There are ten slots in the
-permissions list. The first character in this list is related to file type, not permissions, so we'll ignore it for now. The next three
-characters relate to the permissions that the file owner has, the next three relate to the permissions for group members, and the final
-three characters specify what other users outside of your group can do with the file. We're going to concentrate on the three positions
-that deal with your permissions (as the file owner). 
-
-![Permissions breakdown](../fig/rwx_figure.svg)
-
-Here the three positions that relate to the file owner are `rw-`. The `r` means that you have permission to read the file, the `w` 
-indicates that you have permission to write to (i.e. make changes to) the file, and the third position is a `-`, indicating that you 
-don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
-talk more about this in [a later lesson](http://www.datacarpentry.org/shell-genomics/05-writing-scripts/)).
-
-Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
-
-~~~
-$ chmod -w JC1A_R2-backup.fastq
-$ ls -l 
-~~~
-{: .bash}
-
-~~~
--r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
-~~~
-{: .output}
 
 ### Removing
 
