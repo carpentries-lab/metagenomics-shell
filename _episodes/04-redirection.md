@@ -9,15 +9,14 @@ objectives:
 - "Employ the `grep` command to search for information within files."
 - "Print the results of a command to a file."
 - "Construct command pipelines with two or more stages."
-- "Use `for` loops to run the same command for several input files."
 keypoints:
 - "`grep` is a powerful search tool with many options for customization."
 - "`>`, `>>`, and `|` are different ways of redirecting output."
 - "`command > file` redirects a command's output to a file."
 - "`command >> file` redirects a command's output to a file without overwriting the existing contents of the file."
 - "`command_1 | command_2` redirects the output of the first command as input to the second command."
-- "`for` loops are used for iteration."
-- "`basename` gets rid of repetitive parts of names."
+- "for loops are used for iteration"
+- "`basename` gets rid of repetitive parts of names"
 ---
 
 ## Searching files
@@ -42,10 +41,10 @@ Let's give it a try!
 {: .callout}
 
 We'll search for strings inside of our fastq files. Let's first make sure we are in the correct 
-directory:
+directory.
 
 ~~~
-$ cd ~/shell_data/untrimmed_fastq
+$ cd ~/dc_workshop/data
 ~~~
 {: .bash}
 
@@ -62,13 +61,13 @@ Suppose we want to see how many reads in our file have really bad segments conta
 > 
 {: .callout}
 
-Let's search for the string NNNNNNNNNN in the SRR098026 file:
+Let's search for the string NNNNNNNNNN in the JC1A_R2.fastq file.
 ~~~
-$ grep NNNNNNNNNN SRR098026.fastq
+$ grep NNNNNNNNNN JC1A_R2.fastq
 ~~~
 {: .bash}
 
-This command returns a lot of output to the terminal. Every single line in the SRR098026 
+This command returns a lot of output to the terminal. Every single line in the JC1A_R2.fastq 
 file that contains at least 10 consecutive Ns is printed to the terminal, regardless of how long or short the file is. 
 We may be interested not only in the actual sequence which contains this string, but 
 in the name (or identifier) of that sequence. We discussed in a previous lesson 
@@ -79,26 +78,26 @@ immediately before each match and the two lines immediately after each match.
 
 We can use the `-B` argument for grep to return a specific number of lines before
 each match. The `-A` argument returns a specific number of lines after each matching line. Here we want the line *before* and the two lines *after* each 
-matching line, so we add `-B1 -A2` to our grep command:
+matching line, so we add `-B1 -A2` to our grep command.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq
 ~~~
 {: .bash}
 
 One of the sets of lines returned by this command is: 
 
 ~~~
-@SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-+SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@MISEQ-LAB244-W7:91:000000000-A5C7L:1:2111:5300:24013 2:N:0:TCGAAG
+NNNNNNNNNNNCNANNANNNNNCGCCGGTGTTCTNCTGGGGNACGGANACCGAGTAGATCGGAACAGCGTCGTGGAGNGAAAGAGTGTAGATCCCGGTGGGCGGCGTATCATTAAAAAAAAAACCTGCTGGTCCTTGTCTC
++
+AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//????########################################################################################################################################################################
 ~~~
 {: .output}
 
 > ## Exercise
 >
-> 1. Search for the sequence `GNATNACCACTTCC` in the `SRR098026.fastq` file.
+> 1. Search for the sequence `GATCGAGAGGGGATAGGCG` in the `JC1A_R2.fastq` file.
 > Have your search return all matching lines and the name (or identifier) for each sequence
 > that contains a match.
 > 
@@ -107,41 +106,9 @@ CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 > that contains a match.
 > 
 > > ## Solution  
-> > 1. `grep -B1 GNATNACCACTTCC SRR098026.fastq` 
-> > 
-> >     ```
-> >     @SRR098026.245 HWUSI-EAS1599_1:2:1:2:801 length=35
-> >     GNATNACCACTTCCAGTGCTGANNNNNNNGGGATG
-> >     ```
-> > 
+> > 1. `grep -B1 GATCGAGAGGGGATAGGCG JC1A_R2.fastq`  
 > > 2. `grep -B1 AAGTT *.fastq`
 > >
-> >     ```
-> > SRR097977.fastq-@SRR097977.11 209DTAAXX_Lenski2_1_7:8:3:247:351 length=36
-> > SRR097977.fastq:GATTGCTTTAATGAAAAAGTCATATAAGTTGCCATG
-> > --
-> > SRR097977.fastq-@SRR097977.67 209DTAAXX_Lenski2_1_7:8:3:544:566 length=36
-> > SRR097977.fastq:TTGTCCACGCTTTTCTATGTAAAGTTTATTTGCTTT
-> > --
-> > SRR097977.fastq-@SRR097977.68 209DTAAXX_Lenski2_1_7:8:3:724:110 length=36
-> > SRR097977.fastq:TGAAGCCTGCTTTTTTATACTAAGTTTGCATTATAA
-> > --
-> > SRR097977.fastq-@SRR097977.80 209DTAAXX_Lenski2_1_7:8:3:258:281 length=36
-> > SRR097977.fastq:GTGGCGCTGCTGCATAAGTTGGGTTATCAGGTCGTT
-> > --
-> > SRR097977.fastq-@SRR097977.92 209DTAAXX_Lenski2_1_7:8:3:353:318 length=36
-> > SRR097977.fastq:GGCAAAATGGTCCTCCAGCCAGGCCAGAAGCAAGTT
-> > --
-> > SRR097977.fastq-@SRR097977.139 209DTAAXX_Lenski2_1_7:8:3:703:655 length=36
-> > SRR097977.fastq:TTTATTTGTAAAGTTTTGTTGAAATAAGGGTTGTAA
-> > --
-> > SRR097977.fastq-@SRR097977.238 209DTAAXX_Lenski2_1_7:8:3:592:919 length=36
-> > SRR097977.fastq:TTCTTACCATCCTGAAGTTTTTTCATCTTCCCTGAT
-> > --
-> > SRR098026.fastq-@SRR098026.158 HWUSI-EAS1599_1:2:1:1:1505 length=35
-> > SRR098026.fastq:GNNNNNNNNCAAAGTTGATCNNNNNNNNNTGTGCG
-> >     ```
-> > 
 > {: .solution}
 {: .challenge}
 
@@ -164,7 +131,7 @@ in our FASTQ files that contain
 'NNNNNNNNNN' to another file called `bad_reads.txt`.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 ~~~
 {: .bash}
 
@@ -185,12 +152,7 @@ happened. But type `ls`. You should see a new file called `bad_reads.txt`.
 
 We can check the number of lines in our new file using a command called `wc`. 
 `wc` stands for **word count**. This command counts the number of words, lines, and characters
-in a file. The FASTQ file may change over time, so given the potential for updates, 
-make sure your file matches your instructor's output. 
-
-As of Sept. 2020, wc gives the following output:  
-
-
+in a file. 
 
 ~~~
 $ wc bad_reads.txt
@@ -198,7 +160,7 @@ $ wc bad_reads.txt
 {: .bash}
 
 ~~~
-  802    1338   24012 bad_reads.txt
+  402   489 50076 bad_reads.txt
 ~~~
 {: .output}
 
@@ -211,25 +173,28 @@ $ wc -l bad_reads.txt
 {: .bash}
 
 ~~~
-802 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
+Because we asked `grep` for all four lines of each FASTQ record, we need to divide the output by
+four to get the number of sequences that match our search pattern.
+
 > ## Exercise
 >
-> How many sequences in `SRR098026.fastq` contain at least 3 consecutive Ns?
+> How many sequences in `JC1A_R2.fastq` contain at least 3 consecutive Ns?
 >
 >> ## Solution
 >>  
 >>
 >> ~~~
->> $ grep NNN SRR098026.fastq > bad_reads.txt
+>> $ grep NNN JC1A_R2.fastq > bad_reads.txt
 >> $ wc -l bad_reads.txt
 >> ~~~
 >> {: .bash}
 >> 
 >> ~~~
->> 249
+>596 bad_reads.txt
 >> ~~~
 >> {: .output}
 >>
@@ -243,68 +208,54 @@ This is called "overwriting" and, just like you don't want to overwrite your vid
 of your kid's first birthday party, you also want to avoid overwriting your data files.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-802 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
-~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR097977.fastq > bad_reads.txt
-$ wc -l bad_reads.txt
-~~~
-{: .bash}
-
-~~~
-0 bad_reads.txt
-~~~
-{: .output}
-
-Here, the output of our second  call to `wc` shows that we no longer have any lines in our `bad_reads.txt` file. This is 
-because the second file we searched (`SRR097977.fastq`) does not contain any lines that match our
-search sequence. So our file was overwritten and is now empty.
 
 We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will 
 append new output to the end of a file, rather than overwriting it.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-802 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR097977.fastq >> bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq >> bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-802 bad_reads.txt
+804 bad_reads.txt
 ~~~
 {: .output}
 
 The output of our second call to `wc` shows that we have not overwritten our original data. 
 
-We can also do this with a single line of code by using a wildcard: 
+We can also do this with a single line of code by using a wildcard. 
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN *.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-802 bad_reads.txt
+402 bad_reads.txt
 ~~~
 {: .output}
 
@@ -333,100 +284,26 @@ $ wc -l bad_reads.txt
 
 Since we might have multiple different criteria we want to search for, 
 creating a new output file each time has the potential to clutter up our workspace. We also
-thus far haven't been interested in the actual contents of those files, only in the number of 
+so far haven't been interested in the actual contents of those files, only in the number of 
 reads that we've found. We created the files to store the reads and then counted the lines in 
 the file to see how many reads matched our criteria. There's a way to do this, however, that
 doesn't require us to create these intermediate files - the pipe command (`|`).
 
 This is probably not a key on
-your keyboard you use very much, so let's all take a minute to find that key. For the standard QWERTY keyboard
-layout, the `|` character can be found using the key combination
-
-- <kbd>Shift</kbd>+<kbd>\</kbd>
-
-What `|` does is take the output that is scrolling by on the terminal and uses that output as input to another command. 
+your keyboard you use very much, so let's all take a minute to find that key. 
+What `|` does is take the output that is
+scrolling by on the terminal and uses that output as input to another command. 
 When our output was scrolling by, we might have wished we could slow it down and
 look at it, like we can with `less`. Well it turns out that we can! We can redirect our output
 from our `grep` call through the `less` command.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq | less
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq | less
 ~~~
 {: .bash}
 
 We can now see the output from our `grep` call within the `less` interface. We can use the up and down arrows 
 to scroll through the output and use `q` to exit `less`.
-
-If we don't want to create a file before counting lines of output from our `grep` search, we could directly pipe
-the output of the grep search to the command `wc -l`. This can be helpful for investigating your output if you are not sure
-you would like to save it to a file. 
-
-~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq | wc -l 
-~~~
-{: .bash}
-
-Because we asked `grep` for all four lines of each FASTQ record, we need to divide the output by
-four to get the number of sequences that match our search pattern. Since 802 / 4 = 200.5 and we
-are expecting an integer number of records, there is something added or missing in `bad_reads.txt`. 
-If we explore `bad_reads.txt` using `less`, we might be able to notice what is causing the uneven 
-number of lines. Luckily, this issue happens by the end of the file so we can also spot it with `tail`.
-
-~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
-$ tail bad_reads.txt
-~~~
-{: .bash}
-
-~~~
-@SRR098026.133 HWUSI-EAS1599_1:2:1:0:1978 length=35
-ANNNNNNNNNTTCAGCGACTNNNNNNNNNNGTNGN
-+SRR098026.133 HWUSI-EAS1599_1:2:1:0:1978 length=35
-#!!!!!!!!!##########!!!!!!!!!!##!#!
---
---
-@SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-+SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-~~~
-{: .output}
-
-The fifth and six lines in the output display "--" which is the default action for `grep` to separate groups of 
-lines matching the pattern, and indicate groups of lines which did not match the pattern so are not displayed. 
-To fix this issue, we can redirect the output of grep to a second instance of `grep` as follows.
-
-~~~
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq | grep -v '^--' > bad_reads.fastq
-tail bad_reads.fastq
-~~~
-{: .bash}
-
-~~~
-+SRR098026.132 HWUSI-EAS1599_1:2:1:0:320 length=35
-#!!!!!!!!!##########!!!!!!!!!!##!#!
-@SRR098026.133 HWUSI-EAS1599_1:2:1:0:1978 length=35
-ANNNNNNNNNTTCAGCGACTNNNNNNNNNNGTNGN
-+SRR098026.133 HWUSI-EAS1599_1:2:1:0:1978 length=35
-#!!!!!!!!!##########!!!!!!!!!!##!#!
-@SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
-+SRR098026.177 HWUSI-EAS1599_1:2:1:1:2025 length=35
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-~~~
-{: .output}
-
-The `-v` option in the second `grep` search stands for `--invert-match` meaning `grep` will now only display the 
-lines which do not match the searched pattern, in this case `'^--'`. The caret (`^`) is an **anchoring** 
-character matching the beginning of the line, and the pattern has to be enclose by single quotes so `grep` does 
-not interpret the pattern as an extended option (starting with --).
-
-> ## Custom `grep` control
-> 
-> Use `man grep` to read more about other options to customize the output of `grep` including extended options, 
-> anchoring characters, and much more.
-> 
-{: .callout}
 
 Redirecting output is often not intuitive, and can take some time to get used to. Once you're 
 comfortable with redirection, however, you'll be able to combine any number of commands to
@@ -437,13 +314,6 @@ do anything all that impressive on their own, but when you start chaining
 them together, you can do some really powerful things very
 efficiently. 
 
-> # File manipulation and more practices with pipes
-> 
-> To practice a bit more with the tools we’ve added to our tool kit so far and learn a few extra ones you can follow [this extra lesson](https://datacarpentry.org/shell-genomics/Extra_lesson/index.html) which uses the SRA metadata file. 
-> 
-{: .callout}
-
-
 ## Writing for loops
 
 Loops are key to productivity improvements through automation as they allow us to execute commands repeatedly. 
@@ -453,61 +323,16 @@ files. We will use loops for these purposes in subsequent analyses, but will cov
 
 When the shell sees the keyword `for`, it knows to repeat a command (or group of commands) once for each item in a list. 
 Each time the loop runs (called an iteration), an item in the list is assigned in sequence to the **variable**, and 
-the commands inside the loop are executed, before moving on to the next item in the list. Inside the loop, we call for 
+the commands inside the loop are executed, before moving on to  the next item in the list. Inside the loop, we call for 
 the variable's value by putting `$` in front of it. The `$` tells the shell interpreter to treat the **variable**
 as a variable name and substitute its value in its place, rather than treat it as text or an external command. In shell programming, this is usually called "expanding" the variable.
-
-Sometimes, we want to expand a variable without any whitespace to its right.
-Suppose we have a variable named `foo` that contains the text `abc`, and would
-like to expand `foo` to create the text `abcEFG`.
-
-~~~
-$ foo=abc
-$ echo foo is $foo
-foo is abc
-$ echo foo is $fooEFG      # doesn't work
-foo is
-~~~
-{: .bash}
-
-The interpreter is trying to expand a variable named `fooEFG`, which (probably)
-doesn't exist. We can avoid this problem by enclosing the variable name in 
-braces (`{` and `}`, sometimes called "squiggle braces"). `bash` treats the `#`
-character as a comment character. Any text on a line after a `#` is ignored by
-bash when evaluating the text as code.
-
-~~~
-$ foo=abc
-$ echo foo is $foo
-foo is abc
-$ echo foo is ${foo}EFG      # now it works!
-foo is abcEFG
-~~~
-{: .bash}
-
-Let's write a for loop to show us the first two lines of the fastq files we downloaded earlier. You will notice the shell prompt changes from `$` to `>` and back again as we were typing in our loop. The second prompt, `>`, is different to remind us that we haven’t finished typing a complete command yet. A semicolon, `;`, can be used to separate two commands written on a single line.
 
 ~~~
 $ cd ../untrimmed_fastq/
 ~~~
 {: .bash}
 
-~~~
-$ for filename in *.fastq
-> do
-> head -n 2 ${filename}
-> done
-~~~
-{: .bash}
-
-The for loop begins with the formula `for <variable> in <group to iterate over>`. In this case, the word `filename` is designated 
-as the variable to be used over each iteration. In our case `SRR097977.fastq` and `SRR098026.fastq` will be substituted for `filename` 
-because they fit the pattern of ending with .fastq in the directory we've specified. The next line of the for loop is `do`. The next line is 
-the code that we want to execute. We are telling the loop to print the first two lines of each variable we iterate over. Finally, the
-word `done` ends the loop.
-
-After executing the loop, you should see the first two lines of both fastq files printed to the terminal. Let's create a loop that 
-will save this information to a file.
+Let's write a for loop to show us the first two lines of the fastq files we downloaded earlier. You will notice shell prompt changes from `$` to `>` and back again as we were typing in our loop. The second prompt, `>`, is different to remind us that we haven’t finished typing a complete command yet. A semicolon, `;`, can be used to separate two commands written on a single line.
 
 ~~~
 $ for filename in *.fastq
@@ -517,11 +342,11 @@ $ for filename in *.fastq
 ~~~
 {: .bash}
 
-When writing a loop, you will not be able to return to previous lines once you have pressed Enter. Remember that we can cancel the current command using
-
-- <kbd>Ctrl</kbd>+<kbd>C</kbd>
-
-If you notice a mistake that is going to prevent your loop for executing correctly.
+The for loop begins with the formula `for <variable> in <group to iterate over>`. In this case, the word `filename` is designated 
+as the variable to be used over each iteration. In our case `JC1A_R1.fastq` and `JC1A_R2.fastq` will be substituted for `filename` 
+because they fit the pattern of ending with .fastq in directory we've specified. The next line of the for loop is `do`. The next line is 
+the code that we want to execute. We are telling the loop to print the first two lines of each variable we iterate over and save the information
+to a file. Finally, the word `done` ends the loop.
 
 Note that we are using `>>` to append the text to our `seq_info.txt` file. If we used `>`, the `seq_info.txt` file would be rewritten
 every time the loop iterates, so it would only have text from the last variable used. Instead, `>>` adds to the end of the file.
@@ -530,26 +355,26 @@ every time the loop iterates, so it would only have text from the last variable 
 Basename is a function in UNIX that is helpful for removing a uniform part of a name from a list of files. In this case, we will use basename to remove the `.fastq` extension from the files that we’ve been working with. 
 
 ~~~
-$ basename SRR097977.fastq .fastq
+$ basename JC1A_R2.fastq .fastq
 ~~~
 {: .bash}
 
 We see that this returns just the SRR accession, and no longer has the .fastq file extension on it.
 
 ~~~
-SRR097977
+JC1A_R2
 ~~~
 {: .output}
 
 If we try the same thing but use `.fasta` as the file extension instead, nothing happens. This is because basename only works when it exactly matches a string in the file.
 
 ~~~
-$ basename SRR097977.fastq .fasta
+$ basename JC1A_R2.fastq .fasta
 ~~~
 {: .bash}
 
 ~~~
-SRR097977.fastq
+JC1A_R2.fastq
 ~~~
 {: .output}
 
@@ -597,23 +422,3 @@ $ for filename in *.txt
 > done
 ~~~
 {: .bash}
-
-
-> ## Exercise
->
-> Remove `_2019` from all of the `.txt` files. 
->
->> ## Solution
->>  
->>
->> ~~~
->> $ for filename in *_2019.txt
->> > do
->> > name=$(basename ${filename} _2019.txt)
->> > mv ${filename} ${name}.txt
->> > done
->> ~~~
->> {: .bash}
->>
-> {: .solution}
-{: .challenge}
