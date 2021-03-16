@@ -146,6 +146,51 @@ prints the contents of `/home`, which is one level up from your root directory.
 > {: .solution}
 {: .challenge}
 
+### File Permissions
+
+We've now made a backup copy of our file, but just because we have two copies doesn't make us safe. We can still accidentally delete or 
+overwrite both copies. To make sure we can't accidentally mess up this backup file, we're going to change the permissions on the file so
+that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
+
+View the current permissions on a file using the `-l` (long) flag for the `ls` command. 
+
+~~~
+$ ls -l
+~~~
+{: .bash}
+
+~~~
+-rw-r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
+~~~
+{: .output}
+
+The first part of the output for the `-l` flag gives you information about the file's current permissions. There are ten slots in the
+permissions list. The first character in this list is related to file type, not permissions, so we'll ignore it for now. The next three
+characters relate to the permissions that the file owner has, the next three relate to the permissions for group members, and the final
+three characters specify what other users outside of your group can do with the file. We're going to concentrate on the three positions
+that deal with your permissions (as the file owner). 
+
+![Permissions breakdown](../fig/rwx_figure.svg)
+
+Here the three positions that relate to the file owner are `rw-`. The `r` means that you have permission to read the file, the `w` 
+indicates that you have permission to write to (i.e. make changes to) the file, and the third position is a `-`, indicating that you 
+don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
+talk more about this in [a later lesson](http://www.datacarpentry.org/shell-genomics/05-writing-scripts/)).
+
+Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
+
+~~~
+$ chmod -w JC1A_R2-backup.fastq
+$ ls -l 
+~~~
+{: .bash}
+
+~~~
+-r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
+~~~
+{: .output}
+
+
 > ## Navigating practice
 > 
 > Navigate to your home directory. From there, list the contents of the `data` 
