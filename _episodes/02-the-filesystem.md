@@ -24,21 +24,21 @@ We've also learned how to use `cd` to change locations and `ls` to list the cont
 of a directory. Now we're going to learn some additional commands for moving around 
 within our file system.
 
-Use the commands we've learned so far to navigate to the `shell_data/untrimmed_fastq` directory, if
+Use the commands we've learned so far to navigate to the `dc_workshop/data` directory, if
 you're not already there. 
 
 ~~~
 $ cd
-$ cd shell_data
-$ cd untrimmed_fastq
+$ cd dc_workshop
+$ cd data
 ~~~
 {: .bash}
 
 What if we want to move back up and out of this directory and to our top level 
-directory? Can we type `cd shell_data`? Try it and see what happens.
+directory? Can we type `cd dc_workshop`? Try it and see what happens.
 
 ~~~
-$ cd shell_data
+$ cd dc_workshop
 ~~~
 {: .bash}
 
@@ -47,7 +47,7 @@ $ cd shell_data
 ~~~
 {: .output}
 
-Your computer looked for a directory or file called `shell_data` within the 
+Your computer looked for a directory or file called `dc_workshop` within the 
 directory you were already in. It didn't know you wanted to look at a directory level
 above the one you were located in. 
 
@@ -68,7 +68,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/dcuser/shell_data
+/home/dcuser/dc_workshop
 ~~~
 {: .output}
 
@@ -78,7 +78,7 @@ $ ls
 {: .bash}
 
 ~~~
-sra_metadata  untrimmed_fastq
+assembly  data	metadata  report  taxonomy  16s
 ~~~
 {: .output}
 
@@ -87,15 +87,15 @@ From this output, we can see that `..` did indeed take us back one level in our 
 You can chain these together like so:
 
 ~~~
-$ ls ../../
+$ cd ../../
 ~~~
 {: .bash}
 
-prints the contents of `/home`.
+prints the contents of `/home`, which is one level up from your root directory. 
 
 > ## Finding hidden directories
 >
-> First navigate to the `shell_data` directory. There is a hidden directory within this directory. Explore the options for `ls` to 
+> First navigate to the `dc_workshop` directory. There is a hidden directory within this directory. Explore the options for `ls` to 
 > find out how to see hidden directories. List the contents of the directory and 
 > identify the name of the text file in that directory.
 > 
@@ -118,7 +118,7 @@ prints the contents of `/home`.
 > > {: .bash}
 > > 
 > > ~~~
-> > .  ..  .hidden	sra_metadata  untrimmed_fastq
+> > .  ..  .hidden	assembly  assembly_JC1A  data  metadata  report  taxonomy
 > > ~~~
 > > {: .output}
 > > 
@@ -146,68 +146,66 @@ prints the contents of `/home`.
 > {: .solution}
 {: .challenge}
 
-In most commands the flags can be combined together in no particular order to obtain the desired results/output.
-~~~
-$ ls -Fa
-$ ls -laF
-~~~
+### File Permissions
 
-## Examining the contents of other directories
+We've now made a backup copy of our file, but just because we have two copies doesn't make us safe. We can still accidentally delete or 
+overwrite both copies. To make sure we can't accidentally mess up this backup file, we're going to change the permissions on the file so
+that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
 
-By default, the `ls` commands lists the contents of the working
-directory (i.e. the directory you are in). You can always find the
-directory you are in using the `pwd` command. However, you can also
-give `ls` the names of other directories to view. Navigate to your
-home directory if you are not already there.
+View the current permissions on a file using the `-l` (long) flag for the `ls` command. 
 
 ~~~
-$ cd
-~~~
-{: .bash}
-
-Then enter the command:
-
-~~~
-$ ls shell_data
+$ ls -l
 ~~~
 {: .bash}
 
 ~~~
-sra_metadata  untrimmed_fastq
+-rw-r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
 ~~~
 {: .output}
 
-This will list the contents of the `shell_data` directory without
-you needing to navigate there.
+The first part of the output for the `-l` flag gives you information about the file's current permissions. There are ten slots in the
+permissions list. The first character in this list is related to file type, not permissions, so we'll ignore it for now. The next three
+characters relate to the permissions that the file owner has, the next three relate to the permissions for group members, and the final
+three characters specify what other users outside of your group can do with the file. We're going to concentrate on the three positions
+that deal with your permissions (as the file owner). 
 
-The `cd` command works in a similar way.
+![Permissions breakdown](../fig/rwx_figure.svg)
 
-Try entering:
+Here the three positions that relate to the file owner are `rw-`. The `r` means that you have permission to read the file, the `w` 
+indicates that you have permission to write to (i.e. make changes to) the file, and the third position is a `-`, indicating that you 
+don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
+talk more about this in [a later lesson](http://www.datacarpentry.org/shell-genomics/05-writing-scripts/)).
+
+Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
 
 ~~~
-$ cd
-$ cd shell_data/untrimmed_fastq
+$ chmod -w JC1A_R2-backup.fastq
+$ ls -l 
 ~~~
 {: .bash}
 
-This will take you to the `untrimmed_fastq` directory without having to go through
-the intermediate directory.
+~~~
+-r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
+~~~
+{: .output}
+
 
 > ## Navigating practice
 > 
-> Navigate to your home directory. From there, list the contents of the `untrimmed_fastq` 
+> Navigate to your home directory. From there, list the contents of the `data` 
 > directory. 
 > 
 > > ## Solution
 > >
 > > ~~~
 > > $ cd
-> > $ ls shell_data/untrimmed_fastq/
+> > $ ls dc_workshop/data/
 > > ~~~
 > > {: .bash}
 > > 
 > > ~~~
-> > SRR097977.fastq  SRR098026.fastq 
+> > assembly  assembly_JC1A  data  metadata  report  taxonomy 16s
 > > ~~~
 > > {: .output}
 > > 
@@ -241,8 +239,7 @@ are in a directory called `dcuser`, which sits inside a directory called
 `home` which sits inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
 referred to as the *root directory*. So, to summarize: `dcuser` is a
-directory in `home` which is a directory in `/`. More on `root` and
-`home` in the next section.
+directory in `home` which is a directory in `/`.
 
 Now enter the following command:
 
@@ -278,10 +275,10 @@ you're standing there together, but not so well if you're trying to tell someone
 get there from another country. A full path is like GPS coordinates. It tells you exactly
 where something is no matter where you are right now.
 
-You can usually use either a full path or a relative path depending on what is most convenient.
-If we are in the home directory, it is more convenient to enter the full path.
-If we are in the working directory, it is more convenient to enter the relative path
-since it involves less typing.
+You can usually use either a full path or a relative path
+depending on what is most convenient. If we are in the home directory,
+it is more convenient to enter the relative path since it
+involves less typing.
 
 Over time, it will become easier for you to keep a mental note of the
 structure of the directories that you are using and how to quickly
@@ -311,25 +308,14 @@ navigate amongst them.
 
 ### Navigational Shortcuts
 
-The root directory is the highest level directory in your file
-system and contains files that are important for your computer
-to perform its daily work. While you will be using the root (`/`)
-at the beginning of your absolute paths, it is important that you
-avoid working with data in these higher-level directories, as
-your commands can permanently alter files that the operating
-system needs to function. In many cases, trying to run commands
-in `root` directories will require special permissions which are
-not discussed here, so it’s best to avoid them and work within your
-home directory. Dealing with the `home` directory is very common.
-The tilde character, `~`, is a shortcut for your home directory.
-In our case, the `root` directory is __two__ levels above our
-`home` directory, so `cd` or `cd ~` will take you to
-`/home/dcuser` and `cd /` will take you to `/`. Navigate to the
-`shell_data` directory:
+There are some shortcuts which you should know about. Dealing with the
+home directory is very common. The tilde character,
+`~`, is a shortcut for your home directory. Navigate to the `dc_workshop`
+directory:
 
 ~~~
 $ cd
-$ cd shell_data
+$ cd dc_workshop
 ~~~
 {: .bash}
 
@@ -341,7 +327,7 @@ $ ls ~
 {: .bash}
 
 ~~~
-R  r_data  shell_data
+dc_workshop.tar.gz  R  r_data
 ~~~
 {: .output}
 
