@@ -287,7 +287,18 @@ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq.gz  JP4D_R2.fastq.gz
 
 This directory contains four files with `.fastq.gz` extensions. FASTQ is a format
 for storing information about sequencing reads and their quality. GZ is an archive file compressed.
-We will be learning more about FASTQ files in a later lesson.
+We will be learning more about FASTQ files in a later lesson. But first we are going to decompress the files using the next command:
+
+~~~
+$ gunzip *
+$ ls
+~~~
+{: .bash}
+
+~~~
+JC1A_R1.fastq  JC1A_R2.fastq  JP4D_R1.fastq  JP4D_R2.fastq
+~~~
+{: .output}
 
 ### Shortcut: Tab Completion
 
@@ -348,7 +359,7 @@ $ ls JC1A_R<tab><tab>
 {: .bash}
 
 ~~~
-JC1A_R1.fastq.gz  JC1A_R2.fastq.gz 
+JC1A_R1.fastq  JC1A_R2.fastq
 ~~~
 {: .output}
 
