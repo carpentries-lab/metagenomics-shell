@@ -179,6 +179,13 @@ alphabetical order,
 arranged neatly into columns. 
 We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, throughout this workshop.  
 
+The data comes in a compressed format, which is why there is a `.gz` at the end of the folder names. This makes it faster to transfer, and allows it to take up less space on our computer. Let's unzip the folder so that we can look at the FASTQ format.
+
+~~~
+$ tar -xzf dc_workshop.targ.gz
+~~~
+{: .bash}
+
 The command to change locations in our file system is `cd` followed by a
 directory name to change our working directory.
 `cd` stands for "change directory".
@@ -268,13 +275,13 @@ as needed.
 Let's go into the `data` directory and see what is in there.
 
 ~~~
-$ cd data
+$ cd data/untrimmed/
 $ ls -F
 ~~~
 {: .bash}
 
 ~~~
-JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4_R1.fastq.gz  JP4_R2.fastq.gz
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq.gz  JP4D_R2.fastq.gz
 ~~~
 {: .output}
 
@@ -326,7 +333,7 @@ If we navigate back to our `data` directory and try to access one of our sample 
 ~~~
 $ cd
 $ cd dc_workshop
-$ cd data
+$ cd data/untrimmed/
 $ ls JC<tab>
 ~~~
 {: .bash}
