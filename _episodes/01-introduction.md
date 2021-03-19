@@ -161,6 +161,12 @@ $ pwd
 ~~~
 {: .output}
 
+# Starting with data
+
+Often times, the first step in a bioinformatic workflow is getting the data you want to work with onto a computer where you can work with it. If you have outsourced sequencing of your data, the sequencing center will usually provide you with a link that you can use to download your data. Today we will be working with publicly available sequencing data.
+
+The data are paired-end, so we will download two files for each sample. We will use the [European Nucleotide Archive](https://www.ebi.ac.uk/ena) to get our data. The ENA "provides a comprehensive record of the world's nucleotide sequencing information, covering raw sequencing data, sequence assembly information and functional annotation." The ENA also provides sequencing data in the FASTQ format, an important format for sequencing reads that we will be learning about today. 
+
 Let's look at how our file system is organized. We can see what files and subdirectories are in this directory by running `ls`,
 which stands for "listing":
 
@@ -177,12 +183,14 @@ dc_workshop.tar.gz  R  r_data
 `ls` prints the names of the files and directories in the current directory in
 alphabetical order,
 arranged neatly into columns. 
-
-
-AQUÍ VA COMO DESCOMPRIMIR LA CARPETA
-
-
 We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, throughout this workshop.  
+
+The data comes in a compressed format, which is why there is a `.gz` at the end of the folder names. This makes it faster to transfer, and allows it to take up less space on our computer. Let's unzip the folder so that we can look at the FASTQ format.
+
+~~~
+$ tar -xzf dc_workshop.targ.gz
+~~~
+{: .bash}
 
 The command to change locations in our file system is `cd` followed by a
 directory name to change our working directory.
@@ -255,7 +263,7 @@ to quit.
 > > drwxr-xr-x  2 dcuser dcuser 4096 Mar 10 21:11 data
 > > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 metadata
 > > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 report
-> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonomy
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonom
 > > ~~~
 > > {: .output}
 > > 
@@ -273,35 +281,19 @@ as needed.
 Let's go into the `data` directory and see what is in there.
 
 ~~~
-$ cd data
+$ cd data/untrimmed/
 $ ls -F
 ~~~
 {: .bash}
-~~~
-JC1A_merged_reads.fasta  untrimmed_fastq/
-~~~
-This directory contains one file and one directory. The files with which we are going to be working are inside the folder `untrimmed_fastq`. We can use the following command to get there and see what is in there:
 
 ~~~
-$ cd untrimmed_fastq
-$ ls -F
+JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq.gz  JP4D_R2.fastq.gz
 ~~~
+{: .output}
 
 This directory contains four files with `.fastq.gz` extensions. FASTQ is a format
 for storing information about sequencing reads and their quality. GZ is an archive file compressed.
 We will be learning more about FASTQ files in a later lesson.
-
-
-
-
-AQUÍ VA COMO DESCOMPRIMIR LOS ARCHIVOS
-
-
-~~~
-JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4_R1.fastq.gz  JP4_R2.fastq.gz
-~~~
-{: .output}
-
 
 ### Shortcut: Tab Completion
 
@@ -330,12 +322,11 @@ $ cd dc<tab>
 The shell will fill in the rest of the directory name for
 `dc_workshop`.
 
-Now change directories to `untrimmed_fastq` in `dc_workshop`
+Now change directories to `data` in `dc_workshop`
 
 ~~~
 $ cd dc_workshop
 $ cd data
-$ cd untrimmed_fastq
 ~~~
 {: .bash}
 
@@ -343,13 +334,12 @@ Using tab complete can be very helpful. However, it will only autocomplete
 a file or directory name if you've typed enough characters to provide
 a unique identifier for the file or directory you are trying to access.
 
-If we navigate back to our `untrimmed_fastq` directory and try to access one of our sample files:
+If we navigate back to our `data` directory and try to access one of our sample files:
 
 ~~~
 $ cd
 $ cd dc_workshop
-$ cd data
-$ cd untrimmed_fastq
+$ cd data/untrimmed/
 $ ls JC<tab>
 ~~~
 {: .bash}
