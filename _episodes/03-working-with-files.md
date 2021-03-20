@@ -29,10 +29,10 @@ have two results files, which are stored in our `untrimmed_fastq` directory.
 
 ### Wildcards
 
-Navigate to your `data` directory.
+Navigate to your `untrimmed_fastq` directory.
 
 ~~~
-$ cd ~/dc_workshop/data
+$ cd ~/dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
@@ -45,7 +45,7 @@ $ ls *.fastq
 {: .bash}
 
 ~~~
-JC1A_R1.fastq  JC1A_R2.fastq
+JC1A_R1.fastq JC1A_R2.fastq JP4_R1.fastq JP4_R2.fastq
 ~~~
 {: .output}
 
@@ -60,7 +60,7 @@ $ ls *R1.fastq
 {: .bash}
 
 ~~~
-JC1A_R1.fastq
+JC1A_R1.fastq JP4_R1.fastq
 ~~~
 {: .output}
 
@@ -115,32 +115,12 @@ We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
 One way to examine a file is to print out all of the
-contents using the program `cat`. 
-
-Enter the following command from within the `data` directory: 
-
+contents using the program `cat`.
 ~~~
-$ cat JC1A_R1.fastq
+$ cat filename
 ~~~
-{: .bash}
 
-This will print out all of the content of the `JC1A.fastq` to the screen.
-
-
-> ## Exercise
-> 
-> 1. Print out the contents of the `~/dc_workshop/data/JC1A_R2.fastq` file. What is the last line of the file? 
-> 2.  From your home directory, and without changing directories,
-> use one short command to print the contents of all of the files in
-> the `~/dc_workshop/data` directory.
-> 
-> > ## Solution
-> > 1. The last line of the file is `C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$`.
-> > 2. `cat ~/dc_workshop/data/`
-> {: .solution}
-{: .challenge}
-
-`cat` is a terrific program, but when the file is really big, it can
+`cat` is a terrific program, but when the file is really big (as the files we have), it can
 be annoying to use. The program, `less`, is useful for this
 case. `less` opens the file as read only, and lets you navigate through it. The navigation commands
 are identical to the `man` program.
@@ -179,15 +159,6 @@ You can see that we go right to that sequence, what it looks like,
 and where it is in the file. If you continue to type `/` and hit return, you will move 
 forward to the next instance of this sequence motif. If you instead type `?` and hit 
 return, you will search backwards and move up the file to previous examples of this motif.
-
-> ## Exercise
->
-> What are the next three nucleotides (characters) after the first instance of the sequence quoted above?
-> 
-> > ## Solution
-> > `CAC`
-> {: .solution}
-{: .challenge}
 
 Remember, the `man` program actually uses `less` internally and
 therefore uses the same commands, so you can search documentation
@@ -356,7 +327,7 @@ and change the file permissions so that we can read from, but not write to, the 
 
 First, let's make a copy of one of our FASTQ files using the `cp` command. 
 
-Navigate to the `dc_workshop/data` directory and enter:
+Navigate to the `dc_workshop/data/untrimmed_fastq` directory and enter:
 
 ~~~
 $ cp JC1A_R2.fastq JC1A_R2-copy.fastq
@@ -365,7 +336,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-JC1A_R2.fastq  JC1A_R2-copy.fastq  JC1A_R1.fastq
+JC1A_R1.fastq  JC1A_R2-copy.fastq  JC1A_R2.fastq  JP4_R1.fastq  JP4_R2.fastq
 ~~~
 {: .output}
 
@@ -415,32 +386,10 @@ JC1A_R2-backup.fastq
 
 ### Removing
 
-To prove to ourselves that you no longer have the ability to modify this file, try deleting it with the `rm` command.
+When we want to remove a file or a directory we use the `rm` command. By default, `rm`will not delete directories.
+You can tell `rm` to delete a directory using the `-r` (recursive) option. 
 
-~~~
-$ rm JC1A_R2-backup.fastq
-~~~
-{: .bash}
-
-You'll be asked if you want to override your file permissions.
-
-~~~
-rm: remove write-protected regular file ‘JC1A_R2-backup.fastq’? 
-~~~
-{: .output}
-
-If you enter `n` (for no), the file will not be deleted. If you enter `y`, you will delete the file. This gives us an extra 
-measure of security, as there is one more step between us and deleting our data files.
-
-**Important**: The `rm` command permanently removes the file. Be careful with this command. It doesn't
-just nicely put the files in the Trash. They're really gone.
-
-By default, `rm` will not delete directories. You can tell `rm` to
-delete a directory using the `-r` (recursive) option. Let's delete the backup directory
-we just made. 
-
-Enter the following command:
-
+Let's delete the backup directory we just made. 
 ~~~
 $ cd ..
 $ rm -r backup
@@ -449,6 +398,21 @@ $ rm -r backup
 
 This will delete not only the directory, but all files within the directory. If you have write-protected files in the directory, 
 you will be asked whether you want to override your permission settings. 
+
+
+If we want to modifiy a file without all the permissions you'll be asked if you want to override your file permissions.
+for example:
+
+~~~
+rm: remove write-protected regular file ‘example.fastq’? 
+~~~
+{: .output}
+
+If you enter `n` (for no), the file will not be deleted. If you enter `y`, you will delete the file. This gives us an extra 
+measure of security, as there is one more step between us and deleting our data files.
+
+**Important**: The `rm` command permanently removes the file. Be careful with this command. It doesn't
+just nicely put the files in the Trash. They're really gone.
 
 > ## Exercise
 >
@@ -463,7 +427,8 @@ you will be asked whether you want to override your permission settings.
 > > ## Solution
 > >
 > > 1. `rm -r backup`  
-> > 2. `cp JC1A_R1.fastq JC1A_R1-backup.fastq` and `cp JC1A_R2.fastq JC1A_R2-backup.fastq`  
+> > 2. `cp JC1A_R1.fastq JC1A_R1-backup.fastq`, `cp JC1A_R2.fastq JC1A_R2-backup.fastq`, `cp JP4_R1.fastq JP4_R1-backup.fastq`  
+> > and `cp JP4_R2.fastq JP4_R2-backup.fastq` 
 > > 3. `mkdir backup` and `mv *-backup.fastq backup`
 > > 4. `chmod -w backup/*-backup.fastq`   
 > > It's always a good idea to check your work with `ls -l backup`. You should see something like: 
