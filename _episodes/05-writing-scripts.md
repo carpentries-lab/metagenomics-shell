@@ -43,11 +43,11 @@ To add text to files, we're going to use a text editor called Nano. We're going 
 
 This is good practice when working in bioinformatics. We can create a file called a `README.txt` that describes the data files in the directory or documents how the files in that directory were generated.  As the name suggests it's a file that we or others should read to understand the information in that directory.
 
-Let's change our working directory to `~/dc_workshop/data` using `cd`,
+Let's change our working directory to `~/dc_workshop/data/untrimmed_fastq` using `cd`,
 then run `nano` to create a file called `README.txt`:
 
 ~~~
-$ cd ~/dc_workshop/data
+$ cd ~/dc_workshop/data/untrimmed_fastq
 $ nano README.txt
 ~~~
 {: .bash}
@@ -368,7 +368,7 @@ $ find ~ -name *.txt
 1. Download the bad reads file in ~/data/scripted_bad_reads.txt to your home ~/Download directory using the following command **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**:
 
 ~~~
-$ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/scripted_bad_reads.txt. ~/Downloads
+$ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
 ~~~
 {: .bash}
 
@@ -409,7 +409,7 @@ C:\User\your-pc-username\Downloads> pscp.exe local_file.txt dcuser@ec2-54-88-126
 2. Download the text file using the following command **(make sure you use substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
 
 ~~~
-C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data/scripted_bad_reads.txt.
+C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt.
 
 C:\User\your-pc-username\Downloads
 ~~~
