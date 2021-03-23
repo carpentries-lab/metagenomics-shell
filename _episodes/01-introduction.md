@@ -281,7 +281,7 @@ as needed.
 Let's go into the `data` directory and see what is in there.
 
 ~~~
-$ cd data/untrimmed/
+$ cd data/untrimmed_fastq
 $ ls -F
 ~~~
 {: .bash}
