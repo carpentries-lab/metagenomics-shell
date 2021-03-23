@@ -230,11 +230,10 @@ To understand a little better how to move between folders, let's see the followi
 
 ![folders_dcworkshop.png](../img/folders_dcworkshop.png)
 
-Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving, 
-the path must go as they are ordered. 
-For example, if we wanted to go to untrimmed_fastq folder, the path would be: 
+Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving,
+from dc_workshop to the untrimmed_fastq folder, the path must go as they are ordered: 
 ~~~
-cd dc_workshop / data / untrimmed_fastq
+cd dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
