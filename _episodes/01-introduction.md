@@ -226,6 +226,18 @@ $ ls -F
 Anything with a "/" after it is a directory. Things with a "*" after them are programs. If
 there are no decorations, it's a file.
 
+To understand a little better how to move between folders, let's see the following image:
+
+![folders_dcworkshop.png](../img/folders_dcworkshop.png)
+
+Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving, 
+the path must go as they are ordered. 
+For example, if we wanted to go to untrimmed_fastq folder, the path would be: 
+~~~
+cd dc_workshop / data / untrimmed_fastq
+~~~
+{: .bash}
+
 `ls` has lots of other options. To find out what they are, we can type:
 
 ~~~
