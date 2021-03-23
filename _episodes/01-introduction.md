@@ -212,7 +212,7 @@ $ ls
 {: .bash}
 
 ~~~
-16s assembly  data	metadata  report  taxonomy  
+16s assembly  data  metadata  report  taxonomy  
 ~~~
 {: .output}
 
@@ -339,7 +339,7 @@ If we navigate back to our `data` directory and try to access one of our sample 
 ~~~
 $ cd
 $ cd dc_workshop
-$ cd data/untrimmed/
+$ cd data/untrimmed_fastq
 $ ls JC<tab>
 ~~~
 {: .bash}
@@ -367,7 +367,7 @@ $ pw<tab><tab>
 {: .bash}
 
 ~~~
-pwd         pwd_mkdb    pwhich      pwhich5.16  pwhich5.18  pwpolicy
+pwd pwd_mkdb  pwhich  pwhich5.16  pwhich5.18  pwpolicy
 ~~~
 {: .output}
 
