@@ -263,7 +263,7 @@ to quit.
 > > drwxr-xr-x  2 dcuser dcuser 4096 Mar 10 21:11 data
 > > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 metadata
 > > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 report
-> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonom
+> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonomy
 > > ~~~
 > > {: .output}
 > > 
