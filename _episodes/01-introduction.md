@@ -275,7 +275,7 @@ as needed.
 Let's go into the `data` directory and see what is in there.
 
 ~~~
-$ cd data/untrimmed/
+$ cd data/untrimmed_fastq
 $ ls -F
 ~~~
 {: .bash}
@@ -344,7 +344,7 @@ If we navigate back to our `data` directory and try to access one of our sample 
 ~~~
 $ cd
 $ cd dc_workshop
-$ cd data/untrimmed/
+$ cd data/untrimmed_fastq
 $ ls JC<tab>
 ~~~
 {: .bash}
