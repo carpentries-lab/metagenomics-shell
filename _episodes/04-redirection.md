@@ -44,7 +44,7 @@ We'll search for strings inside of our fastq files. Let's first make sure we are
 directory.
 
 ~~~
-$ cd ~/dc_workshop/data
+$ cd ~/dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
@@ -101,7 +101,7 @@ AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//?
 > Have your search return all matching lines and the name (or identifier) for each sequence
 > that contains a match.
 > 
-> 2. Search for the sequence `AAGTT` in both FASTQ files.
+> 2. Search for the sequence `AAGTT` in all FASTQ files.
 > Have your search return all matching lines and the name (or identifier) for each sequence
 > that contains a match.
 > 
