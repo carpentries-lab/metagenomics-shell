@@ -31,6 +31,7 @@ you're not already there.
 $ cd
 $ cd dc_workshop
 $ cd data
+$ cd untrimmed_fastq
 ~~~
 {: .bash}
 
@@ -78,7 +79,7 @@ $ ls
 {: .bash}
 
 ~~~
-assembly  data	metadata  report  taxonomy  16s
+16s assembly  data	metadata  report  taxonomy  
 ~~~
 {: .output}
 
