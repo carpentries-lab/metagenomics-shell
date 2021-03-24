@@ -327,7 +327,7 @@ and change the file permissions so that we can read from, but not write to, the 
 
 First, let's make a copy of one of our FASTQ files using the `cp` command. 
 
-Navigate to the `dc_workshop/data/untrimmed_fastq` directory and enter:
+Navigate to the `/home/dcuser/dc_workshop/data/untrimmed_fastq` directory and enter:
 
 ~~~
 $ cp JC1A_R2.fastq JC1A_R2-copy.fastq
@@ -416,7 +416,7 @@ just nicely put the files in the Trash. They're really gone.
 
 > ## Exercise
 >
-> Starting in the `dc_workshop/data/` directory, do the following:
+> Starting in the `/home/dcuser/dc_workshop/data/untrimmed_fastq` directory, do the following:
 > 1. Make sure that you have deleted your backup directory and all files it contains.  
 > 2. Create a copy of each of your FASTQ files. (Note: You'll need to do this individually for each of the two FASTQ files. We haven't 
 > learned yet how to do this
