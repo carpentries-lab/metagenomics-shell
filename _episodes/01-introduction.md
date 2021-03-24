@@ -188,7 +188,7 @@ We'll be working within the `dc_workshop` subdirectory, and creating new subdire
 The data comes in a compressed format, which is why there is a `.gz` at the end of the folder names. This makes it faster to transfer, and allows it to take up less space on our computer. Let's unzip the folder so that we can look at the FASTQ format.
 
 ~~~
-$ tar -xzf dc_workshop.tar.gz
+$ tar -xvzf dc_workshop.tar.gz
 ~~~
 {: .bash}
 
