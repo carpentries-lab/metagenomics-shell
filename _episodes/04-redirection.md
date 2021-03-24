@@ -412,13 +412,3 @@ $ for filename in *.fastq
 > {: .solution}
 {: .challenge}
 
-One way this is really useful is to move files. Let's rename all of our .txt files using `mv` so that they have the years on them, which will document when we created them. 
-
-~~~
-$ for filename in *.txt
-> do
-> name=$(basename ${filename} .txt)
-> mv ${filename}  ${name}_2019.txt
-> done
-~~~
-{: .bash}
