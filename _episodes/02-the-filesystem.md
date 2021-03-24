@@ -24,8 +24,7 @@ We've also learned how to use `cd` to change locations and `ls` to list the cont
 of a directory. Now we're going to learn some additional commands for moving around 
 within our file system.
 
-Use the commands we've learned so far to navigate to the `dc_workshop/data` directory, if
-you're not already there. 
+Use the commands we've learned so far to navigate to the `dc_workshop/data/untrimmed_fastq` directory, if you're not already there. 
 
 ~~~
 $ cd
@@ -69,17 +68,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/dcuser/dc_workshop
-~~~
-{: .output}
-
-~~~
-$ ls
-~~~
-{: .bash}
-
-~~~
-16s assembly  data	metadata  report  taxonomy  
+/home/dcuser/dc_workshop/data
 ~~~
 {: .output}
 
@@ -88,7 +77,7 @@ From this output, we can see that `..` did indeed take us back one level in our 
 You can chain these together like so:
 
 ~~~
-$ cd ../../
+$ cd ../../..
 ~~~
 {: .bash}
 
@@ -119,7 +108,7 @@ prints the contents of `/home`, which is one level up from your root directory.
 > > {: .bash}
 > > 
 > > ~~~
-> > .  ..  .hidden	assembly  assembly_JC1A  data  metadata  report  taxonomy
+> > .  ..  .hidden  16s	assembly  assembly_JC1A  data  metadata  report  taxonomy
 > > ~~~
 > > {: .output}
 > > 
@@ -149,9 +138,7 @@ prints the contents of `/home`, which is one level up from your root directory.
 
 ### File Permissions
 
-We've now made a backup copy of our file, but just because we have two copies doesn't make us safe. We can still accidentally delete or 
-overwrite both copies. To make sure we can't accidentally mess up this backup file, we're going to change the permissions on the file so
-that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
+Another option that the `ls` command has is to check the permissions on a file. If we are organized and we have a folder with the backup of all our files, we can rescue files that we have accidentally deleted, for example, but just because we have two copies doesn't make us safe. We can still accidentally delete or overwrite both copies. To make sure we can't accidentally mess up a file, we're going to change the permissions on the file so that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
 
 View the current permissions on a file using the `-l` (long) flag for the `ls` command. 
 
@@ -161,7 +148,8 @@ $ ls -l
 {: .bash}
 
 ~~~
--rw-r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
+total 4
+-rw-r--r-- 1 dcuser dcuser 10 Jul 30  2015 youfoundit.txt
 ~~~
 {: .output}
 
@@ -181,37 +169,16 @@ talk more about this in [a later lesson](http://www.datacarpentry.org/shell-geno
 Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
 
 ~~~
-$ chmod -w JC1A_R2-backup.fastq
+$ chmod -w youfoundit.txt 
 $ ls -l 
 ~~~
 {: .bash}
 
 ~~~
--r--r--r-- 1 dcuser dcuser 43332 Nov 15 23:02 JC1A_R2-backup.fastq
+total 4
+-r--r--r-- 1 dcuser dcuser 10 Jul 30  2015 youfoundit.txt
 ~~~
 {: .output}
-
-
-> ## Navigating practice
-> 
-> Navigate to your home directory. From there, list the contents of the `data` 
-> directory. 
-> 
-> > ## Solution
-> >
-> > ~~~
-> > $ cd
-> > $ ls dc_workshop/data/
-> > ~~~
-> > {: .bash}
-> > 
-> > ~~~
-> > assembly  assembly_JC1A  data  metadata  report  taxonomy 16s
-> > ~~~
-> > {: .output}
-> > 
-> {: .solution}
-{: .challenge}
 
 ## Full vs. Relative Paths
 
@@ -245,7 +212,7 @@ directory in `home` which is a directory in `/`.
 Now enter the following command:
 
 ~~~
-$ cd /home/dcuser/shell_data/.hidden
+$ cd /home/dcuser/dc_workshop/.hidden
 ~~~
 {: .bash}
 
@@ -254,13 +221,6 @@ Now go back to the home directory.
 
 ~~~
 $ cd
-~~~
-{: .bash}
-
-You can also navigate to the `.hidden` directory using:
-
-~~~
-$ cd shell_data/.hidden
 ~~~
 {: .bash}
 
@@ -307,32 +267,5 @@ navigate amongst them.
 > {: .solution}
 {: .challenge} 
 
-### Navigational Shortcuts
-
-There are some shortcuts which you should know about. Dealing with the
-home directory is very common. The tilde character,
-`~`, is a shortcut for your home directory. Navigate to the `dc_workshop`
-directory:
-
-~~~
-$ cd
-$ cd dc_workshop
-~~~
-{: .bash}
-
-Then enter the command:
-
-~~~
-$ ls ~
-~~~
-{: .bash}
-
-~~~
-dc_workshop.tar.gz  R  r_data
-~~~
-{: .output}
-
-This prints the contents of your home directory, without you needing to 
-type the full path. 
 
 The commands `cd`, and `cd ~` are very useful for quickly navigating back to your home directory. We will be using the `~` character in later lessons to specify our home directory.
