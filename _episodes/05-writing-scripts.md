@@ -355,7 +355,7 @@ $  scp local_file.txt dcuser@ip.address:/home/dcuser/
 
 #### Downloading Data from your Virtual Machine with scp
 
-Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/data/scripted_bad_reads.txt.
+Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/data/untrimmed_fastq/scripted_bad_reads.txt.
 
 **Tip:** If you are looking for another (or any really) text file in your home directory to use instead try
 
@@ -368,7 +368,7 @@ $ find ~ -name *.txt
 1. Download the bad reads file in ~/data/scripted_bad_reads.txt to your home ~/Download directory using the following command **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**:
 
 ~~~
-$ scp dcuser@ip.address:/home/dcuser/dc_workshop/data//untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
+$ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
 ~~~
 {: .bash}
 
@@ -409,7 +409,7 @@ C:\User\your-pc-username\Downloads> pscp.exe local_file.txt dcuser@ec2-54-88-126
 2. Download the text file using the following command **(make sure you use substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
 
 ~~~
-C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data//untrimmed_fastq/scripted_bad_reads.txt.
+C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt.
 
 C:\User\your-pc-username\Downloads
 ~~~
