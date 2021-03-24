@@ -176,7 +176,7 @@ $ ls
 {: .bash}
 
 ~~~
-dc_workshop.tar.gz  R  r_data
+R	dc_workshop.tar.gz  r_data  shell_data
 ~~~
 {: .output}
 
