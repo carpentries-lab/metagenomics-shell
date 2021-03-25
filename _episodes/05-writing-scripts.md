@@ -119,7 +119,7 @@ Now you've written a file. You can take a look at it with `less` or `cat`, or op
 > > ## Solution
 > > 
 > > Use `nano README.txt` to open the file.  
-> > Add today's date and then use <kbd>Ctrl</kbd>-<kbd>X</kbd> to exit and `y` to save.
+> > Add today's date and then use `Ctrl+X` to exit and `y` to save.
 > >
 > {: .solution}
 >
