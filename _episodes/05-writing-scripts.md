@@ -162,8 +162,15 @@ It will look like nothing happened, but now if you look at `scripted_bad_reads.t
 > ## Exercise
 >
 > We want the script to tell us when it's done.  
-> 1. Open `bad-reads-script.sh` and add the line `echo "Script finished!"` after the `grep` command and save the file.  
-> 2. Run the updated script.
+> 
+> > ## Solution
+> > 
+> > ~~~
+> >1. Open `bad-reads-script.sh` and add the line `echo "Script finished!"` after the `grep` command and save the file.  
+> >2. Run the updated script.
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
 ## Making the script into a program
