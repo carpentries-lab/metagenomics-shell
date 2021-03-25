@@ -74,6 +74,7 @@ You should see the output:
 
 > ## Exercise  
 > Use the `mkdir` command to make the following directories:   
+> - `workshop`
 > - `workshop/docs`
 > - `workshop/data`
 > - `workshop/results`
@@ -81,6 +82,7 @@ You should see the output:
 > > ## Solution
 > > 
 > > ~~~
+> > $ mkdir workshop
 > > $ mkdir workshop/docs
 > > $ mkdir workshop/data
 > > $ mkdir workshop/results
