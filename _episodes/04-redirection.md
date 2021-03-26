@@ -48,6 +48,29 @@ $ cd ~/dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
+~~~
+$ ls  
+~~~
+{: .bash}
+~~~
+out
+~~~
+{: .output}
+
+~~~
+$ gunzip *.fastq
+~~~
+{: .bash}
+
+~~~
+$ ls  
+~~~
+{: .bash}
+
+~~~
+out
+~~~
+{: .output}
 Suppose we want to see how many reads in our file have really bad segments containing 10 consecutive unknown nucleotides (Ns).
 
 > ## Determining quality
