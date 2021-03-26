@@ -179,13 +179,6 @@ alphabetical order,
 arranged neatly into columns. 
 We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, throughout this workshop.  
 
-The data comes in a compressed format, which is why there is a `.gz` at the end of the folder names. This makes it faster to transfer, and allows it to take up less space on our computer. Let's unzip the folder so that we can look at the FASTQ format.
-
-~~~
-$ tar -xzf dc_workshop.targ.gz
-~~~
-{: .bash}
-
 The command to change locations in our file system is `cd` followed by a
 directory name to change our working directory.
 `cd` stands for "change directory".
