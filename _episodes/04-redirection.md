@@ -48,12 +48,13 @@ $ cd ~/dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
+Here we have
 ~~~
 $ ls  
 ~~~
 {: .bash}
 ~~~
-out
+JC1A_R1.fastq.gz   JC1A_R2.fastq.gz     JP4D_R1.fastq.gz     JP4D_R2.fastq.gz 
 ~~~
 {: .output}
 
@@ -68,7 +69,7 @@ $ ls
 {: .bash}
 
 ~~~
-out
+JC1A_R1.fastq   JC1A_R2.fastq     JP4D_R1.fastq     JP4D_R2.fastq
 ~~~
 {: .output}
 Suppose we want to see how many reads in our file have really bad segments containing 10 consecutive unknown nucleotides (Ns).
