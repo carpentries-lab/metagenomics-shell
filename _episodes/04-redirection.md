@@ -212,17 +212,19 @@ This is called "overwriting" and, just like you don't want to overwrite your vid
 of your kid's first birthday party, you also want to avoid overwriting your data files.
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R1.fastq > bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-402 bad_reads.txt
+24 bad_reads.txt
 ~~~
 {: .output}
 
 
+The old `bad_reads.txt` that counts bad quality reads from file ` JC1A_R2.fastq` with 402 lines has been erased.
+Instead a new `bad_reads.txt` that contain 24 lines from bad reads from ` JC1A_R1.fastq` has been created.
 We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will 
 append new output to the end of a file, rather than overwriting it.
 
@@ -238,28 +240,33 @@ $ wc -l bad_reads.txt
 {: .output}
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq >> bad_reads.txt
+$ grep -B1 -A2 NNNNNNNNNN JC1A_R1.fastq >> bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-804 bad_reads.txt
+426 bad_reads.txt
 ~~~
 {: .output}
 
 The output of our second call to `wc` shows that we have not overwritten our original data. 
-
-We can also do this with a single line of code by using a wildcard. 
+The final number of 426 lines results from the adition of 402 reads from ` JC1A_R2.fastq`
+ file + 24 reads from  `JC1A_R1.fastq` file. We can also do this for more files with a single line of code by using a wildcard. 
 
 ~~~
-$ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq.fastq > bad_reads.txt
+$ rm bad_reads.txt
+~~~
+{: .bash}
+
+~~~
+$ grep -B1 -A2 NNNNNNNNNN *.fastq >> bad_reads.txt
 $ wc -l bad_reads.txt
 ~~~
 {: .bash}
 
 ~~~
-402 bad_reads.txt
+427 bad_reads.txt
 ~~~
 {: .output}
 
