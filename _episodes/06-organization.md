@@ -172,11 +172,11 @@ $ history | tail -n 7
 > ## Exercise
 > Using your knowledge of the shell, use the append redirect `>>` to create a file called
 > `workshop_log_XXXX_XX_XX.sh` (Use the four-digit year, two-digit month, and two digit day, e.g.
-> `workshop_log_2017_10_27.sh`)  
+> `workshop_log_2021_03_25.sh`)  
 > > 
 > > ## Solution
 > > ~~~
-> > $ history | tail -n 8 >> workshop_log_2017_10_27.sh
+> > $ history | tail -n 8 >> workshop_log_2021_03_25.sh
 > > ~~~
 > > {: .bash}
 > > Note we used the last 7 lines as an example, the number of lines may vary.
@@ -187,11 +187,11 @@ You may have noticed that your history contains the `history` command itself. To
 from our log, let's use the `nano` text editor to fix the file:  
 
 ~~~
-$ nano workshop_log_2017_10_27.sh
+$ nano workshop_log_2021_03_25.sh
 ~~~
 {: .bash}
 
-(Remember to replace the `2017_10_27` with your workshop date.)
+(Remember to replace the `2021_03_25` with your workshop date.)
 
 From the `nano` screen, you can use your cursor to navigate, type, and delete any redundant lines.   
 
@@ -216,7 +216,7 @@ From the `nano` screen, you can use your cursor to navigate, type, and delete an
 Add a date line and comment to the line where you have created the directory, for example:   
 
 ~~~
-# 2017_10_27   
+# 2021_03_25  
 # Created sample directories for the Data Carpentry workshop  
 ~~~
 {: .bash}
@@ -229,7 +229,7 @@ delete key. Save your file and close `nano`.
 Your file should look something like this: 
 
 ~~~
-# 2017_10_27
+# 2021_03_25
 # Created sample directories for the Data Carpentry workshop
 
 mkdir workshop
@@ -250,7 +250,7 @@ $ ls
 {: .bash}
 
 ~~~
-shell_data	workshop_log_2017_10_27.sh
+shell_data	workshop_log_2021_03_25.sh
 ~~~
 {: .output}
 
@@ -258,13 +258,13 @@ Then run your workshop log file as a bash script. You should see the `workshop`
 directory and all of its subdirectories reappear. 
 
 ~~~
-$ bash workshop_log_2017_10_27.sh
+$ bash workshop_log_2021_03_25.sh
 $ ls
 ~~~
 {: .bash}
 
 ~~~
-workshop workshop_log_2017_10_27.txt
+workshop workshop_log_2021_03_25.txt
 ~~~
 {: .output}
 
