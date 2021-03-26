@@ -48,11 +48,14 @@ $ cd ~/dc_workshop/data/untrimmed_fastq
 ~~~
 {: .bash}
 
-Here we have
+
+The data comes in a compressed format, which is why there is a `.gz` at the end of the files. This makes it faster to transfer, and allows it to take up less space on our computer. Let's unzip the files so that we can look at the FASTQ format.
+
 ~~~
 $ ls  
 ~~~
 {: .bash}
+
 ~~~
 JC1A_R1.fastq.gz   JC1A_R2.fastq.gz     JP4D_R1.fastq.gz     JP4D_R2.fastq.gz 
 ~~~
