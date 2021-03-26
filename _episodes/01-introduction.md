@@ -170,14 +170,14 @@ $ ls
 {: .bash}
 
 ~~~
-dc_workshop.tar.gz  R  r_data
+dc_workshop  R  r_data shell_data 
 ~~~
 {: .output}
 
 `ls` prints the names of the files and directories in the current directory in
-alphabetical order,
-arranged neatly into columns. 
-We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, throughout this workshop.  
+alphabetical order,arranged neatly into columns. 
+We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, 
+throughout this workshop.  
 
 The command to change locations in our file system is `cd` followed by a
 directory name to change our working directory.
