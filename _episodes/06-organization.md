@@ -211,6 +211,7 @@ From the `nano` screen, you can use your cursor to navigate, type, and delete an
 > | <kbd>Ctrl</kbd>-<kbd>W</kbd> | to search |
 > 
 {: .callout}
+                                      
 
 Add a date line and comment to the line where you have created the directory, for example:   
 
