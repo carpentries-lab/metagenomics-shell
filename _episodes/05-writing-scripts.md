@@ -219,6 +219,23 @@ The script should run the same way as before, but now we've created our very own
 
 You will learn more about writing scripts in [a later lesson](https://datacarpentry.org/wrangling-genomics/05-automation/index.html).
 
+It is good practice to keep any large files compressed while you are not using them. In this way you save storage space, you will see that you will appreciate it when you advance in your analysis. So, since we will not use the FASTQ files for now, let's compress them. And run `ls -lh` to confirm that they are compressed. 
+
+~~~
+$ gzip ~/dc_workshop/data/untrimmed_fastq/*.fastq
+$ ls -lh  ~/dc_workshop/data/untrimmed_fastq/
+~~~
+{: .bash}
+
+~~~
+total 428M
+-rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:36 JC1A_R1.fastq.gz
+-rw-r--r-- 1 dcuser dcuser  24M Nov 26 12:37 JC1A_R2.fastq.gz
+-rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz
+-rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz
+~~~
+{: .output}
+
 ## Moving and Downloading Data
 
 So far, we've worked with data that is pre-loaded on the instance in the cloud. Usually, however,
