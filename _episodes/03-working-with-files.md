@@ -45,7 +45,7 @@ $ ls *.fastq
 {: .bash}
 
 ~~~
-JC1A_R1.fastq JC1A_R2.fastq JP4_R1.fastq JP4_R2.fastq
+JC1A_R1.fastq JC1A_R2.fastq JP4D_R1.fastq JP4D_R2.fastq
 ~~~
 {: .output}
 
@@ -60,7 +60,7 @@ $ ls *R1.fastq
 {: .bash}
 
 ~~~
-JC1A_R1.fastq JP4_R1.fastq
+JC1A_R1.fastq JP4D_R1.fastq
 ~~~
 {: .output}
 
@@ -336,7 +336,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-JC1A_R1.fastq  JC1A_R2-copy.fastq  JC1A_R2.fastq  JP4_R1.fastq  JP4_R2.fastq
+JC1A_R1.fastq  JC1A_R2-copy.fastq  JC1A_R2.fastq  JP4D_R1.fastq  JP4D_R2.fastq
 ~~~
 {: .output}
 
@@ -428,7 +428,7 @@ just nicely put the files in the Trash. They're really gone.
 > >
 > > 1. `rm -r backup`  
 > > 2. `cp JC1A_R1.fastq JC1A_R1-backup.fastq`, `cp JC1A_R2.fastq JC1A_R2-backup.fastq`, `cp JP4_R1.fastq JP4_R1-backup.fastq`  
-> > and `cp JP4_R2.fastq JP4_R2-backup.fastq` 
+> > and `cp JP4D_R2.fastq JP4D_R2-backup.fastq` 
 > > 3. `mkdir backup` and `mv *-backup.fastq backup`
 > > 4. `chmod -w backup/*-backup.fastq`   
 > > It's always a good idea to check your work with `ls -l backup`. You should see something like: 
