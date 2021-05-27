@@ -51,22 +51,11 @@ In this lesson you will learn how to use the command line interface to move arou
 ## How to access the shell
 
 On a Mac or Linux machine, you can access a shell through a program called Terminal, which is already available
-on your computer. If you're using Windows, you'll need to download a separate program to access the shell.
+on your computer. If you're using Windows, you'll need to download a separate program to access the shell (see installation instructions [here](https://carpentries-incubator.github.io/metagenomics//setup.html)).
 
-We will spend most of our time learning about the basics of the shell
-by manipulating some experimental data. Some of the data we're going to be working with is quite large, and
-we're also going to be using several bioinformatics packages in later
-lessons to work with this data. To avoid having to spend time 
-downloading the data and downloading and installing all of the software,
-we're going to be working with data on a remote server. 
+In this workshop, we suggest using a remote server to invest most of our time learning the basics of shell by manipulating some experimental data. The remote server already includes the required bioinformatics packages as well as the large datasets that usually take a lot of time to load into everyone's local computers.
 
-You can log-in to the remote server using the instructions 
-[here](http://www.datacarpentry.org/cloud-genomics/02-logging-onto-cloud/#logging-onto-a-cloud-instance). 
-Your instructor will supply the `ip_address` and password that you need to login.
-
-Each of you will have a different `ip_address`. This will 
-prevent us from accidentally changing each other's files as we work through the
-exercises. The password will be the same for everyone. 
+Ask your instructor for the `ip_address` and password to login.
 
 After logging in, you will see a screen showing something like this: 
 
@@ -388,7 +377,7 @@ Displays the name of every program that starts with `pw`.
 
 We now know how to move around our file system using the command line.
 This gives us an advantage over interacting with the file system through
-a GUI as it allows us to work on a remote server, carry out the same set of operations 
+a Graphical User Interface (GUI) as it allows us to work on a remote server, carry out the same set of operations 
 on a large number of files quickly, and opens up many opportunities for using 
 bioinformatics software that is only available in command line versions. 
 
