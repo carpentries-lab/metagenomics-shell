@@ -43,7 +43,7 @@ $ cd dc_workshop
 {: .bash}
 
 ~~~
--bash: cd: shell_data: No such file or directory
+-bash: cd: dc_workshop: No such file or directory
 ~~~
 {: .output}
 
@@ -72,18 +72,16 @@ $ pwd
 ~~~
 {: .output}
 
-From this output, we can see that `..` did indeed take us back one level in our file system. 
+From this output, we can see that `..` did indeed took us back one level in our file system. 
 
-You can chain these together like so:
+You can chain these together to move several levels:
 
 ~~~
 $ cd ../../..
 ~~~
 {: .bash}
 
-prints the contents of `/home`, which is one level up from your root directory. 
-
-> ## Finding hidden directories
+> ## Excercise 1: Finding hidden directories
 >
 > First navigate to the `dc_workshop` directory. There is a hidden directory within this directory. Explore the options for `ls` to 
 > find out how to see hidden directories. List the contents of the directory and 
@@ -108,7 +106,7 @@ prints the contents of `/home`, which is one level up from your root directory.
 > > {: .bash}
 > > 
 > > ~~~
-> > .  ..  .hidden  16s	assembly  assembly_JC1A  data  metadata  report  taxonomy
+> >.  ..  assembly  data  .hidden	mags  metadata	results  taxonomy
 > > ~~~
 > > {: .output}
 > > 
@@ -136,7 +134,7 @@ prints the contents of `/home`, which is one level up from your root directory.
 > {: .solution}
 {: .challenge}
 
-### File Permissions
+### File permissions
 
 Another option that the `ls` command has is to check the permissions on a file. If we are organized and we have a folder with the backup of all our files, we can rescue files that we have accidentally deleted, for example, but just because we have two copies doesn't make us safe. We can still accidentally delete or overwrite both copies. To make sure we can't accidentally mess up a file, we're going to change the permissions on the file so that we're only allowed to read (i.e. view) the file, not write to it (i.e. make new changes).
 
@@ -148,8 +146,8 @@ $ ls -l
 {: .bash}
 
 ~~~
-total 4
--rw-r--r-- 1 dcuser dcuser 10 Jul 30  2015 youfoundit.txt
+total 0
+-rw-rw-r-- 1 dcuser dcuser 0 May 27 23:16 youfoundit.txt
 ~~~
 {: .output}
 
@@ -164,7 +162,7 @@ that deal with your permissions (as the file owner).
 Here the three positions that relate to the file owner are `rw-`. The `r` means that you have permission to read the file, the `w` 
 indicates that you have permission to write to (i.e. make changes to) the file, and the third position is a `-`, indicating that you 
 don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
-talk more about this in [a later lesson](http://www.datacarpentry.org/shell-genomics/05-writing-scripts/)).
+talk more about this in [a later lesson](https://nselem.github.io/shell-metagenomics/05-writing-scripts/index.html)).
 
 Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
 
@@ -175,12 +173,12 @@ $ ls -l
 {: .bash}
 
 ~~~
-total 4
--r--r--r-- 1 dcuser dcuser 10 Jul 30  2015 youfoundit.txt
+total 0
+-r--r--r-- 1 dcuser dcuser 0 May 27 23:16 youfoundit.txt
 ~~~
 {: .output}
 
-## Full vs. Relative Paths
+## Absolute vs. relative paths
 
 The `cd` command takes an argument which is a directory
 name. Directories can be specified using either a *relative* path or a
@@ -220,13 +218,19 @@ This jumps forward multiple levels to the `.hidden` directory.
 Now go back to the home directory. 
 
 ~~~
-$ cd
+$ cd 
+~~~
+{: .bash}
+
+And then
+~~~
+$ cd dc_workshop/.hidden
 ~~~
 {: .bash}
 
 
 These two commands have the same effect, they both take us to the `.hidden` directory.
-The first uses the absolute path, giving the full address from the home directory. The
+The first one uses the absolute path, giving the full address from the home directory. The
 second uses a relative path, giving only the address from the working directory. A full
 path always starts with a `/`. A relative path does not.
 
@@ -245,7 +249,7 @@ Over time, it will become easier for you to keep a mental note of the
 structure of the directories that you are using and how to quickly
 navigate amongst them.
 
-> ## Relative path resolution
+> ## Excercise 2: Relative path resolution
 > 
 > Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
 > what will `ls ../backup` display?
