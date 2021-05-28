@@ -99,7 +99,7 @@ AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//?
 ~~~
 {: .output}
 
-> ## Exercise
+> ## Exercise 1: Using grep
 >
 > 1. Search for the sequence `GATCGAGAGGGGATAGGCG` in the `JC1A_R2.fastq` file.
 > Have your search return all matching lines and the name (or identifier) for each sequence
@@ -184,7 +184,7 @@ $ wc -l bad_reads.txt
 Because we asked `grep` for all four lines of each FASTQ record, we need to divide the output by
 four to get the number of sequences that match our search pattern.
 
-> ## Exercise
+> ## Exercise 2: Using `wc`
 >
 > How many sequences in `JC1A_R2.fastq` contain at least 3 consecutive Ns?
 >
@@ -404,7 +404,7 @@ $ for filename in *.fastq
 
 
 
-> ## Exercise
+> ## Exercise 3: Using `basename`
 >
 > Print the file prefix of all of the `.txt` files in our current directory.
 >
