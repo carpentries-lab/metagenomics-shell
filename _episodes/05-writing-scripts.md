@@ -336,9 +336,6 @@ using a transfer program, it needs to be installed on your local machine, not yo
 
 ## Transferring Data Between your Local Machine and the Cloud
 
-These directions are platform specific so please follow the instructions for your system:
-
-
 ### Uploading Data to your Virtual Machine with scp
 
 `scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
@@ -393,14 +390,3 @@ $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_b
 ~~~
 {: .bash}
 
-Remember that in both instances, the command is run from your local machine, we've just flipped the order of the to and from parts of the command.
-</div>
-
-~~~
-C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt.
-
-C:\User\your-pc-username\Downloads
-~~~
-{: .bash}
-
-</div>
