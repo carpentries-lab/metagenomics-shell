@@ -250,7 +250,7 @@ $ ls
 {: .bash}
 
 ~~~
-dc_workshop R	r_data	shell_data	species_EnsemblBacteria.txt workshop workshop_log_fecha.sh workshop_log_fecha.txt 
+dc_workshop R r_data shell_data species_EnsemblBacteria.txt workshop workshop_log_fecha.sh workshop_log_fecha.txt
 ~~~
 {: .output}
 
