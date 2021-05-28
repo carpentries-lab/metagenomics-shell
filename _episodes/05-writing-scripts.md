@@ -338,11 +338,6 @@ using a transfer program, it needs to be installed on your local machine, not yo
 
 These directions are platform specific so please follow the instructions for your system:
 
-**Please select the platform you wish to use for the exercises: <select id="id_platform" name="platformlist" onchange="change_content_by_platform('id_platform');return false;"><option value="unix" id="id_unix" selected> UNIX </option><option value="win" id="id_win" selected> Windows </option></select>**
-
-
-
-<div id="div_unix" style="display:block" markdown="1">
 
 ### Uploading Data to your Virtual Machine with scp
 
@@ -400,39 +395,6 @@ $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_b
 
 Remember that in both instances, the command is run from your local machine, we've just flipped the order of the to and from parts of the command.
 </div>
-
-
-<div id="div_win" style="display:block" markdown="1">
-
-### Uploading Data to your Virtual Machine with PSCP
-
-If you're using a PC, we recommend you use the *PSCP* program. This program is from the same suite of
-tools as the PuTTY program we have been using to connect.
-
-1. If you haven't done so, download pscp from [http://the.earth.li/~sgtatham/putty/latest/x86/pscp.exe](http://the.earth.li/~sgtatham/putty/latest/x86/pscp.exe)
-2. Make sure the *PSCP* program is somewhere you know on your computer. In this case,
-your Downloads folder is appropriate.
-3. Open the windows [PowerShell](https://en.wikipedia.org/wiki/Windows_PowerShell);
-go to your start menu/search enter the term **'cmd'**; you will be able to start the shell
-(the shell should start from C:\Users\your-pc-username>).
-4. Change to the download directory
-
-~~~
-> cd Downloads
-~~~
-{: .bash}
-
-5. Locate a file on your computer that you wish to upload (be sure you know the path). Then upload it to your remote machine **(you will need to know your AMI instance address (which starts with ec2), and login credentials)**. You will be prompted to enter a password, and then your upload will begin. **(make sure you use substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
-
-~~~
-C:\User\your-pc-username\Downloads> pscp.exe local_file.txt dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/
-~~~
-{: .bash}
-
-### Downloading Data from your Virtual Machine with PSCP
-
-1. Follow the instructions in the Upload section to download (if needed) and access the *PSCP* program (steps 1-3)
-2. Download the text file using the following command **(make sure you use substitute 'your-pc-username' for your actual pc username and 'ec2-54-88-126-85.compute-1.amazonaws.com' with your AMI instance address)**
 
 ~~~
 C:\User\your-pc-username\Downloads> pscp.exe dcuser@ec2-54-88-126-85.compute-1.amazonaws.com:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt.
