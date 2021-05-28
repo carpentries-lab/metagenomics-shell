@@ -188,7 +188,7 @@ $ ls
 {: .bash}
 
 ~~~
-16s assembly  data	metadata  report  taxonomy  
+assembly  data	mags  metadata	results  taxonomy
 ~~~
 {: .output}
 
@@ -201,7 +201,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-16s/ assembly/  data/  metadata/  report/  taxonomy/ 
+assembly/  data/  mags/  metadata/  results/  taxonomy/
 ~~~
 {: .output}
 
@@ -231,7 +231,7 @@ your keyboard's down arrow or use the <kbd>Space</kbd> key to go forward one pag
 and the <kbd>b</kbd> key to go backwards one page. When you are done reading, hit <kbd>q</kbd>
 to quit.
 
-> ## Challenge
+> ## Excercise 1: Extra information with `ls -l`
 > Use the `-l` option for the `ls` command to display more information for each item 
 > in the directory. What is one piece of additional information this long format
 > gives you that you don't see with the bare `ls` command?
@@ -367,7 +367,7 @@ $ pw<tab><tab>
 {: .bash}
 
 ~~~
-pwd         pwd_mkdb    pwhich      pwhich5.16  pwhich5.18  pwpolicy
+pwd   pwdx
 ~~~
 {: .output}
 
