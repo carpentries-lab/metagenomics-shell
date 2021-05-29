@@ -72,7 +72,7 @@ You should see the output:
 > always returns you to home.  
 {: .callout}
 
-> ## Exercise  
+> ## Exercise 1: Making and organized file system   
 > Use the `mkdir` command to make the following directories:   
 > - `workshop`
 > - `workshop/docs`
@@ -126,7 +126,7 @@ your data that you never modify guarantees that you will always be
 able to start over if something goes wrong with your analysis. When
 starting any analysis, you can make a copy of your raw data file and
 do your manipulations on that file, rather than the raw version. We
-learned in [a previous episode](http://www.datacarpentry.org/shell-genomics/03-working-with-files/#file-permissions) how to prevent overwriting our raw data
+learned in [a previous episode](https://nselem.github.io/shell-metagenomics/03-working-with-files/index.html/#file-permissions) how to prevent overwriting our raw data
 files by setting restrictive file permissions. 
 
 You can store any results that are generated from your analysis in
@@ -169,7 +169,8 @@ $ history | tail -n 7
 ~~~
 {: .bash}
 
-> ## Exercise
+> ## Exercise 2: Creating a record of the used commands 
+> 
 > Using your knowledge of the shell, use the append redirect `>>` to create a file called
 > `workshop_log_XXXX_XX_XX.sh` (Use the four-digit year, two-digit month, and two digit day, e.g.
 > `workshop_log_2021_03_25.sh`)  
@@ -250,7 +251,7 @@ $ ls
 {: .bash}
 
 ~~~
-dc_workshop R r_data  shell_data  species_EnsemblBacteria.txt workshop  workshop_log_fecha.sh workshop_log_fecha.txt
+dc_workshop   R   r_data   shell_data   species_EnsemblBacteria.txt    workshop   workshop_log_2021_03_25.sh 
 ~~~
 {: .output}
 
@@ -272,7 +273,7 @@ It's important that we keep our workshop log file outside of our `workshop` dire
 if we want to use it to recreate our work. It's also important for us to keep it up to
 date by regularly updating with the commands that we used to generate our results files.
 
-Congratulations! You've finished your introduction to using the shell for genomics
+Congratulations! You've finished your introduction to using the shell for metagenomics
 projects. You now know how to navigate your file system, create, copy, move,
 and remove files and directories, and automate repetitive tasks using scripts and 
 wildcards. With this solid foundation, you're ready to move on to apply all of these new
