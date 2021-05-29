@@ -112,7 +112,7 @@ return to the shell.
 
 Now you've written a file. You can take a look at it with `less` or `cat`, or open it up again and edit it with `nano`.
 
-> ## Exercise
+> ## Exercise 1: Edit a file with nano
 >
 > Open `README.txt` and add the date to the top of the file and save the file. 
 >
@@ -159,7 +159,7 @@ $ bash bad-reads-script.sh
 It will look like nothing happened, but now if you look at `scripted_bad_reads.txt`, you can see that there are now reads in the file.
 
 
-> ## Exercise
+> ## Exercise 2: Edit a script
 >
 > We want the script to tell us when it's done.  
 > 
@@ -175,7 +175,7 @@ It will look like nothing happened, but now if you look at `scripted_bad_reads.t
 
 ## Making the script into a program
 
-We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](http://www.datacarpentry.org/shell-genomics/03-working-with-files/).
+We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](https://nselem.github.io/shell-metagenomics/02-the-filesystem/index.html).
 
 First, let's look at the current permissions.
 
@@ -217,7 +217,7 @@ $ ./bad-reads-script.sh
 
 The script should run the same way as before, but now we've created our very own computer program!
 
-You will learn more about writing scripts in [a later lesson](https://datacarpentry.org/wrangling-genomics/05-automation/index.html).
+You will learn more about writing scripts in [a later lesson](https://carpentries-incubator.github.io/metagenomics/05-workflow/index.html).
 
 It is good practice to keep any large files compressed while you are not using them. In this way you save storage space, you will see that you will appreciate it when you advance in your analysis. So, since we will not use the FASTQ files for now, let's compress them. And run `ls -lh` to confirm that they are compressed. 
 
@@ -236,7 +236,7 @@ total 428M
 ~~~
 {: .output}
 
-## Moving and Downloading Data
+## Moving and downloading data
 
 So far, we've worked with data that is pre-loaded on the instance in the cloud. Usually, however,
 most analyses begin with moving data onto the instance. Below we'll show you some commands to 
@@ -334,9 +334,9 @@ to start the transfer locally. **This means if you're typing into a terminal, th
 should not be logged into your instance, it should be showing your local computer. If you're
 using a transfer program, it needs to be installed on your local machine, not your instance.**
 
-## Transferring Data Between your Local Machine and the Cloud
+## Transferring data between your local machine and the cloud
 
-### Uploading Data to your Virtual Machine with scp
+### Uploading data to your virtual machine with `scp`
 
 `scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
 between computers. The simplest way to use `scp` is to run it in your local terminal,
@@ -362,7 +362,7 @@ $ scp <AWS instance> <local file>
 ~~~
 {: .bash}
 
-#### Uploading Data to your Virtual Machine with scp
+#### Uploading data to your virtual machine with scp
 
 1. Open the terminal and use the `scp` command to upload a file (e.g. local_file.txt) to the dcuser home directory:
 
@@ -371,7 +371,7 @@ $  scp local_file.txt dcuser@ip.address:/home/dcuser/
 ~~~
 {: .bash}
 
-#### Downloading Data from your Virtual Machine with scp
+#### Downloading data from your virtual machine with `scp`
 
 Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/data/untrimmed_fastq/scripted_bad_reads.txt.
 
