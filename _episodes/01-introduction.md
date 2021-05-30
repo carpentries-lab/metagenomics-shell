@@ -4,11 +4,12 @@ teaching: 20
 exercises: 10
 questions:
 - "What is a command shell and why would I use one?"
-- "How can I move around on my computer?"
+- "How can I move around in a computer?"
 - "How can I see what files and directories I have?"
 - "How can I specify the location of a file or directory on my computer?"
 objectives:
 - "Describe key reasons for learning shell."
+- "Learn how to access a remote machine."
 - "Navigate your file system using the command line."
 - "Access and read help files for `bash` programs and use help files to identify useful command options."
 - "Demonstrate the use of tab completion, and explain its advantages."
@@ -56,6 +57,14 @@ on your computer. If you're using Windows, you'll need to download a separate pr
 In this workshop, we suggest using a remote server to invest most of our time learning the basics of shell by manipulating some experimental data. The remote server already includes the required bioinformatics packages as well as the large datasets that usually take a lot of time to load into everyone's local computers.
 
 Ask your instructor for the `ip_address` and password to login.
+
+To log in you need the `ssh` command (ssh stands for Secure Shell), your username and the adress of the machine you are logging into.
+~~~
+$ ssh dcuser@ec2-18-702-132-236.compute-1.amazonaws.com
+~~~
+{: .bash}
+
+Then you are prompted to type the password. Take into account that while you are typing a password no characters will appear on the screen, trust that they are being typed and press enter. 
 
 After logging in, you will see a screen showing something like this: 
 
