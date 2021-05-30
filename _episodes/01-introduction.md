@@ -121,9 +121,12 @@ Several commands are frequently used to create, inspect, rename, and delete file
 > ## Preparation Magic
 >
 > If you type the command:
-> `PS1='$ '`
+> `PS1='\W\?$ '`
 > into your shell, followed by pressing the <kbd>Enter</kbd> key,
-> your window should look like our example in this lesson.  
+> your window should look like.  
+> ~\ $ 
+> That only shows the ultimate directory where you ar standing. In this case
+> it is the home directory. The symbol `~` is an abbreviation of the home directory. 
 > This isn't necessary to follow along (in fact, your prompt may have
 > other helpful information you want to know about).  This is up to you!  
 {: .callout}
