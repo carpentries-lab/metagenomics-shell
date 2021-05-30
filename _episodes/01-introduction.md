@@ -121,25 +121,27 @@ Several commands are frequently used to create, inspect, rename, and delete file
 > ## Preparation Magic
 >
 > If you type the command:
-> `PS1='\W\?$ '`
+> `PS1='\W\ $ '`
 > into your shell, followed by pressing the <kbd>Enter</kbd> key,
-> your window should look like.  
-> ~\ $ 
+> your window should look like this:    
+> `~\ $`   
 > That only shows the ultimate directory where you ar standing. In this case
 > it is the home directory. The symbol `~` is an abbreviation of the home directory. 
 > This isn't necessary to follow along (in fact, your prompt may have
 > other helpful information you want to know about).  This is up to you!  
 {: .callout}
 
+The dollar sign is a **prompt**, which shows us that the shell is waiting for input;
+your shell may use a different character as a prompt and may add information before
+the prompt. When typing commands, either from these lessons or from other sources,
+do not type the prompt, only the commands that follow it. In this lesson we will use the 
+dollar sign to indicate the prompt. 
+
 ~~~
 $
 ~~~
 {: .bash}
 
-The dollar sign is a **prompt**, which shows us that the shell is waiting for input;
-your shell may use a different character as a prompt and may add information before
-the prompt. When typing commands, either from these lessons or from other sources,
-do not type the prompt, only the commands that follow it.
 
 Let's find out where we are by running a command called `pwd`
 (which stands for "print working directory").
