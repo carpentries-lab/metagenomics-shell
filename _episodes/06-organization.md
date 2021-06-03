@@ -17,8 +17,8 @@ keypoints:
 # Getting your project started
 
 Project organization is one of the most important parts of a sequencing project, and yet is often overlooked amidst the
-excitement of getting a first look at new data. Of course, while it's best to get yourself organized before you even begin your analyses,
-it's never too late to start, either.  
+excitement of getting a first look at new data. Of course, while it is best to get yourself organized before you even begin your analyses,
+it is never too late to start, either.  
 
 You should approach your sequencing project similarly to how you do a biological experiment and this ideally begins with experimental design. We're going to assume that you've already designed a beautiful 
 sequencing experiment to address your biological question, collected appropriate samples, and that you have 
