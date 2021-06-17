@@ -223,8 +223,8 @@ $ wc -l bad_reads.txt
 {: .output}
 
 
-The old `bad_reads.txt` that counts bad quality reads from file ` JC1A_R2.fastq` with 402 lines has been erased.
-Instead a new `bad_reads.txt` that contain 24 lines from bad reads from ` JC1A_R1.fastq` has been created.
+The old `bad_reads.txt` that counts bad quality reads from file `JC1A_R2.fastq` with 402 lines has been erased.
+Instead a new `bad_reads.txt` that contain 24 lines from bad reads from `JC1A_R1.fastq` has been created.
 We can avoid overwriting our files by using the command `>>`. `>>` is known as the "append redirect" and will 
 append new output to the end of a file, rather than overwriting it.
 
