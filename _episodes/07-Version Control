@@ -1,0 +1,15 @@
+---
+title: "Project Organization"
+teaching: 15
+exercises: 15
+questions:
+- "How can I organize my file system for a new bioinformatics project?"
+- "How can I document my work?"
+objectives:
+- "Create a file system for a bioinformatics project."
+- "Explain what types of files should go in your `docs`, `data`, and `results` directories."
+- "Use the `history` command and a text editor like `nano` to document your work on your project."
+keypoints:
+- "Spend the time to organize your file system when you start a new project. Your future self will thank you!"
+- "Always save a write-protected copy of your raw data."
+---
