@@ -106,7 +106,7 @@ $ cd ../../..
 > > {: .bash}
 > > 
 > > ~~~
-> >.  ..  assembly  data  .hidden	mags  metadata	results  taxonomy
+> >.  ..  data  .hidden  mags  taxonomy
 > > ~~~
 > > {: .output}
 > > 
