@@ -396,39 +396,52 @@ Git is a version control ystem that helps you keep track of the entire history o
 GitHub is a web-based service for version control and online collaboration. It is a hosting service for Git Repositories.
 GitHub acts as a social networking site for software developers where they can manage projects and build their portfolio.
 To get started, you will need to create a GitHub account on the sign up page https://github.com/
+
 To see if Git is installed on your system, open your terminal and type: 
+
 ~~~
 git --version
 ~~~
 {: .bash}
+
 If Git is installed, you will see the git version available on your terminal
 
 To install Git on Linux:
+
 ~~~
 sudo apt-get update
 ~~~
+{: .bash}
 
 ~~~
 sudo apt-get install git
 ~~~
+{: .bash}
 
 On Mac Terminal:
 
 ~~~
 brew install git
 ~~~
+{: .bash}
 
 Make sure to verify the installation was successful by checking Git version:
 
 ~~~
 git --version
 ~~~
+{: .bash}
 
-The next step involves configuring your Git username and email. This will allow you to push updates to GitHub.
+The next step involves configuring your Git username and email. This will allow you to push project updates to GitHub.
 
 ~~~
 git config --global user.name "Your GitHub user Name"
 ~~~
+{: .bash}
+
 ~~~
 git config --global user.email "your email address@address.com"
 ~~~
+{: .bash}
+
+
