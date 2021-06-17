@@ -402,8 +402,7 @@ git --version
 ~~~
 If Git is installed, you will see the git version available on your terminal
 
-To install Git:
-On Linux
+To install Git on Linux:
 ~~~
 sudo apt-get update
 ~~~
@@ -422,4 +421,13 @@ Make sure to verify the installation was successful by checking Git version:
 
 ~~~
 git --version
+~~~
+
+The next step involves configuring your Git username and email. This will allow you to push updates to GitHub.
+
+~~~
+git config --global user.name "Your GitHub user Name"#Put your GitHub user name
+~~~
+~~~
+git config --global user.email "youremailaddress@address.com" #Put your email address
 ~~~
