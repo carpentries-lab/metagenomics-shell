@@ -251,7 +251,7 @@ $ wc -l bad_reads.txt
 {: .output}
 
 The output of our second call to `wc` shows that we have not overwritten our original data. 
-The final number of 426 lines results from the adition of 402 reads from ` JC1A_R2.fastq`
+The final number of 426 lines results from the adition of 402 reads from `JC1A_R2.fastq`
  file + 24 reads from  `JC1A_R1.fastq` file. We can also do this for more files with a single line of code by using a wildcard. 
 
 ~~~
