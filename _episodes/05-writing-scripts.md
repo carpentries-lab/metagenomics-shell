@@ -444,4 +444,4 @@ git config --global user.email "your email address@address.com"
 ~~~
 {: .bash}
 
-
+More detailed intro to version control on the Software Carpentries website https://swcarpentry.github.io/git-novice/
