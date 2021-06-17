@@ -223,7 +223,7 @@ It is good practice to keep any large files compressed while you are not using t
 
 ~~~
 $ gzip ~/dc_workshop/data/untrimmed_fastq/*.fastq
-$ ls -lh  ~/dc_workshop/data/untrimmed_fastq/
+$ ls -lh  ~/dc_workshop/data/untrimmed_fastq/*.fastq.gz
 ~~~
 {: .bash}
 
