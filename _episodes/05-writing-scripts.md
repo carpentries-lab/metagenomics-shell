@@ -390,3 +390,36 @@ $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_b
 ~~~
 {: .bash}
 
+#### Using Git and GitHub
+
+Git is a version control ystem that helps you keep track of the entire history of projects that you are working on and facilitates collaboration on projects.
+GitHub is a web-based service for version control and online collaboration. It is a hosting service for Git Repositories.
+GitHub acts as a social networking site for software developers where they can manage projects and build their portfolio.
+To get started, you will need to create a GitHub account on the sign up page https://github.com/
+To see if Git is installed on your system, open your terminal and type: 
+~~~
+git --version
+~~~
+If Git is installed, you will see the git version available on your terminal
+
+To install Git:
+On Linux
+~~~
+sudo apt-get update
+~~~
+
+~~~
+sudo apt-get install git
+~~~
+
+On Mac Terminal:
+
+~~~
+brew install git
+~~~
+
+Make sure to verify the installation was successful by checking Git version:
+
+~~~
+git --version
+~~~
