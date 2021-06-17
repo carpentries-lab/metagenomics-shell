@@ -121,10 +121,10 @@ Several commands are frequently used to create, inspect, rename, and delete file
 > ## Preparation Magic
 >
 > If you type the command:
-> `PS1='\W\ $ '`
+> `PS1='\W\$ '`
 > into your shell, followed by pressing the <kbd>Enter</kbd> key,
 > your window should look like this:    
-> `~\ $`   
+> `~\$ `   
 > That only shows the ultimate directory where you ar standing. In this case
 > it is the home directory. The symbol `~` is an abbreviation of the home directory. 
 > This isn't necessary to follow along (in fact, your prompt may have
@@ -173,12 +173,12 @@ $ ls
 {: .bash}
 
 ~~~
-dc_workshop  R  r_data shell_data 
+dc_workshop  R 
 ~~~
 {: .output}
 
 `ls` prints the names of the files and directories in the current directory in
-alphabetical order,arranged neatly into columns. 
+alphabetical order, arranged neatly into columns. 
 We'll be working within the `dc_workshop` subdirectory, and creating new subdirectories, 
 throughout this workshop.  
 
@@ -202,7 +202,7 @@ $ ls
 {: .bash}
 
 ~~~
-assembly  data	mags  metadata	results  taxonomy
+data	mags  taxonomy
 ~~~
 {: .output}
 
@@ -215,7 +215,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-assembly/  data/  mags/  metadata/  results/  taxonomy/
+data/  mags/  taxonomy/
 ~~~
 {: .output}
 
@@ -227,11 +227,7 @@ To understand a little better how to move between folders, let's see the followi
 ![02-01-01.png](../fig/02-01-01.png)
 
 Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving,
-from dc_workshop to the untrimmed_fastq folder, the path must go as they are ordered: 
-~~~
-cd dc_workshop/data/untrimmed_fastq
-~~~
-{: .bash}
+from dc_workshop to the untrimmed_fastq folder, the path must go as they are ordered: `cd dc_workshop/data/untrimmed_fastq`
 
 `ls` has lots of other options. To find out what they are, we can type:
 
@@ -257,14 +253,10 @@ to quit.
 > > {: .bash}
 > > 
 > > ~~~
-> > total 28
-> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  3 20:21 16s
-> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:33 assembly
-> > drwxrwxr-x 10 dcuser dcuser 4096 Mar 10 21:03 assembly_JC1A
-> > drwxr-xr-x  2 dcuser dcuser 4096 Mar 10 21:11 data
-> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 metadata
-> > drwxr-xr-x  2 dcuser dcuser 4096 Nov 26 12:51 report
-> > drwxr-xr-x  2 dcuser dcuser 4096 Mar  7 19:56 taxonom
+> > total 12
+> > drwxr-xr-x 3 dcuser dcuser 4096 Jun  3 17:59 data
+> > drwxrwxr-x 2 dcuser dcuser 4096 Jun  3 18:02 mags
+> > drwxrwxr-x 3 dcuser dcuser 4096 Jun  3 18:25 taxonomy
 > > ~~~
 > > {: .output}
 > > 
@@ -279,7 +271,7 @@ No one can possibly learn all of these arguments, that's why the manual page
 is for. You can (and should) refer to the manual page or other help files
 as needed.
 
-Let's go into the `data` directory and see what is in there.
+Let's go into the `data/untrimmed_fastq` directory and see what is in there.
 
 ~~~
 $ cd data/untrimmed_fastq
