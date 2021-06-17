@@ -397,12 +397,16 @@ GitHub is a web-based service for version control and online collaboration. It i
 GitHub acts as a social networking site for software developers where they can manage projects and build their portfolio.
 To get started, you will need to create a GitHub account on the sign up page https://github.com/
 
-To see if Git is installed on your system, open your terminal and type: 
+Let's have a look at useful Git command options: 
 
 ~~~
-git --version
+git --help
 ~~~
 {: .bash}
+
+This will display the output below:
+
+
 
 If Git is installed, you will see the git version available on your terminal
 
