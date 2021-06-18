@@ -393,11 +393,11 @@ $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_b
 #### Using Git and GitHub
 
 Git is a version control ystem that helps you keep track of the entire history of projects that you are working on and facilitates collaboration on projects.
-GitHub is a web-based service for version control and online collaboration. It is a hosting service for Git Repositories.
+GitHub is a web-based service for version control and online collaboration. It is a hosting service for Git repositories, and is a handy platform for backup of software code and files.
 GitHub acts as a social networking site for software developers where they can manage projects and build their portfolio.
 To get started, you will need to create a GitHub account on the sign up page https://github.com/
 
-Let's have a look at useful Git command options: 
+Let's have a look at the Git command help option: 
 
 ~~~
 git --help
@@ -408,4 +408,4 @@ This will display the output below:
 
 ![18-06-2021](https://github.com/bwanya/shell-metagenomics/blob/gh-pages/fig/18-06-2021.png)
 
-More detailed intro to version control on the Software Carpentries website https://swcarpentry.github.io/git-novice/
+To learn more about Git and GitUb platforms for version control and collaborative development, check the Software Carpentries website https://swcarpentry.github.io/git-novice/
