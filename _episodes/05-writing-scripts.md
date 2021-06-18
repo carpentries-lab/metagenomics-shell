@@ -406,46 +406,6 @@ git --help
 
 This will display the output below:
 
-
-
-If Git is installed, you will see the git version available on your terminal
-
-To install Git on Linux:
-
-~~~
-sudo apt-get update
-~~~
-{: .bash}
-
-~~~
-sudo apt-get install git
-~~~
-{: .bash}
-
-On Mac Terminal:
-
-~~~
-brew install git
-~~~
-{: .bash}
-
-Make sure to verify the installation was successful by checking Git version:
-
-~~~
-git --version
-~~~
-{: .bash}
-
-The next step involves configuring your Git username and email. This will allow you to push project updates to GitHub.
-
-~~~
-git config --global user.name "Your GitHub user Name"
-~~~
-{: .bash}
-
-~~~
-git config --global user.email "your email address@address.com"
-~~~
-{: .bash}
+![18-06-2021.png](../fig/18-06-2021)
 
 More detailed intro to version control on the Software Carpentries website https://swcarpentry.github.io/git-novice/
