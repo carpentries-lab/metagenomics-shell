@@ -406,6 +406,6 @@ git --help
 
 This will display the output below:
 
-![18-06-2021.png](../fig/18-06-2021)
+![18-06-2021](../fig/18-06-2021)
 
 More detailed intro to version control on the Software Carpentries website https://swcarpentry.github.io/git-novice/
