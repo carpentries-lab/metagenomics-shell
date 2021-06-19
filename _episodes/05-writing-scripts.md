@@ -390,3 +390,21 @@ $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_b
 ~~~
 {: .bash}
 
+#### Using Git and GitHub
+
+Git is a version control system that helps you keep track of the entire history of projects that you are working on and facilitates collaboration on projects.
+GitHub is a web-based service for version control and online collaboration. It is a hosting service for Git repositories, and is a handy platform for backup of software code and files.
+GitHub acts as a social networking site for software developers where they can manage projects and build their portfolio.
+
+Let's have a look at the Git command help option: 
+
+~~~
+git --help
+~~~
+{: .bash}
+
+This will display the output below:
+
+![18-06-2021](https://github.com/bwanya/shell-metagenomics/blob/gh-pages/fig/18-06-2021.png)
+
+To learn more about Git and GitHub platforms for version control and collaborative development, check the Software Carpentries website https://swcarpentry.github.io/git-novice/
