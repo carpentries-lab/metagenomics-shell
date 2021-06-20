@@ -405,6 +405,6 @@ git --help
 
 This will display the output below:
 
-![18-06-2021](https://github.com/bwanya/shell-metagenomics/blob/gh-pages/fig/18-06-2021.png)
+(https://github.com/bwanya/shell-metagenomics/blob/gh-pages/fig/18-06-2021.png)
 
 To learn more about Git and GitHub platforms for version control and collaborative development, check the Software Carpentries website https://swcarpentry.github.io/git-novice/
