@@ -405,6 +405,8 @@ git --help
 
 This will display the output below:
 
-![18-06-2021](https://github.com/bwanya/shell-metagenomics/blob/gh-pages/fig/18-06-2021.png)
+<a href="{{ page.root }}/fig/18-06-2021.pngg">
+  <img src="{{ page.root }}/fig/18-06-2021.png" alt="Cog Metagenome" />
+</a>
 
 To learn more about Git and GitHub platforms for version control and collaborative development, check the Software Carpentries website https://swcarpentry.github.io/git-novice/
