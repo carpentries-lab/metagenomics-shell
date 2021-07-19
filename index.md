@@ -1,7 +1,7 @@
 ---
 layout: lesson
 ---
-
+ 
 {% include gh_variables.html %}
 
 
