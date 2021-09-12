@@ -54,11 +54,27 @@ Here, we will found the `Bioproject` number. This is a identification-code, link
 where the information concerning a project and its data is hoarded. For this paper, the number
 is: `PRJNA566436`. 
 With this information, we can open a NCBI page in our favorite internet brower, and paste this
-code in the search section:
+code in the search section. Then, a new pag with the search results will be displayed. Here, 
+we will choose the `human gut metagenome` option:
+
+<a href="{{ page.root }}/fig/02-07-02.png">
+  <img src="{{ page.root }}/fig/02-07-02.png" alt="Search results after using the Bioproject
+  code: PRJNA566436" />
+</a>
 
 
+###### Figure 2. Search results after using the Bioproject code: PRJNA566436
 
+In the new displayed page, we can see different pieces of information. We are interested in the
+**Project Data** section, which shows in a table, the sequence data. NCBI saves each set of
+files (usually libraries) in a `Sequence Read Archive` (SRA). This will be the identifiaction
+code that we will search if we want to download the data. We will click on the number of 
+**SRA experiments**, which is 18:
 
+<a href="{{ page.root }}/fig/02-07-03.png">
+  <img src="{{ page.root }}/fig/02-07-03.png" alt="Search results after using the Bioproject
+  code: PRJNA566436" />
+</a>
 
 
 
