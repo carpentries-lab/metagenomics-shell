@@ -99,14 +99,13 @@ download a **Accession List** by clicking in this section of the **Select** squa
 
 ###### Figure 5. Downloading the Accession List file
 
+You can obtain this file from [here]().
+We will move the new file to our `/data` directory and re-name it as **SRA-names.txt**:
 
 
-~~~
-
-~~~
-{: .bash}
-
-
+```bash
+$ mv ~/downloads/SRR_Acc_List ~/sra-toolkit/data/SRA-names.txt
+```
 
 
 ~~~
