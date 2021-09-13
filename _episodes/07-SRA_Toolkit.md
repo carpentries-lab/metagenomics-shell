@@ -256,14 +256,14 @@ reads written   : 23,376
 {: .output}
 
 ~~~
-$ ls -lh
+$ ls 
 ~~~
 {: .bash}
 
 ~~~
--rwxrwxrwx 1 user user  216 Sep 12 18:56 SRA-accessions.txt
--rwxrwxrwx 1 user user 6.2M Sep 13 13:45 SRR10153499_1.fastq
--rwxrwxrwx 1 user user 5.2M Sep 13 13:45 SRR10153499_2.fastq
+SRA-accessions.txt   
+SRR10153499_1.fastq  
+SRR10153499_2.fastq
 ~~~
 {: .bash}
 
@@ -297,13 +297,43 @@ $ ls -lh
 {: .bash}
 
 ~~~
-
+SRA-accessions.txt   SRR10153503_2.fastq  SRR10153508_2.fastq  SRR10153513_2.fastq
+SRR10153499_1.fastq  SRR10153504_1.fastq  SRR10153509_1.fastq  SRR10153514_1.fastq
+SRR10153499_2.fastq  SRR10153504_2.fastq  SRR10153509_2.fastq  SRR10153514_2.fastq
+SRR10153500_1.fastq  SRR10153505_1.fastq  SRR10153510_1.fastq  SRR10153515_1.fastq
+SRR10153500_2.fastq  SRR10153505_2.fastq  SRR10153510_2.fastq  SRR10153515_2.fastq
+SRR10153501_1.fastq  SRR10153506_1.fastq  SRR10153511_1.fastq  SRR10153573_1.fastq
+SRR10153501_2.fastq  SRR10153506_2.fastq  SRR10153511_2.fastq  SRR10153573_2.fastq
+SRR10153502_1.fastq  SRR10153507_1.fastq  SRR10153512_1.fastq
+SRR10153502_2.fastq  SRR10153507_2.fastq  SRR10153512_2.fastq
+SRR10153503_1.fastq  SRR10153508_1.fastq  SRR10153513_1.fastq
 ~~~
 {: .output}
 
+Now, we have the 36 files (2 for every one of the 18 samples) that we will use in the next 
+lessons. 
+`fasterq-dump` is a useful tool to access to public data. Since the explotion of the 
+next-generation sequencing technologies, it is imperative for publicable research projects 
+to upload their data. This is a useful resource for learnes, students and professors to 
+use the already scrutinized data to practice, run newly-develop tools, and teach exercises.
 
 
-~~~
+> ## Exercise 1: 
+> By using the next piece of code:
+> ~~~
+> cat SRA-accessions.txt | sed -n '1!p'| while read line; do fasterq-dump -s $line -p -e 12; done
+> ~~~
+> {: .bash}
+> How many new file we will have in our folder?
+> 1. 36
+> 2. 18
+> 3. 17
+> 4. 34
 
-~~~
-{: .bash}
+> Please, paste your result on the collaborative document provided by instructors. 
+> *Hic Sunt Leones!* (*Here be Lions!*)  
+>
+>> ## Solution
+>> Answer: 17
+> {: .solution}
+{: .challenge}
