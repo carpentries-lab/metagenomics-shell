@@ -69,12 +69,35 @@ In the new displayed page, we can see different pieces of information. We are in
 **Project Data** section, which shows in a table, the sequence data. NCBI saves each set of
 files (usually libraries) in a `Sequence Read Archive` (SRA). This will be the identifiaction
 code that we will search if we want to download the data. We will click on the number of 
-**SRA experiments**, which is 18:
+**SRA experiments**, which is **18**:
 
 <a href="{{ page.root }}/fig/02-07-03.png">
-  <img src="{{ page.root }}/fig/02-07-03.png" alt="Search results after using the Bioproject
-  code: PRJNA566436" />
+  <img src="{{ page.root }}/fig/02-07-03.png" alt="SRA Experiments section for accessing
+  the libraries information" />
 </a>
+
+###### Figure 3. SRA Experiments section for accessing the libraries information
+
+This will lead us to a page where the desired information is still inconspicuous. We will click
+on the **Send results to Run selector** option, at the top of the page:
+
+<a href="{{ page.root }}/fig/02-07-04.png">
+  <img src="{{ page.root }}/fig/02-07-04.png" alt="Option to display a more informative 
+  resume of the data" />
+</a>
+
+###### Figure 4. Option to display a more informative resume of the data
+
+The resulting page (SRA Run Selector), will show the information the is located in the 
+`Bioproject` and `Biosample` pages. Also, in the bottom we will find a table with useful 
+information provided by the authors. In order to obtain the *Accession* info, we will
+download a **Accession List** by clicking in this section of the **Select** square:
+
+<a href="{{ page.root }}/fig/02-07-05.png">
+  <img src="{{ page.root }}/fig/02-07-05.png" alt="Downloading the Accession List file" />
+</a>
+
+###### Figure 5. Downloading the Accession List file
 
 
 
