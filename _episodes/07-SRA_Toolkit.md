@@ -17,8 +17,7 @@ to explore `SRA Toolkit`
 In ancient times (before the sra-tools version 2.9.1), `fastq-dump` was the tool used by 
 deafult to access public dat in NCBI. But, with the 2.9.1 version, `fasterq-dump` became
 available. It is faster than its predecesor and a little bit more intuitive that the former 
-(`fastq-dump` was little intuitive). `fastq-dump` is still available, but the line of 
-thought of the developers is to erase it sooner than latter.
+. `fastq-dump` is still available, but the line of thought of the developers is to erase it sooner than latter.
 
 ### Creating a folder for the data
 It is important to maintain onder in your projects. This extrapolates to the tools used inside
@@ -104,7 +103,7 @@ We will move the new file to our `/data` directory and re-name it as **SRA-names
 
 
 ~~~
-$ mv ~/Downloads/SRR_Acc_List ~/sra-toolkit/data/SRA-names.txt
+$ mv ~/Downloads/SRR_Acc_List ~/sra-toolkit/data/SRA-accessions.txt
 $ cat SRA-names.txt
 ~~~
 {: .bash}
@@ -182,40 +181,125 @@ the reads that we will use, so this is the most reliable option.
 All this options have its reciprocal one in `fastq-dump`, which can be a reference for 
 the users accostumed to it:
 
-~~~
-fastq-dump SRRXXXXXX --split-3 --skip-technical       fasterq-dump SRRXXXXXX
-
-fastq-dump SRRXXXXXX --split-spot --skip-technical    fasterq-dump SRRXXXXXX --split-spot
-
-fastq-dump SRRXXXXXX --split-files --skip-technical   fasterq-dump SRRXXXXXX --split-files
-
-fastq-dump SRRXXXXXX                                  fasterq-dump SRRXXXXXX --concatenate-reads --include-technical
-
-~~~
-{: .bash}
+|-------------------+-----------------------------------------------------------------------------------------------------------------|   
+| Old option                                                 |                             New option                                 |   
+|-------------------+-----------------------------------------------------------------------------------------------------------------|   
+|fastq-dump SRRXXXXXX --split-3 --skip-technical             |fasterq-dump SRRXXXXXX                                                  |   
+|-------------------+-----------------------------------------------------------------------------------------------------------------|   
+|    fastq-dump SRRXXXXXX --split-spot --skip-technical      |fasterq-dump SRRXXXXXX --split-spot                                     |                              
+|-------------------+-----------------------------------------------------------------------------------------------------------------|   
+| fastq-dump SRRXXXXXX --split-files --skip-technical        |fasterq-dump SRRXXXXXX --split-files                                    |            
+|-------------------+-----------------------------------------------------------------------------------------------------------------|   
+|fastq-dump SRRXXXXXX                                        |fasterq-dump SRRXXXXXX --concatenate-reads --include-technical          |            
+|-------------------+-----------------------------------------------------------------------------------------------------------------|   
 
 Let's run one example with the first accession of our data: SRR10153499. We will use the 
 `--stdout` option, to not save the output in a file, but only to be displayed in the 
 terminal. Also, we will use some of the commands that we reviewed in the past lessons:
 
 ~~~
-fasterq-dump --stdout SRR10153499 --concatenate-reads --include-technical | head -n 8
+fasterq-dump -s --stdout SRR10153499 --include-technical | head -n 8
 ~~~
 {: .bash}
 
 
 ~~~
-@SRR10153499.1 1 length=453
-TACGGAGGATACGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGCAGGTGGTCCTGCAAGTCAGTGGTGAAAAGCTGAGGCTCAACCTCAGCCTTGCCGTTGAAACTGCAAGACTTGAGAGTACATGATGTGGGCGGAATGCGTAGTGTAGCGGTGAAATGCATAGATATTACGCAGAACTCCGATTGCGAAGGCAGCTCACAAAGGTATATCTGACACTGAGGCACGAAAGCGTGGGGAGCAAACCCTGTTTGCGCCCCACGCTTTCGTGCCTCAGTGTCAGATATACCTTTGTGAGCTGCCTTCGCAATCGGAGTTCTGCGTAATATCTATGCATTTCACCGCTACACTACGCATTCCGCCCACATCATGTACTCTCAAGTCTTGCAGTTTCAACGGCAAGGCTGAGGTTGAGCCTCAGCTTTTCACCACTGACTTGCAGGACCACC
-+SRR10153499.1 1 length=453
-CCCCCCBCCFFFGGGGGGGGGGHGGGGGHHHHHHHGGGHHHHHGHGGGGGGGHHGGHHHHHHHHHHHHHHHHGHHHHHHGHGHGFHHHHHHHHHHHGHHHHHGGGGHHHHHHHHHHGHHHHHHGHHHHHHHHHHHHHGGGGGGGHHGGGGGHHHHHGGGGGGHHHHFHHHHHFHHHHGGGGGGGFGGGGGAEGGGBGGFFFFFFFFBFAFF0BFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFB9:BA>AAA1B3C@1AAGEGGGGGF0B0BBAFG1FGFGGHHHHHDGBEGFHHHDADAFGFGHFGGFF//EFFCBEFHBGHFFEAEGHFHGBFGF2GHHHEGHGGG>EHFHHFGG?EFHFGCA@CGGHHFGFH2FFHGFFHHGHHHHHHFHHHHFH1ACC@-.<F1C0FFCFH/GFGHHFHCGGHHCCCC0GCGFGEGGH0CG.C9..C
-@SRR10153499.2 2 length=426
-TACGGAAGGTTCGGGCGTTATCCGGATTTATTGGGTTTAAAGGGAGCGTAGGCCGTTTGGTAAGCGTGTTGTGAAATGTAGTAGCTCAACTTCTAGATTGCAGCGCGAACTGTCAGACTTGAGTGCGCACAACGTAGGCGGAATTCATGGTGTAGCGGTGAAATGCTTAGATATCATGAAGAACTCCGATTGCGAAGGCAGCTTACGGGAGCCTGTTTGATACCCGCACTTTCGAGCATCAGCGTCAGTTGCGCTCCCGTAAGCTGCCTTCGCAATCGGAGTTCTTCATGATATCTAAGCATTTCACCGCTACACCATGAATTCCGCCTACGTTGTGCGCACTCAAGTCTGACAGTTCGCGCTGCAATCTAGAAGTTGAGCTACTACATTTCACAACACGCTTACCAAACGGCCTACGCTCCCTTT
-+SRR10153499.2 2 length=426
-CCCCCAAAAFFFGGGGGGGGGGHGGGGGHHHHHHHGGGBGHHHGHGGGGGGGHHGGGHGGHGHHHGGGGHHHGHHHHHHHHHHHGHHHHHGHHHFHHHHHHGFHGGGDGGHHHHHHEGHHHEHHHHGGGGGHGDHGHGHGGGFFHHGGHHHHHHHHGGGGEGGGGGGGGGE0FFBCFG0CFGGGGGGGAGFEEFA-CDEFDFFFFFFFF.;>AAAAFFFFFFFGGCEGAEG4BAABBEGFFHHGGGGGHHHHGGGGG1EGCFGHHHHGGFGHGEEGHGGEFEHHGHGBFFFHGGGG44F3GFHHHGHHGEE>EGGCHHHHFGHHF?EDGAHGHFAF<2?CCDGHHHHHFGGHHHG<FBGD@DFFG/0DFHDGD0GDDGFC::;:0:BFHHBB0GG0.CEEA.C.FFFBAAA;-99FFAFAD?.BBF
+@SRR10153499.1 1 length=250
+TACGGAGGATACGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGCAGGTGGTCCTGCAAGTCAGTGGTGAAAAGCTGAGGCTCAACCTCAGCCTTGCCGTTGAAACTGCAAGACTTGAGAGTACATGATGTGGGCGGAATGCGTAGTGTAGCGGTGAAATGCATAGATATTACGCAGAACTCCGATTGCGAAGGCAGCTCACAAAGGTATATCTGACACTGAGGCACGAAAGCGTGGGGAGCAAAC
++SRR10153499.1 1 length=250
+CCCCCCBCCFFFGGGGGGGGGGHGGGGGHHHHHHHGGGHHHHHGHGGGGGGGHHGGHHHHHHHHHHHHHHHHGHHHHHHGHGHGFHHHHHHHHHHHGHHHHHGGGGHHHHHHHHHHGHHHHHHGHHHHHHHHHHHHHGGGGGGGHHGGGGGHHHHHGGGGGGHHHHFHHHHHFHHHHGGGGGGGFGGGGGAEGGGBGGFFFFFFFFBFAFF0BFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFB9:BA
+@SRR10153499.1 1 length=203
+CCTGTTTGCGCCCCACGCTTTCGTGCCTCAGTGTCAGATATACCTTTGTGAGCTGCCTTCGCAATCGGAGTTCTGCGTAATATCTATGCATTTCACCGCTACACTACGCATTCCGCCCACATCATGTACTCTCAAGTCTTGCAGTTTCAACGGCAAGGCTGAGGTTGAGCCTCAGCTTTTCACCACTGACTTGCAGGACCACC
++SRR10153499.1 1 length=203
+>AAA1B3C@1AAGEGGGGGF0B0BBAFG1FGFGGHHHHHDGBEGFHHHDADAFGFGHFGGFF//EFFCBEFHBGHFFEAEGHFHGBFGF2GHHHEGHGGG>EHFHHFGG?EFHFGCA@CGGHHFGFH2FFHGFFHHGHHHHHHFHHHHFH1ACC@-.<F1C0FFCFH/GFGHHFHCGGHHCCCC0GCGFGEGGH0CG.C9..C
+fasterq-dump was killed (signal 13 SIGPIPE)
 ~~~
 {: .output}
 
+As mentioned before, we will get the information in `FASTQ` format. `fasterq-dump` takes 
+shorter times to accomplish the task because its multi-thread capability. We can assign 
+how many threads we want `fasterq-dump` to use to the task, more threads is less time. We
+can use a command to know the number of threads available in our working station:
+
+#### On Linux:
+~~~
+$ nproc --all
+~~~
+{: .bash}
+
+~~~
+12
+~~~
+{: .output}
+
+#### On Mac
+~~~
+/usr/sbin/sysctl -n hw.ncpu
+~~~
+{: .bash}
+
+Also, we can ask `fasterq-dump` to display the progress by the `-p` flag. So we will run an 
+example with the progress displayed, and with 12 threads:
+
+~~~
+$ fasterq-dump SRR10153499 -p -e 12
+~~~
+{: .bash}
+
+~~~
+join   :|-------------------------------------------------- 100%
+concat :|-------------------------------------------------- 100%
+spots read      : 11,688
+reads read      : 23,376
+reads written   : 23,376
+~~~
+{: .output}
+
+~~~
+$ ls -lh
+~~~
+{: .bash}
+
+~~~
+-rwxrwxrwx 1 user user  216 Sep 12 18:56 SRA-accessions.txt
+-rwxrwxrwx 1 user user 6.2M Sep 13 13:45 SRR10153499_1.fastq
+-rwxrwxrwx 1 user user 5.2M Sep 13 13:45 SRR10153499_2.fastq
+~~~
+{: .bash}
+
+Since `fasterq-dumb` does not take multiple accesions just one, we will do a `while` cycle 
+to proccess all the accessions in the `SRA-names.txt`:
+
+~~~
+cat SRA-accessions.txt | sed -n '1!p'| while read line; do fasterq-dump $line -p -e 12; done
+~~~
+{: .bash}
+
+~~~
+join   :|-------------------------------------------------- 100%
+concat :|-------------------------------------------------- 100%
+spots read      : 14,467
+reads read      : 28,934
+reads written   : 28,934
+join   :|-------------------------------------------------- 100%
+concat :|-------------------------------------------------- 100%
+spots read      : 13,557
+reads read      : 27,114
+reads written   : 27,114
+join   :|-------------------------------------------------- 100%
+concat :|-------------------------------------------------- 100%
+~~~
+{: .output}
+
+~~~
+$ ls -lh
+~~~
+{: .bash}
+
+~~~
+
+~~~
+{: .output}
 
 
 
