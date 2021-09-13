@@ -133,6 +133,92 @@ SRR10153515
 
 ### Using faterq-dump to download the data
 
+As mentioned at the beggining, `fasterq-dump` is the new version of `fastq-dump`. Let's see 
+some of the parameters that this new tool can offer:
+~~~
+$ fasterq-dump --help
+~~~
+{: .bash}
+
+First, we will put attention to the split options:
+
+~~~
+  -s|--split-spot                  split spots into reads
+  -S|--split-files                 write reads into different files
+  -3|--split-3                     writes single reads into special file
+     --concatenate-reads           writes whole spots into one file
+~~~
+{: .bash}
+
+#### --split-spot (-s)
+
+This flag will generate a unique file which will contain all the information for the 
+library, no matter if those reads are forward or reverse sequenced. Each read will come 
+along the 4 lines usual in the `FASTQ` format
+
+
+#### ---split-file (-S)
+
+With this statement, we will end with separate files for the forward and the reverse reads
+(1.fastq and 2.fastq respectively). Nevertheless, the unmated reads (those present in
+the forward but without their complement in reverse and visceversa) will also be located
+in their respective file. This can be useful for special kind of analyses, but usually we
+will prefer to exclude the unmated reads from the next steps. Moreoevee, this option
+will write each read with the four lines from the `FASTQ` format.
+
+#### --concatenate-reads
+
+The informatio of each read is concatenated and each new spot (information from the forward
+and reverse) is written alongside the four lines characteristic of the `FASTQ` format.
+
+#### --split-spot
+
+This is the deafult option for `fasterq-dump`. The source file is split in a file containing
+the forward reads (_i.e._ 1.fastq) and the reverse ones (_i.e._ 2.fastq). Unmated reads are placed in a 3.fastq or SRA-code-name file. Each read is written with the 4 characteristic
+lines of the `FASTQ` format.
+Most of the sequencing projects are now in paired-end read format. This is also the case for 
+the reads that we will use, so this is the most reliable option.
+
+All this options have its reciprocal one in `fastq-dump`, which can be a reference for 
+the users accostumed to it:
+
+~~~
+fastq-dump SRRXXXXXX --split-3 --skip-technical       fasterq-dump SRRXXXXXX
+
+fastq-dump SRRXXXXXX --split-spot --skip-technical    fasterq-dump SRRXXXXXX --split-spot
+
+fastq-dump SRRXXXXXX --split-files --skip-technical   fasterq-dump SRRXXXXXX --split-files
+
+fastq-dump SRRXXXXXX                                  fasterq-dump SRRXXXXXX --concatenate-reads --include-technical
+
+~~~
+{: .bash}
+
+Let's run one example with the first accession of our data: SRR10153499. We will use the 
+`--stdout` option, to not save the output in a file, but only to be displayed in the 
+terminal. Also, we will use some of the commands that we reviewed in the past lessons:
+
+~~~
+fasterq-dump --stdout SRR10153499 --concatenate-reads --include-technical | head -n 8
+~~~
+{: .bash}
+
+
+~~~
+@SRR10153499.1 1 length=453
+TACGGAGGATACGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGCAGGTGGTCCTGCAAGTCAGTGGTGAAAAGCTGAGGCTCAACCTCAGCCTTGCCGTTGAAACTGCAAGACTTGAGAGTACATGATGTGGGCGGAATGCGTAGTGTAGCGGTGAAATGCATAGATATTACGCAGAACTCCGATTGCGAAGGCAGCTCACAAAGGTATATCTGACACTGAGGCACGAAAGCGTGGGGAGCAAACCCTGTTTGCGCCCCACGCTTTCGTGCCTCAGTGTCAGATATACCTTTGTGAGCTGCCTTCGCAATCGGAGTTCTGCGTAATATCTATGCATTTCACCGCTACACTACGCATTCCGCCCACATCATGTACTCTCAAGTCTTGCAGTTTCAACGGCAAGGCTGAGGTTGAGCCTCAGCTTTTCACCACTGACTTGCAGGACCACC
++SRR10153499.1 1 length=453
+CCCCCCBCCFFFGGGGGGGGGGHGGGGGHHHHHHHGGGHHHHHGHGGGGGGGHHGGHHHHHHHHHHHHHHHHGHHHHHHGHGHGFHHHHHHHHHHHGHHHHHGGGGHHHHHHHHHHGHHHHHHGHHHHHHHHHHHHHGGGGGGGHHGGGGGHHHHHGGGGGGHHHHFHHHHHFHHHHGGGGGGGFGGGGGAEGGGBGGFFFFFFFFBFAFF0BFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFB9:BA>AAA1B3C@1AAGEGGGGGF0B0BBAFG1FGFGGHHHHHDGBEGFHHHDADAFGFGHFGGFF//EFFCBEFHBGHFFEAEGHFHGBFGF2GHHHEGHGGG>EHFHHFGG?EFHFGCA@CGGHHFGFH2FFHGFFHHGHHHHHHFHHHHFH1ACC@-.<F1C0FFCFH/GFGHHFHCGGHHCCCC0GCGFGEGGH0CG.C9..C
+@SRR10153499.2 2 length=426
+TACGGAAGGTTCGGGCGTTATCCGGATTTATTGGGTTTAAAGGGAGCGTAGGCCGTTTGGTAAGCGTGTTGTGAAATGTAGTAGCTCAACTTCTAGATTGCAGCGCGAACTGTCAGACTTGAGTGCGCACAACGTAGGCGGAATTCATGGTGTAGCGGTGAAATGCTTAGATATCATGAAGAACTCCGATTGCGAAGGCAGCTTACGGGAGCCTGTTTGATACCCGCACTTTCGAGCATCAGCGTCAGTTGCGCTCCCGTAAGCTGCCTTCGCAATCGGAGTTCTTCATGATATCTAAGCATTTCACCGCTACACCATGAATTCCGCCTACGTTGTGCGCACTCAAGTCTGACAGTTCGCGCTGCAATCTAGAAGTTGAGCTACTACATTTCACAACACGCTTACCAAACGGCCTACGCTCCCTTT
++SRR10153499.2 2 length=426
+CCCCCAAAAFFFGGGGGGGGGGHGGGGGHHHHHHHGGGBGHHHGHGGGGGGGHHGGGHGGHGHHHGGGGHHHGHHHHHHHHHHHGHHHHHGHHHFHHHHHHGFHGGGDGGHHHHHHEGHHHEHHHHGGGGGHGDHGHGHGGGFFHHGGHHHHHHHHGGGGEGGGGGGGGGE0FFBCFG0CFGGGGGGGAGFEEFA-CDEFDFFFFFFFF.;>AAAAFFFFFFFGGCEGAEG4BAABBEGFFHHGGGGGHHHHGGGGG1EGCFGHHHHGGFGHGEEGHGGEFEHHGHGBFFFHGGGG44F3GFHHHGHHGEE>EGGCHHHHFGHHF?EDGAHGHFAF<2?CCDGHHHHHFGGHHHG<FBGD@DFFG/0DFHDGD0GDDGFC::;:0:BFHHBB0GG0.CEEA.C.FFFBAAA;-99FFAFAD?.BBF
+~~~
+{: .output}
+
+
+
+
 ~~~
 
 ~~~
