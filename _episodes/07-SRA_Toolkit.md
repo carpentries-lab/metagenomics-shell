@@ -12,7 +12,7 @@ information, then jumped to the `SRA experiments` inmense list and return finall
 number of the sample data, and type it in one of the `SRA Toolkit` tools. This is not trivial (It should be!), so let's go 
 to explore `SRA Toolkit`
 
-## Using fasterq-dump to download data
+## fasterq-dump 
 
 In ancient times (before the sra-tools version 2.9.1), `fastq-dump` was the tool used by 
 deafult to access public dat in NCBI. But, with the 2.9.1 version, `fasterq-dump` became
@@ -103,10 +103,35 @@ You can obtain this file from [here]().
 We will move the new file to our `/data` directory and re-name it as **SRA-names.txt**:
 
 
-```bash
-$ mv ~/downloads/SRR_Acc_List ~/sra-toolkit/data/SRA-names.txt
-```
+~~~
+$ mv ~/Downloads/SRR_Acc_List ~/sra-toolkit/data/SRA-names.txt
+$ cat SRA-names.txt
+~~~
+{: .bash}
 
+~~~
+SRR10153499
+SRR10153504
+SRR10153506
+SRR10153508
+SRR10153510
+SRR10153512
+SRR10153514
+SRR10153573
+SRR10153500
+SRR10153501
+SRR10153502
+SRR10153503
+SRR10153505
+SRR10153507
+SRR10153509
+SRR10153511
+SRR10153513
+SRR10153515
+~~~
+{: .output}
+
+### Using faterq-dump to download the data
 
 ~~~
 
