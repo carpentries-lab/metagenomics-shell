@@ -263,7 +263,7 @@ CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGG
 ~~~
 {: .output}
 
-All but one of the nucleotides in this read are unknown (`N`). This is a pretty bad read!
+Most of the nucleotides are correct, although we have some unknown bases (N). This is actually a good read!
 
 Line 4 shows the quality for each nucleotide in the read. Quality is interpreted as the 
 probability of an incorrect base call (e.g. 1 in 10) or, equivalently, the base call 
