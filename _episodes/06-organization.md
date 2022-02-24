@@ -14,7 +14,7 @@ keypoints:
 - "Always save a write-protected copy of your raw data."
 ---
 
-# Getting your project started
+## Getting your project started
 
 Project organization is one of the most important parts of a sequencing project, and yet is often overlooked amidst the
 excitement of getting a first look at new data. Of course, while it is best to get yourself organized before you even begin your analyses,
@@ -114,7 +114,7 @@ workshop/results:
 ~~~
 {: .output}
 
-# Organizing your files
+## Organizing your files
 
 Before beginning any analysis, it's important to save a copy of your
 raw data. The raw data should never be changed. Regardless of how
@@ -138,7 +138,7 @@ The `docs` folder is the place to store any written analysis of your
 results, notes about how your analyses were carried out, and 
 documents related to your eventual publication.
 
-# Documenting your activity on the project
+## Documenting your activity on the project
 
 When carrying out wet-lab analyses, most scientists work from a 
 written protocol and keep a hard copy of written notes in their lab
