@@ -54,7 +54,7 @@ $ nano README.txt
 
 You should see something like this: 
 
-![02-05-01.png](../fig/02-05-01.png)
+ <img src="{{ page.root }}/fig/02-05-01.png" alt="GNU Nano Text Editor Menu" />
 
 The text at the bottom of the screen shows the keyboard shortcuts for performing various tasks in `nano`. We will talk more about how to interpret this information soon.
 
