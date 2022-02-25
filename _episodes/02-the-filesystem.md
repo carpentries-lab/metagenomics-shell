@@ -157,12 +157,12 @@ characters relate to the permissions that the file owner has, the next three rel
 three characters specify what other users outside of your group can do with the file. We're going to concentrate on the three positions
 that deal with your permissions (as the file owner). 
 
-<img src="{{ page.root }}/fig/02-02-01.png" alt="File permission parameters" />
+<img src="{{ page.root }}/fig/02-02-01.svg" alt="File permission parameters" />
 
 Here the three positions that relate to the file owner are `rw-`. The `r` means that you have permission to read the file, the `w` 
 indicates that you have permission to write to (i.e. make changes to) the file, and the third position is a `-`, indicating that you 
 don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
-talk more about this in [a later lesson](https://nselem.github.io/shell-metagenomics/05-writing-scripts/index.html)).
+talk more about this in [a later lesson](https://carpentries-incubator.github.io/shell-metagenomics/05-writing-scripts/index.html)).
 
 Our goal for now is to change permissions on this file so that you no longer have `w` or write permissions. We can do this using the `chmod` (change mode) command and subtracting (`-`) the write permission `-w`. 
 
