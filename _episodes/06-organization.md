@@ -126,7 +126,7 @@ your data that you never modify guarantees that you will always be
 able to start over if something goes wrong with your analysis. When
 starting any analysis, you can make a copy of your raw data file and
 do your manipulations on that file, rather than the raw version. We
-learned in [a previous episode](https://nselem.github.io/shell-metagenomics/03-working-with-files/index.html/#file-permissions) how to prevent overwriting our raw data
+learned in [a previous episode](https://carpentries-incubator.github.io/shell-metagenomics/02-the-filesystem/index.html) how to prevent overwriting our raw data
 files by setting restrictive file permissions. 
 
 You can store any results that are generated from your analysis in
