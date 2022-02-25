@@ -1,6 +1,7 @@
 ---
+layout: page
 title: Discussion
 ---
-FIXME
+No current Discussion
 
 {% include links.md %}
