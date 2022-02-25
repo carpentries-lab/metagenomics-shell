@@ -31,5 +31,5 @@ There are quite a few reasons to start learning about the shell:
 > [Instructor notes](./guide/index.html).
 {: .prereq}
 
-## Reference
+## Lesson Reference
 This page and the six episodes in this lesson are adapted from [Introduction to the Command Line for Genomics](https://datacarpentry.org/shell-genomics/) lesson.
