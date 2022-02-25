@@ -211,7 +211,7 @@ To learn more about Git and GitHub platforms for version control and collaborati
 
 ## Making the script into a program
 
-We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](https://nselem.github.io/shell-metagenomics/02-the-filesystem/index.html).
+We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](https://carpentries-incubator.github.io/shell-metagenomics/02-the-filesystem/index.html).
 
 First, let's look at the current permissions.
 
@@ -253,7 +253,7 @@ $ ./bad-reads-script.sh
 
 The script should run the same way as before, but now we've created our very own computer program!
 
-You will learn more about writing scripts in [a later lesson](https://carpentries-incubator.github.io/metagenomics/05-workflow/index.html).
+You will learn more about writing scripts in [a later lesson](https://carpentries-incubator.github.io/shell-metagenomics/05-writing-scripts/index.html).
 
 It is good practice to keep any large files compressed while you are not using them. In this way you save storage space, you will see that you will appreciate it when you advance in your analysis. So, since we will not use the FASTQ files for now, let's compress them. And run `ls -lh` to confirm that they are compressed. 
 
