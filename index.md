@@ -31,5 +31,8 @@ There are quite a few reasons to start learning about the shell:
 > [Instructor notes](./guide/index.html).
 {: .prereq}
 
+
+This is the second lesson of the [Metagenomics Workshop](https://carpentries-incubator.github.io/metagenomics-workshop/) comprised of four lessons in total. 
+
 ## Lesson Reference
 This page and the six episodes in this lesson are adapted from [Introduction to the Command Line for Genomics](https://datacarpentry.org/shell-genomics/) lesson.
