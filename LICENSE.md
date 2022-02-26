@@ -24,9 +24,9 @@ license terms.
 Under the following terms:
 
 * **Attribution**---You must give appropriate credit (mentioning that
-  your work is derived from work that is Copyright © Software
-  Carpentry and, where practical, linking to
-  http://software-carpentry.org/), provide a [link to the
+  your work is derived from work that is Copyright © [Claudia Zirion, Diego Garfias, Vanessa Arellano, 
+  Aaron Jaime, Abel Lovaco, Daniel Díaz, Abraham Avelar, Nelly Sélem] and, where practical, linking to
+  https://carpentries-incubator.github.io/metagenomics-workshop/), provide a [link to the
   license][cc-by-human], and indicate if changes were made. You may do
   so in any reasonable manner, but not in any way that suggests the
   licensor endorses you or your use.
@@ -48,10 +48,10 @@ Notices:
 ## Software
 
 Except where otherwise noted, the example programs and other software
-provided by Software Carpentry and Data Carpentry are made available under the
+provided by Claudia Zirion, Diego Garfias, Vanessa Arellano, Aaron Jaime, 
+Abel Lovaco, Daniel Díaz, Abraham Avelar, Nelly Sélem are made available under the
 [OSI][osi]-approved
 [MIT license][mit-license].
->>>>>>> temp/gh-pages
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
