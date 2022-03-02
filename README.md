@@ -29,7 +29,7 @@ Current maintainers of this lesson are
 
 ## Authors
 
-Shell metagenomics is authored and maintained by the [community](https://github.com/datacarpentry/shell-genomics/network/members). 
+A list of contributors to the lesson can be found in [AUTHORS](AUTHORS) 
 
 ## Citation
 
