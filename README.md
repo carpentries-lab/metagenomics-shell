@@ -3,9 +3,9 @@
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/) 
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-dc--genomics-E01563.svg)](https://swcarpentry.slack.com/messages/C9N1K7DCY) 
 
-# Shell Genomics lessons
+# Shell Metagenomics lessons
 
-An introduction to the Unix shell for people working with genomics data. This lesson is part of the [Data Carpentry Genomics Workshop](http://www.datacarpentry.org/genomics-workshop/). Please see http://www.datacarpentry.org/shell-genomics/ for a rendered version of this material.
+An introduction to the Unix shell for people working with metagenomics data. This lesson is part of the [Data Carpentry Genomics Workshop](http://www.datacarpentry.org/genomics-workshop/). Please see http://www.datacarpentry.org/shell-genomics/ for a rendered version of this material.
 
 ## Contribution
 
@@ -25,13 +25,14 @@ Current maintainers of this lesson are
 * [Diego Garfias Gallegos](https://github.com/Bedxxe)
 * [Jesus Abraham Avelar Rivas](https://github.com/AbrahamAvelar)
 * [Tania Vanessa Arellano Fernandez](https://github.com/Vanessaarfer)
+* [Edder D. Bustos-Díaz](https://github.com/EdderDaniel)
 
 ## Authors
 
-Shell Genomics is authored and maintained by the [community](https://github.com/datacarpentry/shell-genomics/network/members). 
+Shell metagenomics is authored and maintained by the [community](https://github.com/datacarpentry/shell-genomics/network/members). 
 
 ## Citation
 
 Please cite as:
 
-Erin Alison Becker, Anita Schürch, Tracy Teal, Sheldon John McKay, Jessica Elizabeth Mizzi, François Michonneau, et al. (2019, June). datacarpentry/shell-genomics: Data Carpentry: Introduction to the shell for genomics data, June 2019 (Version v2019.06.1). Zenodo. https://doi.org/10.5281/zenodo.6251246
+Nelly Sélem Mojica; Diego Garfias Gallegos; Claudia Zirión Martínez; Jesús Abraham Avelar Rivas; Aaron Jaime Espinosa; Abel Lovaco Flores; Tania Vanessa Arellano Fernandez (2022, Jan). Metagenomics for Software Carpentry lesson, Jan 2022. Zenodo. https://doi.org/10.5281/zenodo.6251246
