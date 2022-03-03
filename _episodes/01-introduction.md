@@ -224,7 +224,9 @@ there are no decorations, it's a file.
 
 To understand a little better how to move between folders, let's see the following image:
 
-<img src="{{ page.root }}/fig/02-02-01.png" alt="Folder project organization" />
+<a href="{{ page.root }}/fig/02-02-01.png">
+  <img src="{{ page.root }}/fig/02-02-01.png" width="435" height="631" alt="Folder organization example diagram"/>
+</a>
 
 Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving,
 from dc_workshop to the untrimmed_fastq folder, the path must go as they are ordered: `cd dc_workshop/data/untrimmed_fastq`
