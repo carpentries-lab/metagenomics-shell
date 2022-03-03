@@ -224,8 +224,8 @@ there are no decorations, it's a file.
 
 To understand a little better how to move between folders, let's see the following image:
 
-<a href="{{ page.root }}/fig/02-02-01.png">
-  <img src="{{ page.root }}/fig/02-02-01.png" width="435" height="631" alt="Folder organization example diagram"/>
+<a href="{{ page.root }}/fig/02-01-01.png">
+  <img src="{{ page.root }}/fig/02-01-01.png" width="435" height="631" alt="Folder organization example diagram"/>
 </a>
 
 Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving,
