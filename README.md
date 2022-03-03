@@ -3,13 +3,13 @@
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/) 
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-dc--genomics-E01563.svg)](https://swcarpentry.slack.com/messages/C9N1K7DCY) 
 
-# Shell Metagenomics lessons
+# Introduction to the Command Line for Metagenomics
 
-An introduction to the Unix shell for people working with metagenomics data. This lesson is part of the [Data Carpentry Genomics Workshop](http://www.datacarpentry.org/genomics-workshop/). Please see http://www.datacarpentry.org/shell-genomics/ for a rendered version of this material.
+An introduction lesson to the Unix shell for people working with metagenomics data. This lesson is part of the [Metagenomics Workshop](https://carpentries-incubator.github.io/metagenomics-workshop/).
 
 ## Contribution
 
-Make a suggestion or correct an error by [raising an Issue](https://github.com/datacarpentry/shell-genomics/issues).
+Make a suggestion or correct an error by [raising an Issue](https://github.com/carpentries-incubator/shell-metagenomics/issues).
 
 ## Code of Conduct
 
