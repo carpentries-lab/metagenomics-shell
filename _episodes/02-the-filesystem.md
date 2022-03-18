@@ -259,7 +259,7 @@ navigate amongst them.
 > 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
 > 4.  `original pnas_final pnas_sub`
 > 
-> <img src="{{ page.root }}/fig/02-02-02.png" alt="" />
+> <img src="{{ page.root }}/fig/filesystem-challenge.svg" alt="Filesystem diagram with folders: Users/thing/backup/2012-12-02, Users/thing/backup/2012-01-08, Users/thing/backup/2013-01-27, Users/backup/original, Users/backup/pnas_final, and Users/backup/pnas_sub" />
 > 
 > > ## Solution
 > >  1. No: there *is* a directory `backup` in `/Users`.
