@@ -1,5 +1,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4285900.svg)](https://doi.org/10.5281/zenodo.4285900)
 
+[![The Carpentries Lab Review Status](http://badges.carpentries-lab.org/11_status.svg)](https://github.com/carpentries-lab/reviews/issues/11)
+
 # Introduction to the Command Line for Metagenomics
 
 An introduction lesson to the Unix shell for people working with metagenomics data. This lesson is part of the [Metagenomics Workshop](https://carpentries-incubator.github.io/metagenomics-workshop/).
