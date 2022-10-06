@@ -23,7 +23,7 @@ keypoints:
 
 ### Our data set: FASTQ files
 
-Now that we know how to navigate around our directory structure, lets
+Now that we know how to navigate around our directory structure, let's
 start working with our sequencing files. We did a sequencing experiment and 
 have two results files, which are stored in our `untrimmed_fastq` directory. 
 
@@ -115,13 +115,15 @@ We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
 One way to examine a file is to print out all of the
-contents using the program `cat`.
+contents using the program `cat`, that will print in the screen all the content of a file.
 ~~~
-$ cat filename
+$ cat JC1A_R2.fastq
 ~~~
 
-`cat` is a terrific program, but when the file is really big (as the files we have), it can
-be annoying to use. The program, `less`, is useful for this
+`cat` is a terrific program, but, as you just saw, when the file is really big (as the files we have), it can
+be annoying to use. You can always use Ctrl+C to stop the command.  
+
+The program, `less`, is useful for this
 case. `less` opens the file as read only, and lets you navigate through it. The navigation commands
 are identical to the `man` program.
 
