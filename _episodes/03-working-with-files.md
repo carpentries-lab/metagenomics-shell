@@ -21,13 +21,11 @@ keypoints:
 
 ## Working with Files
 
-### Our data set: FASTQ files
+### Wildcards
 
 Now that we know how to navigate around our directory structure, let's
-start working with our sequencing files. We did a sequencing experiment and 
-have two results files, which are stored in our `untrimmed_fastq` directory. 
-
-### Wildcards
+start working with **our sequencing files**. We did a sequencing experiment and 
+have four result files, which are stored in our `untrimmed_fastq` directory. 
 
 Navigate to your `untrimmed_fastq` directory.
 
@@ -37,7 +35,7 @@ $ cd ~/dc_workshop/data/untrimmed_fastq
 {: .bash}
 
 We are interested in looking at the FASTQ files in this directory. We can list
-all files with the .fastq extension using the command:
+all files with the `.fastq` extension using the command:
 
 ~~~
 $ ls *.fastq
@@ -114,13 +112,13 @@ You will be glad you learned this when you need to re-run very complicated comma
 We now know how to switch directories, run programs, and look at the
 contents of directories, but how do we look at the contents of files?
 
-One way to examine a file is to print out all of the
-contents using the program `cat`, that will print in the screen all the content of a file.
+One way to examine a file is to print out on the screen all of the
+contents using the program `cat`.
 ~~~
 $ cat JC1A_R2.fastq
 ~~~
 
-`cat` is a terrific program, but, as you just saw, when the file is really big (as the files we have), it can
+`cat` is a terrific program, but, as you just saw if your ran the command, when the file is really big (as the files we have), it can
 be annoying to use. You can always use Ctrl+C to stop the command.  
 
 The program, `less`, is useful for this
@@ -236,82 +234,82 @@ AAA#>>A#1>AAGGGGGGGG#ABFEFGGHGEFGEGGGEGFHHHGGGGGGGGEEEEEGCG?EGHHHG@CC#??#???FFG#
 {: .output}
 
 
-## Details on the FASTQ format
-
-Although it looks complicated (and it is), it's easy to understand the
-[fastq](https://en.wikipedia.org/wiki/FASTQ_format) format with a little decoding. Some rules about the format
-include...
-
-|Line|Description|
-|----|-----------|
-|1|Always begins with '@' and then information about the read|
-|2|The actual DNA sequence|
-|3|Always begins with a '+' and sometimes the same info in line 1|
-|4|Has a string of characters which represent the quality scores; must have same number of characters as line 2|
-
-We can view the first complete read in one of the files our dataset by using `head` to look at
-the first four lines.
-
-~~~
-$ head -n 4 JC1A_R2.fastq
-~~~
-{: .bash}
-
-~~~
-@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
-CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGGCGGCGATCAGGCAGCGCAGCAGCAGGAGCCACCAGGGCGTGCGGTCGGGCGTCCGTTCGGCGTCCTCGCGCCCCAGCAGCAGGCGCACGCCAGGGAATCCGACCCGCCGCCGGCTCGGCCGCGTCNCCCGCNCCCGCCCCCCGAGCACCCGNAGCCNCNCCACCGCCGCCC
-+
-1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B/>EF/EGHHHHHHG?C##???/FE/ECHCE?C<FGGGGCCCGGGG@?AE.BFFEAB-9@@@FFFFFEEEEFBFF--99A-;@B=@A@@?@@>-@@--/B--@--@@-F----;@--:F---9-AB9=-@-9E-99A-;:BF-9-@@-;@-@#############################################################
-~~~
-{: .output}
-
-Most of the nucleotides are correct, although we have some unknown bases (N). This is actually a good read!
-
-Line 4 shows the quality for each nucleotide in the read. Quality is interpreted as the 
-probability of an incorrect base call (e.g. 1 in 10) or, equivalently, the base call 
-accuracy (e.g. 90%). To make it possible to line up each individual nucleotide with its quality
-score, the numerical score is converted into a code where each individual character 
-represents the numerical quality score for an individual nucleotide. For example, in the line
-above, the quality score line is: 
-
-~~~
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
-~~~
-{: .output}
-
-The `#` character and each of the `!` characters represent the encoded quality for an 
-individual nucleotide. The numerical value assigned to each of these characters depends on the 
-sequencing platform that generated the reads. The sequencing machine used to generate our data 
-uses the standard Sanger quality PHRED score encoding, Illumina version 1.8 onwards.
-Each character is assigned a quality score between 0 and 42 as shown in the chart below.
-
-~~~
-Quality encoding: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJK
-                  |         |         |         |         |
-Quality score:    0........10........20........30........40..                          
-~~~
-{: .output}
-
-Each quality score represents the probability that the corresponding nucleotide call is
-incorrect. This quality score is logarithmically based, so a quality score of 10 reflects a
-base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. 
-These probability values are the results from the base calling algorithm and dependent on how 
-much signal was captured for the base incorporation. 
-
-Looking back at our read: 
-
-~~~
-@MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
-CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNT
-+
-1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B
-~~~
-{: .output}
-
-we can now see that the quality of each of the `N`s is 0 and the quality of the only
-nucleotide call (`C`) is also very poor (`#` = a quality score of 2). This is indeed a very
-bad read. 
-
+> ## Details on the FASTQ format
+>
+> Although it looks complicated (and it is), it's easy to understand the
+> [fastq](https://en.wikipedia.org/wiki/FASTQ_format) format with a little decoding. Some rules about the format
+> include...
+> 
+> |Line|Description|
+> |----|-----------|
+> |1|Always begins with '@' and then information about the read|
+> |2|The actual DNA sequence|
+> |3|Always begins with a '+' and sometimes the same info in line 1|
+> |4|Has a string of characters which represent the quality scores; must have same number of characters as line 2|
+> 
+> We can view the first complete read in one of the files our dataset by using `head` to look at
+> the first four lines.
+> 
+> ~~~
+> $ head -n 4 JC1A_R2.fastq
+> ~~~
+> {: .bash}
+> 
+> ~~~
+> @MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
+> CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNTGGGGTTCAGCACCGGCNNGGCGAAGGCCGCGATCGCGGCGGCGGCGATCAGGCAGCGCAGCAGCAGGAGCCACCAGGGCGTGCGGTCGGGCGTCCGTTCGGCGTCCTCGCGCCCCAGCAGCAGGCGCACGCCAGGGAATCCGACCCGCCGCCGGCTCGGCCGCGTCNCCCGCNCCCGCCCCCCGAGCACCCGNAGCCNCNCCACCGCCGCCC
+> +
+> 1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B/>EF/EGHHHHHHG?C##???/FE/ECHCE?C<FGGGGCCCGGGG@?AE.BFFEAB-9@@@FFFFFEEEEFBFF--99A-;@B=@A@@?@@>-@@--/B--@--@@-F----;@--:F---9-AB9=-@-9E-99A-;:BF-9-@@-;@-@#############################################################
+> ~~~
+> {: .output}
+> 
+> Most of the nucleotides are correct, although we have some unknown bases (N). This is actually a good read!
+> 
+> Line 4 shows the quality for each nucleotide in the read. Quality is interpreted as the 
+> probability of an incorrect base call (e.g. 1 in 10) or, equivalently, the base call 
+> accuracy (e.g. 90%). To make it possible to line up each individual nucleotide with its quality
+> score, the numerical score is converted into a code where each individual character 
+> represents the numerical quality score for an individual nucleotide. For example, in the line
+> above, the quality score line is: 
+> 
+> ~~~
+> !!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
+> ~~~
+> {: .output}
+> 
+> The `#` character and each of the `!` characters represent the encoded quality for an 
+> individual nucleotide. The numerical value assigned to each of these characters depends on the 
+> sequencing platform that generated the reads. The sequencing machine used to generate our data 
+> uses the standard Sanger quality PHRED score encoding, Illumina version 1.8 onwards.
+> Each character is assigned a quality score between 0 and 42 as shown in the chart below.
+> 
+> ~~~
+> Quality encoding: !"#$%&'()\*+,-./0123456789:;<=>?@ABCDEFGHIJK
+>                   |         |         |         |         |
+> Quality score:    0........10........20........30........40..                          
+> ~~~
+> {: .output}
+> 
+> Each quality score represents the probability that the corresponding nucleotide call is
+> incorrect. This quality score is logarithmically based, so a quality score of 10 reflects a
+> base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. 
+> These probability values are the results from the base calling algorithm and dependent on how 
+> much signal was captured for the base incorporation. 
+> 
+> Looking back at our read: 
+> 
+> ~~~
+> @MISEQ-LAB244-W7:91:000000000-A5C7L:1:1101:13417:1998 2:N:0:TCGNAG
+> CGCGATCAGCAGCGGCCCGGAACCGGTCAGCCGCGCCNT
+> +
+> 1>AAADAAFFF1G11AA0000AAFE/AAE0FBAEGGG#B
+> ~~~
+> {: .output}
+> 
+> We can now see that the quality of each of the `N`s is 0 and the quality of the only
+> nucleotide call (`C`) is also very poor (`#` = a quality score of 2). This is indeed a very
+> bad read. 
+{: .callout}
 
 ## Creating, moving, copying, and removing
 
