@@ -235,7 +235,7 @@ AAA#>>A#1>AAGGGGGGGG#ABFEFGGHGEFGEGGGEGFHHHGGGGGGGGEEEEEGCG?EGHHHG@CC#??#???FFG#
 
 
 > ## Details on the FASTQ format
->
+> Since we are learning while using FASTQ files, let's understand what they are.
 > Although it looks complicated (and it is), it's easy to understand the
 > [fastq](https://en.wikipedia.org/wiki/FASTQ_format) format with a little decoding. Some rules about the format
 > include...
