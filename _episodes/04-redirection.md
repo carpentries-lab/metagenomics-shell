@@ -418,7 +418,13 @@ $ for filename in *.fastq
 > done
 ~~~
 {: .bash}
-
+~~~
+JC1A_R1
+JC1A_R2
+JP4D_R1
+JP4D_R2
+~~~
+{: .output}
 
 
 > ## Exercise 3: Using `basename`
