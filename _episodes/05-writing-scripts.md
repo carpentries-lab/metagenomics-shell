@@ -173,42 +173,6 @@ It will look like nothing happened, but now if you look at `scripted_bad_reads.t
 > {: .solution}
 {: .challenge}
 
-## Versioning scripts with Git and GitHub
-A good coding practice is to keep versions of the scripts you code. 
-That way, you can control what it is functional on each version, 
-and you can always come back to older versions if something goes wrong 
-with the new ones. Git is a version control system that helps you 
-keep track of the entire history of the scripts that you are
-working on and facilitates collaboration on projects.
-GitHub is a web-based service for version control and online 
-collaboration. It is a hosting service for Git repositories, 
-and is a handy platform for backup of software code and files.
-GitHub acts as a social networking site for software developers 
-where they can manage projects and build their portfolio.
-
-Git is alradey installed in you machine, let's have a look at its help command: 
-
-~~~
-git --help
-~~~
-{: .bash}
-
-The first lines of the git help are displayed below:
-~~~
-usage: git [--version] [--help] [-C <path>] [-c name=value] 
-[--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]        
-[-p | --paginate | --no-pager] [--no-replace-objects] [--bare]                                              
-[--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]                                                
-<command> [<args>]
-These are common Git commands used in various situations:                                                                                                                                                               
-start a working area (see also: git help tutorial)                                                             
-clone      Clone a repository into a new directory 
-~~~
-{: .output}
-
-To learn more about Git and GitHub platforms for version control and collaborative development, check the Software Carpentries website https://swcarpentry.github.io/git-novice/
-
-
 ## Making the script into a program
 
 We had to type `bash` because we needed to tell the computer what program to use to run this script. Instead we can turn this script into its own program. We need to tell it that it's a program by making it executable. We can do this by changing the file permissions. We talked about permissions in [an earlier episode](https://carpentries-incubator.github.io/shell-metagenomics/02-the-filesystem/index.html).
@@ -252,8 +216,6 @@ $ ./bad-reads-script.sh
 {: .bash}
 
 The script should run the same way as before, but now we've created our very own computer program!
-
-You will learn more about writing scripts in [a later lesson](https://carpentries-incubator.github.io/shell-metagenomics/05-writing-scripts/index.html).
 
 It is good practice to keep any large files compressed while you are not using them. In this way you save storage space, you will see that you will appreciate it when you advance in your analysis. So, since we will not use the FASTQ files for now, let's compress them. And run `ls -lh` to confirm that they are compressed. 
 
