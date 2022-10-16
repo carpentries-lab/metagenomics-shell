@@ -57,7 +57,7 @@ You should see something like this:
 <a href="{{ page.root }}/fig/02-05-01.png">
   <img src="{{ page.root }}/fig/02-05-01.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
 </a>
-<em> Figure 1. "GNU Nano Text Editor Menu". <em/>
+<em> Figure 1. GNU Nano Text Editor Menu. <em/>
 
 The text at the bottom of the screen shows the keyboard shortcuts for performing various tasks in `nano`. We will talk more about how to interpret this information soon.
 
@@ -87,10 +87,10 @@ The text at the bottom of the screen shows the keyboard shortcuts for performing
 
 Let's type in a few lines of text. Describe what the files in this
 directory are or what you've been doing with them.
-    <a href="{{ page.root }}/fig/02-05-01.png">
-  <img src="{{ page.root }}/fig/02-05-01.png" alt="The same screen as before but now it has text in the middle part." />
+    <a href="{{ page.root }}/fig/02-05-02.png">
+  <img src="{{ page.root }}/fig/02-05-02.png" alt="The same screen as before but now it has text in the middle part." />
 </a>
-<em> Figure 2. "Example README file written in nano". <em/>
+<em> Figure 2. Example README file written in nano. <em/>
     
 Once we're happy with our text, we can press <kbd>Ctrl</kbd>-<kbd>O</kbd> (press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
 holding it down, press the <kbd>O</kbd> key) to write our data to disk. You'll be asked what file we want to save this to:
