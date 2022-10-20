@@ -225,7 +225,7 @@ there are no decorations, it's a file.
 To understand a little better how to move between folders, let's see the following image:
 
 <a href="{{ page.root }}/fig/02-01-01.png">
-  <img src="{{ page.root }}/fig/02-01-01.png" width="870" height="631" alt="Folder organization example diagram"/>
+  <img src="{{ page.root }}/fig/02-01-01.png" width="870" height="631" alt="Folder organization diagram showing a parent directory called dc_workshop, with tree subdirectories called data, mags, and taxonomy. Insida data there is another one called untrimmed_fastq, and inside taxonomy there is another one called mags_taxonomy."/>
 </a>
 
 Here we can see a diagram of how the folders are arranged one inside another. In this way, if we think about moving,
