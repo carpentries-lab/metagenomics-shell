@@ -158,7 +158,9 @@ three characters specify what other users outside of your group can do with the 
 that deal with your permissions (as the file owner). 
 
 <img src="{{ page.root }}/fig/02-02-01.svg" alt="File permission parameters" />
-
+<a href="{{ page.root }}/fig/02-02-01.svg">
+  <img src="{{ page.root }}/fig/02-02-01.svg" width="870" height="631" alt="The file permission parameters described in the text (-rw-rw-r--) showing which of the slots correspond to who has permissions, and a legend showing the meaning of the letters."/>
+</a>
 Here the three positions that relate to the file owner are `rw-`. The `r` means that you have permission to read the file, the `w` 
 indicates that you have permission to write to (i.e. make changes to) the file, and the third position is a `-`, indicating that you 
 don't have permission to carry out the ability encoded by that space (this is the space where `x` or executable ability is stored, we'll 
