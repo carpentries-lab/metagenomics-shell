@@ -336,7 +336,7 @@ $ ls -F
 {: .bash}
 
 ~~~
-JC1A_R1.fastq  JC1A_R2-copy.fastq  JC1A_R2.fastq  JP4D_R1.fastq  JP4D_R2.fastq
+JC1A_R1.fastq  JC1A_R2-copy.fastq  JC1A_R2.fastq  JP4D_R1.fastq  JP4D_R2.fastq  TruSeq3-PE.fa
 ~~~
 {: .output}
 
