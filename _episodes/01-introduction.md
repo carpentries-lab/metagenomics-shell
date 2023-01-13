@@ -57,7 +57,7 @@ on your computer. If you're using Windows, you'll need to download a separate pr
 In this workshop, we suggest using a remote server to invest most of our time learning the basics of shell by manipulating some experimental data. The remote server already includes the required bioinformatics packages as well as the large datasets that usually take a lot of time to load into everyone's local computers.
 
 > ## Shell alternatives
-> >
+> 
 > In case you decide to follow the lesson locally, you won't need to use `ssh` command.
 >  The same situation will occur if you are working in a R Studio terminal through AWS. In the later, you'll access the server with an user and password but in both cases you might need to install some dependencies or set up a work environment.
 >
