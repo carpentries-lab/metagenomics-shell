@@ -207,7 +207,7 @@ data	mags  taxonomy
 {: .output}
 
 We can make the `ls` output more comprehensible by using the **flag** `-F`,
-which tells `ls` to add a trailing `/` to the names of directories:
+which tells `ls` to add a trailing `/` to the names of directories, or other symbols to identify the type of elements in the directory:
 
 ~~~
 $ ls -F
@@ -286,7 +286,7 @@ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq.gz  JP4D_R2.fastq.gz  TruSeq3-
 ~~~
 {: .output}
 
-This directory contains four files with `.fastq.gz` extensions. FASTQ is a format
+This directory contains a file `TruSeq3-PE.fa`, that we will use in a later lesson and four files with `.fastq.gz` extensions. FASTQ is a format
 for storing information about sequencing reads and their quality. GZ is an archive file compressed.
 We will be learning more about FASTQ files in a later lesson. These data comes in a compressed format, 
 which is why there is a `.gz` at the end of the files. 
