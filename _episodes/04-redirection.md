@@ -112,15 +112,12 @@ AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//?
 > > ## Solution  
 > > 1. To search for the GATCGAGAGGGGATAGGCG sequence in the file JC1A_R2.fastq:  
 > > `grep -B1 GATCGAGAGGGGATAGGCG JC1A_R2.fastq`  
-> > as you are only searching for the line that contains the sequence, you could run grep without flags
-> >    `grep GATCGAGAGGGGATAGGCG JC1A_R2.fastq`  
-> >The output shows all of the lines that contain the sequence GATCGAGAGGGGATAGGCG.
+> > The output shows all of the lines that contain the sequence GATCGAGAGGGGATAGGCG. The flag -B1 shows one line before which in FastQ files is the identifier of each sequence that matches your query.
 > >    
+> >   
 > > 2. To search for a sequence in all of the FastQ files you could use the asterisk `*` wildcard before the file extension .fastq
 > >    `grep -B1 AAGTT *.fastq`  
-> > or the simpler line  
-> >    `grep AAGTT *.fastq`  
-> > In these cases, the lines with the sequence AAGTT are shown for all of the files that end with '.fastq' in the current directory. The output shows the name of the file followed by semicolon to differentiate what file each line comes from.
+> > In this case, the lines with the sequence AAGTT are shown for all of the files that end with '.fastq' in the current directory. The output shows the name of the file followed by semicolon to differentiate what file each line comes from.
 > > 
 > {: .solution}
 {: .challenge}
