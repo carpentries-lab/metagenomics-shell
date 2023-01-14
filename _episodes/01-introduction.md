@@ -312,7 +312,7 @@ JC1A_R1.fastq  JC1A_R2.fastq  JP4D_R1.fastq  JP4D_R2.fastq  TruSeq3-PE.fa
 
 ### Shortcut: Tab Completion
 
-Usually the key Tab is located on the left side of the keyboard just above the "Shift" key or "Mayus" key. 
+Usually the key Tab is located on the left side of the keyboard just above the "Shift" key or "Caps lock" key. 
 
 Typing out file or directory names can waste a
 lot of time and it's easy to make typing mistakes. Instead we can use tab complete 
@@ -337,11 +337,10 @@ $ cd dc<tab>
 The shell will fill in the rest of the directory name for
 `dc_workshop`.
 
-Now change directories to `data` in `dc_workshop`
+Now change directories to `dc_workshop`
 
 ~~~
 $ cd dc_workshop
-$ cd data
 ~~~
 {: .bash}
 
@@ -349,11 +348,9 @@ Using tab complete can be very helpful. However, it will only autocomplete
 a file or directory name if you've typed enough characters to provide
 a unique identifier for the file or directory you are trying to access.
 
-If we navigate back to our `data` directory and try to access one of our sample files:
+If we navigate to our `data` directory and try to access one of our sample files:
 
 ~~~
-$ cd
-$ cd dc_workshop
 $ cd data/untrimmed_fastq
 $ ls JC<tab>
 ~~~
