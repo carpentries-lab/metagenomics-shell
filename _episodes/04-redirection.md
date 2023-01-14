@@ -119,7 +119,7 @@ AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//?
 > >    
 > >   
 > > 2. To search for a sequence in all of the FastQ files you could use the asterisk `*` wildcard before the file extension .fastq
-> >> >~~~
+> >~~~
 > > $ grep -B1 AAGTT *.fastq
 > >~~~  
 > > In this case, the lines with the sequence AAGTT are shown for all of the files that end with '.fastq' in the current directory. The output shows the name of the file followed by semicolon to differentiate what file each line comes from.
