@@ -116,8 +116,6 @@ AAA11BB3333BGG1GGEC1E?0E0B0BFDGFHD2FBH110A1BEE?A/BAFBDGH///>FEGGG><@/#//?#?/#//?
 > >~~~
 >> {: .bash}
 > > The output shows all of the lines that contain the sequence GATCGAGAGGGGATAGGCG. As the flag -B1 is used, it also shows the previous line to each occurence. In a FastQ file the identifier of each sequence is one line avobe the sequence itself, therefore in this example you can see the names and the sequences that match your query.
-> >    
-> >   
 > > 2. To search for a sequence in all of the FastQ files you could use the asterisk `*` wildcard before the file extension .fastq
 > >~~~
 > > $ grep -B1 AAGTT *.fastq
