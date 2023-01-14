@@ -145,17 +145,7 @@ $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 ~~~
 {: .bash}
 
-> ## File extensions
-> 
-> You might be confused about why we're naming our output file with a `.txt` extension. After all,
-> it will be holding FASTQ formatted data that we're extracting from our FASTQ files. Won't it 
-> also be a FASTQ file? The answer is, yes - it will be a FASTQ file and it would make sense to 
-> name it with a `.fastq` extension.  However, using a `.fastq` extension will lead us to problems
-> when we move to using wildcards later in this episode. We'll point out where this becomes
-> important. For now, it's good that you're thinking about file extensions! 
-> 
-{: .callout}
-
+  
 
 The prompt should sit there a little bit, and then it should look like nothing
 happened. But type `ls`. You should see a new file called `bad_reads.txt`. 
@@ -276,31 +266,7 @@ $ wc -l bad_reads.txt
 ~~~
 {: .output}
 
-> ##  Input file is also the output.
-> 
-> Be carefull to avoid that the list of input files '*.fastq' includes the output file. 
-> If the output is also an input, it will lead to warning messages and unintendend results in your output file.
-> 
-> This is where we would have trouble if we were naming our output file with a `.fastq` extension as explained in the 'File extensions box avobe'. 
-> If we already had a file called `bad_reads.fastq` (from our previous `grep` practice) 
-> and then ran the command above using a `.fastq` extension instead of a `.txt` extension, `grep`
-> would give us a warning. 
-> 
-> ~~~
-> grep -B1 -A2 NNNNNNNNNN *.fastq > bad_reads.fastq
-> ~~~
-> {: .bash}
-> 
-> ~~~
-> grep: input file ‘bad_reads.fastq’ is also the output
-> ~~~
-> {: .output}
-> 
-> `grep` is letting you know that the output file `bad_reads.fastq` is also included in your
-> `grep` call because it matches the `*.fastq` pattern. Be careful with this as it can lead to
-> some unintended results.
-> 
-{: .callout}
+   
 
 Since we might have multiple different criteria we want to search for, 
 creating a new output file each time has the potential to clutter up our workspace. We also
