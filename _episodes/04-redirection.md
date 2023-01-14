@@ -150,7 +150,7 @@ $ grep -B1 -A2 NNNNNNNNNN JC1A_R2.fastq > bad_reads.txt
 > You might be confused about why we're naming our output file with a `.txt` extension. After all,
 > it will be holding FASTQ formatted data that we're extracting from our FASTQ files. Won't it 
 > also be a FASTQ file? The answer is, yes - it will be a FASTQ file and it would make sense to 
-> name it with a `.fastq` extension. However, using a `.fastq` extension will lead us to problems
+> name it with a `.fastq` extension.  However, using a `.fastq` extension will lead us to problems
 > when we move to using wildcards later in this episode. We'll point out where this becomes
 > important. For now, it's good that you're thinking about file extensions! 
 > 
@@ -276,9 +276,12 @@ $ wc -l bad_reads.txt
 ~~~
 {: .output}
 
-> ## File extensions - part 2
+> ##  Input file is also the output.
 > 
-> This is where we would have trouble if we were naming our output file with a `.fastq` extension. 
+> Be carefull to avoid that the list of input files '*.fastq' includes the output file. 
+> If the output is also an input, it will lead to warning messages and unintendend results in your output file.
+> 
+> This is where we would have trouble if we were naming our output file with a `.fastq` extension as explained in the 'File extensions box avobe'. 
 > If we already had a file called `bad_reads.fastq` (from our previous `grep` practice) 
 > and then ran the command above using a `.fastq` extension instead of a `.txt` extension, `grep`
 > would give us a warning. 
