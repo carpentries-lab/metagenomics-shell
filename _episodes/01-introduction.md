@@ -54,12 +54,12 @@ In this lesson you will learn how to use the command line interface to move arou
 On a Mac or Linux machine, you can access a shell through a program called Terminal, which is already available
 on your computer. If you're using Windows, you'll need to download a separate program to access the shell (see installation instructions [here](https://carpentries-incubator.github.io/metagenomics-workshop/setup.html)).
 
-In this workshop, we suggest using a remote server to invest most of our time learning the basics of shell by manipulating some experimental data. The remote server already includes the required bioinformatics packages as well as the large datasets that usually take a lot of time to load into everyone's local computers.
+In this workshop, we suggest using a remote server, to invest most of our time learning the basics of shell by manipulating some experimental data, instead of dealing with installations. The remote server already includes the required bioinformatics packages as well as the large datasets that usually take a lot of time to load into everyone's local computers.
 
 > ## Shell alternatives
 > 
-> In case you decide to follow the lesson locally, you won't need to use `ssh` command.
->  The same situation will occur if you are working in a R Studio terminal through AWS. In the later, you'll access the server with an user and password but in both cases you might need to install some dependencies or set up a work environment.
+> In case you decide to follow the lesson on your computer, you won't need to use `ssh` command because you will connect to the remote machine.  
+> If you are working on a remote machine that includes RStudio (which you will open in a browser) you can work in the terminal that is included in RStudio.
 >
 {: .callout}
 
