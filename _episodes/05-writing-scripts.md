@@ -256,7 +256,6 @@ tasks by default, so you'll need to give the programs somewhat different options
 the same behaviour, but they are mostly interchangeable.
 
  - ``wget`` is short for "world wide web get", and it's basic function is to *download*
- web pages or data at a web address.
 
  - ``cURL`` is a pun, it is suppose to be read as "see URL", so it's basic function is
  to *display* webpages or data at a web address.
@@ -341,6 +340,20 @@ should not be logged into your instance, it should be showing your local compute
 using a transfer program, it needs to be installed on your local machine, not your instance.**
 
 ## Transferring data between your local machine and the cloud
+While following this lesson, you may be using the r-studio terminal, other bash terminal or a local
+installation of the needed bioinformatic tools. Depending on your setup, 
+there are several alternatives to transfer the files. Here we describe how to use r-studio interface 
+to transfer files and we left as an exercise the steps needes to use `scp` commans
+ 
+    
+> ## Transferring files scenarios
+> 
+> If you are working on your **local** computer there is no need to transfer files because you have your files on your local computer. 
+> You will only need to knowthe directory where you are working in.
+> If you are working on a remote machine, such as an AWS instance you can use the `scp` command 
+{: .callout}
+    
+
 ### Downloading files with R Studio
 1. Choose the file to download
 <a href="{{ page.root }}/fig/02-05-03.png">
@@ -389,14 +402,10 @@ using a transfer program, it needs to be installed on your local machine, not yo
   <img src="{{ page.root }}/fig/02-05-12.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
 </a>
 
-> ## Transferring data alternatives
-> 
-> If you are working on your local computer this step is optional, because you have your file on your local computer. Therefore is important to know the directory when you are working.
->
-{: .callout}
 ### Uploading data to your virtual machine with `scp`
 
-`scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
+  
+>> `scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
 between computers. The simplest way to use `scp` is to run it in your local terminal,
 and use it to copy a single file:
 
@@ -447,3 +456,8 @@ $ find ~ -name *.txt
 $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
 ~~~
 {: .bash}
+
+    
+
+
+    
