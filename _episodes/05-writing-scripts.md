@@ -341,7 +341,59 @@ should not be logged into your instance, it should be showing your local compute
 using a transfer program, it needs to be installed on your local machine, not your instance.**
 
 ## Transferring data between your local machine and the cloud
+### Downloading files with R Studio
+1. Choose the file to download
+<a href="{{ page.root }}/fig/02-05-03.png">
+  <img src="{{ page.root }}/fig/02-03-01.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+    
+2. Choose the option “More”.
+<a href="{{ page.root }}/fig/02-05-04.png">
+  <img src="{{ page.root }}/fig/02-04-01.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
 
+3. Choose the option “export”
+<a href="{{ page.root }}/fig/02-05-05.png">
+  <img src="{{ page.root }}/fig/02-05-05.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+
+4. Display an emergent window on your screen, so you select “Download”.
+<a href="{{ page.root }}/fig/02-05-06.png">
+  <img src="{{ page.root }}/fig/02-05-06.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>  
+ 
+5. You can view your file downloading on your local computer.
+<a href="{{ page.root }}/fig/02-05-07.png">
+  <img src="{{ page.root }}/fig/02-05-07.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+
+### Upload files to the environment in R Studio
+1. Choose the option “Upload” in your terminal.
+<a href="{{ page.root }}/fig/02-05-08.png">
+  <img src="{{ page.root }}/fig/02-05-08.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+2. Display an emergent window on your screen, so you select “selection file”.
+<a href="{{ page.root }}/fig/02-05-09.png">
+  <img src="{{ page.root }}/fig/02-05-09.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+3. Display a new screen from your computer so you choose the file to upload and later click on “open”.
+<a href="{{ page.root }}/fig/02-05-10.png">
+  <img src="{{ page.root }}/fig/02-05-10.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+4. Finally, you check if the file is the correct one to upload and later click on “ok”.
+<a href="{{ page.root }}/fig/02-05-11.png">
+  <img src="{{ page.root }}/fig/02-05-11.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+5. Now, you can view the new file to upload to your terminal of RStudio.
+<a href="{{ page.root }}/fig/02-05-12.png">
+  <img src="{{ page.root }}/fig/02-05-12.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+</a>
+
+> ## Transferring data alternatives
+> 
+> If you are working on your local computer this step is optional, because you have your file on your local computer. Therefore is important to know the directory when you are working.
+>
+{: .callout}
 ### Uploading data to your virtual machine with `scp`
 
 `scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
