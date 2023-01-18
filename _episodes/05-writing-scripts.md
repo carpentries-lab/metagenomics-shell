@@ -357,12 +357,12 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 ### Downloading files with R Studio
 1. Choose the file to download
 <a href="{{ page.root }}/fig/02-05-03.png">
-  <img src="{{ page.root }}/fig/02-03-01.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+  <img src="{{ page.root }}/fig/02-05-03.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
 </a>
     
 2. Choose the option “More”.
 <a href="{{ page.root }}/fig/02-05-04.png">
-  <img src="{{ page.root }}/fig/02-04-01.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
+  <img src="{{ page.root }}/fig/02-05-04.png" alt="nano screen with the name of the file in the top bar, a blanck screen to write in in the middle, and a bottom bar with the shortcuts for the available instructions in nano." />
 </a>
 
 3. Choose the option “export”
