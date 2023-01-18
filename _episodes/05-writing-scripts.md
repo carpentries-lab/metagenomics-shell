@@ -376,7 +376,7 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
      height="300" />
 </a>
 
-4. Display an emergent window on your screen, so you select “Download”.
+4. Displayed an emergent window on your screen and you select “Download”.
 <a href="{{ page.root }}/fig/02-05-06.png">
   <img src="{{ page.root }}/fig/02-05-06.png" alt="Download data with R studio." 
      width="800" 
@@ -391,21 +391,21 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 </a>
 
 ### Upload files to the environment in R Studio
-1. Choose the option “Upload” in your terminal.
+1. Choose the option 'Upload' in your terminal.
 <a href="{{ page.root }}/fig/02-05-08.png">
   <img src="{{ page.root }}/fig/02-05-08.png" alt="Upload data with R studio." 
      width="800" 
      height="300" />
 </a>
     
-2. Display an emergent window on your screen, so you select “selection file”.
+2. Displayed an emergent window on your screen and you select “selection file”.
 <a href="{{ page.root }}/fig/02-05-09.png">
   <img src="{{ page.root }}/fig/02-05-09.png" alt="Upload data with R studio." 
      width="800" 
      height="300" />
 </a>
     
-3. Display a new screen from your computer so you choose the file to upload and later click on “open”.
+3. Displayed a new screen from your computer and you choose the file to upload, later click on “open”.
 <a href="{{ page.root }}/fig/02-05-10.png">
   <img src="{{ page.root }}/fig/02-05-10.png" alt="Upload data with R studio." 
      width="500" 
@@ -419,7 +419,7 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
      height="300" />
 </a>
     
-5. Now, you can view the new file to upload to your terminal of RStudio.
+5. Now, you can view a new file in your terminal of R Studio
 <a href="{{ page.root }}/fig/02-05-12.png">
   <img src="{{ page.root }}/fig/02-05-12.png" alt="Upload data with R studio." 
      width="800" 
