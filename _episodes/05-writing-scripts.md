@@ -427,49 +427,45 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 </a>
     
  
-### Uploading data to your virtual machine with `scp`  
+### Transferring data to your virtual machine with `scp`  
     
 
-> ## Exercise 2: Edit a script
+> ## Exercise 4: Uploading data with `scp`  
 >`scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
 > between computers. The simplest way to use `scp` is to run it in your local terminal,
-> and use it to copy a single file:
+> and use it to copy a single file     
+> ~~~
+> scp <file I want to move> <where I want to move it>
+> ~~~
+> {: .bash}
+> ~~~
+> $ scp <local file> <AWS instance>
+> ~~~
+> {: .bash}
+> To move it back, you just re-order the to and from fields:
+>
+> ~~~
+> $ scp <AWS instance> <local file>
+> ~~~
+> {: .bash}
+> What does the next commands do?
+> ~~~
+> $  scp local_file.txt dcuser@ip.address:/home/dcuser/
+> ~~~
+> {: .bash}
+>
+> ~~~
+> $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
+> ~~~
+> {: .bash}
+>
 > > ## Solution
-> > 
+> >    A)  upload the file local_file.txt to the dcuser home directory:
+> >    B) Download the bad reads file in ~/data/scripted_bad_reads.txt to your home ~/Download directory
+> >       **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**
 > {: .solution}
 {: .challenge}
     
-
-~~~
-scp <file I want to move> <where I want to move it>
-~~~
-{: .bash}
-
-Note that you are always running `scp` locally, but that *doesn't* mean that
-you can only move files from your local computer. A command like:
-
-~~~
-$ scp <local file> <AWS instance>
-~~~
-{: .bash}
-
-To move it back, you just re-order the to and from fields:
-
-~~~
-$ scp <AWS instance> <local file>
-~~~
-{: .bash}
-
-#### Uploading data to your virtual machine with scp
-
-1. Open the terminal and use the `scp` command to upload a file (e.g. local_file.txt) to the dcuser home directory:
-
-~~~
-$  scp local_file.txt dcuser@ip.address:/home/dcuser/
-~~~
-{: .bash}
-
-#### Downloading data from your virtual machine with `scp`
 
 Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/data/untrimmed_fastq/scripted_bad_reads.txt.
 
@@ -481,14 +477,6 @@ $ find ~ -name *.txt
 {: .bash}
 
 
-1. Download the bad reads file in ~/data/scripted_bad_reads.txt to your home ~/Download directory using the following command **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**:
-
-~~~
-$ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
-~~~
-{: .bash}
-
-    
 
 
     
