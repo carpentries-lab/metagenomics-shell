@@ -357,14 +357,14 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 ### Downloading files with R Studio
 1. Choose the file to download
 <a href="{{ page.root }}/fig/02-05-03.png">
-  <img src="{{ page.root }}/fig/02-03-01.png" alt="Download data with R studio." 
+  <img src="{{ page.root }}/fig/02-05-03.png" alt="Download data with R studio." 
      width="800" 
      height="400" />
 </a>
     
 2. Choose the option “More”.
 <a href="{{ page.root }}/fig/02-05-04.png">
-  <img src="{{ page.root }}/fig/02-04-01.png" alt="Download data with R studio." 
+  <img src="{{ page.root }}/fig/02-05-04.png" alt="Download data with R studio." 
      width="800" 
      height="400" />
 </a>
