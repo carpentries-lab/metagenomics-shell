@@ -58,7 +58,7 @@ In this workshop, we suggest using a remote server, to invest most of our time l
 
 > ## Shell alternatives
 > 
-> In case you decide to follow the lesson on your computer, you won't need to use `ssh` command because you will connect to the remote machine.  
+> In case you decide to follow the lesson on your computer, you won't need to use `ssh` command because you will not connect to a remote machine.  
 > If you are working on a remote machine that includes RStudio (which you will open in a browser) you can work in the terminal that is included in RStudio.
 >
 {: .callout}
