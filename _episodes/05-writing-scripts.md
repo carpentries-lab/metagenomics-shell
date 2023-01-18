@@ -429,11 +429,12 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
  
 ### Transferring data between yourlocal and virtual machine with `scp`  
     
-
+`scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
+between computers. The simplest way to use `scp` is to run it in your local terminal,
+and use it to copy a single file.  
+    
 > ## Exercise 3: Uploading data with `scp`  
->`scp` stands for 'secure copy protocol', and is a widely used UNIX tool for moving files
-> between computers. The simplest way to use `scp` is to run it in your local terminal,
-> and use it to copy a single file     
+> 
 > ~~~
 > scp <file I want to move> <where I want to move it>
 > ~~~
