@@ -398,7 +398,9 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
     
 4. Finally, you check if the file is the correct one to upload and later click on “ok”.
 <a href="{{ page.root }}/fig/02-05-11.png">
-  <img src="{{ page.root }}/fig/02-05-11.png" alt="Upload data with R studio." />
+  <img src="{{ page.root }}/fig/02-05-11.png" alt="Upload data with R studio."
+     width="400" 
+     height="500" />
 </a>
     
 5. Now, you can view the new file to upload to your terminal of RStudio.
