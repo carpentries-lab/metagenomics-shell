@@ -365,37 +365,37 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 2. Choose the option “More”.
 <a href="{{ page.root }}/fig/02-05-04.png">
   <img src="{{ page.root }}/fig/02-05-04.png" alt="Download data with R studio." 
-     width="800" 
-     height="300" />
+     width="826" 
+     height="235" />
 </a>
 
 3. Choose the option “export”
 <a href="{{ page.root }}/fig/02-05-05.png">
   <img src="{{ page.root }}/fig/02-05-05.png" alt="Download data with R studio." 
-     width="800" 
-     height="300" />
+     width="960" 
+     height="555" />
 </a>
 
 4. Displayed an emergent window on your screen and you select “Download”.
 <a href="{{ page.root }}/fig/02-05-06.png">
   <img src="{{ page.root }}/fig/02-05-06.png" alt="Download data with R studio." 
-     width="800" 
-     height="300" />
+     width="729" 
+     height="399" />
 </a>  
  
 5. You can view your file downloading on your local computer.
 <a href="{{ page.root }}/fig/02-05-07.png">
   <img src="{{ page.root }}/fig/02-05-07.png" alt="Download data with R studio." 
-     width="800" 
-     height="300" />
+     width="826" 
+     height="235" />
 </a>
 
 ### Upload files to the environment in R Studio
 1. Choose the option 'Upload' in your terminal.
 <a href="{{ page.root }}/fig/02-05-08.png">
   <img src="{{ page.root }}/fig/02-05-08.png" alt="Upload data with R studio." 
-     width="800" 
-     height="400" />
+     width="826" 
+     height="235" />
 </a>
     
 2. Displayed an emergent window on your screen and you select “selection file”.
@@ -408,8 +408,8 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 3. Displayed a new screen from your computer and you choose the file to upload, later click on “open”.
 <a href="{{ page.root }}/fig/02-05-10.png">
   <img src="{{ page.root }}/fig/02-05-10.png" alt="Upload data with R studio." 
-     width="900" 
-     height="700" />
+     width="1623" 
+     height="920" />
 </a>
     
 4. Finally, you check if the file is the correct one to upload and later click on “ok”.
