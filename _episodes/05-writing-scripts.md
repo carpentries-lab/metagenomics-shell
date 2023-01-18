@@ -408,7 +408,7 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 3. Display a new screen from your computer so you choose the file to upload and later click on “open”.
 <a href="{{ page.root }}/fig/02-05-10.png">
   <img src="{{ page.root }}/fig/02-05-10.png" alt="Upload data with R studio." 
-     width="800" 
+     width="500" 
      height="300" />
 </a>
     
