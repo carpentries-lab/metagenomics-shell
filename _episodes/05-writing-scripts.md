@@ -372,7 +372,7 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
 3. Choose the option “export”
 <a href="{{ page.root }}/fig/02-05-05.png">
   <img src="{{ page.root }}/fig/02-05-05.png" alt="Download data with R studio." 
-     width="960" 
+     width="826" 
      height="555" />
 </a>
 
