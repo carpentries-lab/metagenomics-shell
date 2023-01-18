@@ -348,8 +348,8 @@ to transfer files and we left as an exercise the steps needes to use `scp` comma
     
 > ## Transferring files scenarios
 > 
-> If you are working on your **local** computer there is no need to transfer files because you have your files on your local computer. 
-> You will only need to knowthe directory where you are working in.
+> If you are working on your **local** computer there is no need to transfer files because you have your files on your local computer.   
+> In that case, you only need to know the directory where you are working in.  
 > If you are working on a remote machine, such as an AWS instance you can use the `scp` command 
 {: .callout}
     
