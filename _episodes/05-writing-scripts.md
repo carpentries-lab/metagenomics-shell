@@ -13,7 +13,8 @@ objectives:
 keypoints:
 - Scripts are a collection of commands executed together.
 - In a terminal, `scp` transfers information to and from virtual and local computers.
-- Scripts are executable text files.  
+- Scripts are executable text files.
+- `nano` is a text editor.
 - R studio remote interface allows the transfer of information between virtual and local computers.
 ---
 
