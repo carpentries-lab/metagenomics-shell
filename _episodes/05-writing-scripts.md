@@ -12,8 +12,6 @@ objectives:
 - Use `chmod` to make a script an executable program.
 keypoints:
 - Scripts are a collection of commands executed together.
-- Scripts are executable text files.  
-- `nano` is a text editor.
 - In a terminal, `scp` transfers information to and from virtual and local computers.
 - R studio remote interface allows the transfer of information between virtual and local computers.
 ---
