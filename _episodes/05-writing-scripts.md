@@ -337,42 +337,41 @@ machine, not your local one.
 ### Moving files between your laptop and your instance
 
 What if the data you need is on your local computer, but you need to get it *into* the
-cloud? There are also several ways to do this. While following this lesson, you may use 
-the R studio interface containing a terminal, some other terminal, or a local
-installation of the needed bioinformatic tools. Depending on your setup, 
-there are several alternatives to transfer the files. Here we describe how to use the R studio interface 
-to transfer files, and we left the steps needed to use `scp` commands as an exercise.
+cloud? There are several ways to do this. While following this lesson, you may be using
+the RStudio interface containing a terminal, some other terminal, or your own local computer. Depending on your setup, 
+there are several alternatives to transfer the files. Here we describe how to use the RStudio interface 
+to transfer files..
  
     
 > ## Transferring files scenarios
-> 1. If you are working on your **local** computer, there is no need to transfer files because you have your files on your local computer.   
+> 1. If you are working on your **local** computer, there is no need to transfer files because you already have them locally.   
 > In that case, you only need to know the directory you are working in.  
 > 2. If you are working on a remote machine such as an AWS instance, you can use the `scp` command. In that case, it is *always* easier
-to start the transfer locally. ** If you are typing into a terminal, the terminal should not be logged into your instance. It should show your local computer. If you are using a transfer program, it needs to be installed on your local machine, not your instance.**     
-> 3. If you have access to the **R studio interface**, you can transfer files between your local and your remote machine.  
+to start the transfer locally. **If you are typing into a terminal, the terminal should not be logged into your instance. It should show your local computer. If you are using a transfer program, it needs to be installed on your local machine, not your instance.**     
+> 3. If you are using the **RStudio server** from the AWS instance, you can transfer files between your local and your remote machine using the graphic interface of RStudio.  
 {: .callout}
     
 
-### Downloading files with R Studio
-We will follow the next five steps to download files with the R studio interface. 
+### Downloading files in RStudio
+We will follow the next five steps to download files with the RStudio interface. 
     
 1. First, we select the file to download from the bottom right panel.  
 <a href="{{ page.root }}/fig/02-05-03.png">
-  <img src="{{ page.root }}/fig/02-05-03.png" alt="Download data with R studio." 
+  <img src="{{ page.root }}/fig/02-05-03.png" alt="Download data with R Studio." 
      width="826" 
      height="235"
      alt="Bottom right panel where the file-menu is displayed. The file to download is selected." />
 </a>
     
-2. Then, we choose “More” to display more actions for the selected file. 
+2. Then, we choose “More” to display more actions for the selected file.  
 <a href="{{ page.root }}/fig/02-05-04.png">
   <img src="{{ page.root }}/fig/02-05-04.png" alt="Download data with R studio." 
      width="826" 
      height="235"
-     alt="More menu displays more actions for the selected file " />
+     alt="More menu displays more actions for the selected file." />
 </a>
 
-3. Within the "More" menu, the “export” button should become available.
+3. Within the "More" menu, the “export” button should become available.  
 <a href="{{ page.root }}/fig/02-05-05.png">
   <img src="{{ page.root }}/fig/02-05-05.png" alt="Download data with R studio." 
      width="826" 
@@ -396,12 +395,12 @@ We will follow the next five steps to download files with the R studio interface
        alt="Your fileis shown in your local computer"  />
 </a>
 
-### Upload files to the environment in R Studio
-Now that we learned how to download files from the R studio interface, 
+### Upload files to AWS in RStudio
+Now that we learned how to download files from the RStudio interface, 
 we will learn the opposite action, uploading files from your local computer
 to your remote AWS machine.  
     
-1. Choose the option 'Upload' in your R studio interface.
+1. Choose the option 'Upload' in your RStudio interface.
 <a href="{{ page.root }}/fig/02-05-08.png">
   <img src="{{ page.root }}/fig/02-05-08.png" alt="Upload data with R studio." 
      width="826" 
@@ -434,7 +433,7 @@ to your remote AWS machine.
        alt="Clicking ok will start the uploading" />
 </a>
     
-5. Now, you can view a new file in your R Studio interface.
+5. Now, you can view a new file in your RStudio interface.
 <a href="{{ page.root }}/fig/02-05-12.png">
   <img src="{{ page.root }}/fig/02-05-12.png" alt="Upload data with R studio." 
      width="800" 
@@ -457,7 +456,7 @@ $ scp <file you want to move, local or remote> <path to where I want to move it,
 
     
 > ## Exercise 3: Uploading data with `scp`  
-> Let us download the text file  ~/data/untrimmed_fastq/scripted_bad_reads.txt from our remote machine to your local computer.
+> Let us download the text file  `~/data/untrimmed_fastq/scripted_bad_reads.txt` from the remote machine to your local computer.
 > Which of the following commands would download the file?  
 > A)  
 > ~~~
@@ -471,8 +470,8 @@ $ scp <file you want to move, local or remote> <path to where I want to move it,
 > {: .bash}
 >
 > > ## Solution
-> >    A) False. This command will upload the file local_file.txt to the dcuser home directory in your AWS remote machine.  
-> >    B) True. This option downloads the bad reads file in ~/data/scripted_bad_reads.txt to your local ~/Download directory
+> >    A) False. This command will upload the file `local_file.txt` to the dcuser home directory in your AWS remote machine.  
+> >    B) True. This option downloads the bad reads file in `~/data/scripted_bad_reads.txt` to your local `~/Downloads` directory
 > >       **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**
 > {: .solution}
 {: .challenge}
