@@ -14,7 +14,7 @@ keypoints:
 - Scripts are a collection of commands executed together.
 - Scripts are executable text files.  
 - `nano` is a text editor.
--  In a terminal, `scp` transfers information to and from virtual and local computers.
+- In a terminal, `scp` transfers information to and from virtual and local computers.
 - R studio remote interface allows the transfer of information between virtual and local computers.
 ---
 
@@ -471,7 +471,7 @@ $ scp <file you want to move, local or remote> <path to where I want to move it,
 > {: .bash}
 >
 > > ## Solution
-> >    A) False. This command will upload the file local_file.txt to the dcuser home directory in your AWS remote machine.
+> >    A) False. This command will upload the file local_file.txt to the dcuser home directory in your AWS remote machine.  
 > >    B) True. This option downloads the bad reads file in ~/data/scripted_bad_reads.txt to your local ~/Download directory
 > >       **(make sure you use substitute dcuser@ ip.address with your remote login credentials)**
 > {: .solution}
