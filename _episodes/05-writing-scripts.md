@@ -471,12 +471,6 @@ and use it to copy a single file.
 
 Let's download a text file from our remote machine. You should have a file that contains bad reads called ~/data/untrimmed_fastq/scripted_bad_reads.txt.
 
-**Tip:** If you are looking for another (or any really) text file in your home directory to use instead try
-
-~~~
-$ find ~ -name *.txt
-~~~
-{: .bash}
 
 
 
