@@ -4,6 +4,7 @@ teaching: 20
 exercises: 20
 questions:
 - How can we automate a commonly used set of commands?
+- How can we transfer files between local and remote computers?
 objectives:
 - Use the `nano` text editor to modify text files.
 - Write a basic shell script.
@@ -11,6 +12,8 @@ objectives:
 - Use `chmod` to make a script an executable program.
 keypoints:
 - Scripts are a collection of commands executed together.
+- Scripts are executable text files.  
+- `nano` is a text editor.
 -  In a terminal, `scp` transfers information to and from virtual and local computers.
 - R studio remote interface allows the transfer of information between virtual and local computers.
 ---
@@ -342,19 +345,16 @@ to transfer files, and we left the steps needed to use `scp` commands as an exer
  
     
 > ## Transferring files scenarios
-> 
-> If you are working on your **local** computer, there is no need to transfer files because you have your files on your local computer.   
+> 1. If you are working on your **local** computer, there is no need to transfer files because you have your files on your local computer.   
 > In that case, you only need to know the directory you are working in.  
-> If you are working on a remote machine such as an AWS instance, you can use the `scp` command. In that case, it is *always* easier
-to start the transfer locally. ** If you are typing into a terminal, the terminal
-should not be logged into your instance. It should show your local computer. If you are
-using a transfer program, it needs to be installed on your local machine, not your instance.** 
-> If you have access to the R studio interface, you can transfer files between your local and your remote machine.  
+> 2. If you are working on a remote machine such as an AWS instance, you can use the `scp` command. In that case, it is *always* easier
+to start the transfer locally. ** If you are typing into a terminal, the terminal should not be logged into your instance. It should show your local computer. If you are using a transfer program, it needs to be installed on your local machine, not your instance.**     
+> 3. If you have access to the **R studio interface**, you can transfer files between your local and your remote machine.  
 {: .callout}
     
 
 ### Downloading files with R Studio
-    We will follow the next five steps to download files with the R studio interface. 
+We will follow the next five steps to download files with the R studio interface. 
     
 1. First, we select the file to download from the bottom right panel.  
 <a href="{{ page.root }}/fig/02-05-03.png">
@@ -447,25 +447,24 @@ to your remote AWS machine.
     
 `scp` stands for 'secure copy protocol' and is a widely used UNIX tool for moving files
 between computers. The simplest way to use `scp` is to run it in your local terminal
-and use it to copy a single file.  
+and use it to copy a single file. While `scp <local-file-path> <AWS instance path>` will upload a local file into your AWS instance, 
+`scp <AWS-instance-path> <local-file-path>` will move your file from your remote AWS instance into
+your local computer. The general form of the `scp` command is the following:  
 ~~~
-$ scp <file I want to move> <path to where I want to move it>
+$ scp <file you want to move, local or remote> <path to where I want to move it, local or remote>
 ~~~
 {: .bash}
 
-While `scp <local-file-path> <AWS instance path>` will upload a local file into your AWS instance, 
-`scp <AWS-instance-path> <local-file-path>` will move your file from your remote AWS instance into
-your local computer.
     
 > ## Exercise 3: Uploading data with `scp`  
 > Let us download the text file  ~/data/untrimmed_fastq/scripted_bad_reads.txt from our remote machine to your local computer.
-> Which of the following commands would download the file?
-> A)
+> Which of the following commands would download the file?  
+> A)  
 > ~~~
 > $  scp local_file.txt dcuser@ip.address:/home/dcuser/
 > ~~~
 > {: .bash}
-> B)
+> B)  
 > ~~~
 > $ scp dcuser@ip.address:/home/dcuser/dc_workshop/data/untrimmed_fastq/scripted_bad_reads.txt. ~/Downloads
 > ~~~
