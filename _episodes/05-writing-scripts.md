@@ -11,7 +11,8 @@ objectives:
 - Use `chmod` to make a script an executable program.
 keypoints:
 - Scripts are a collection of commands executed together.
-- Transferring information to and from virtual and local computers.
+-  In a terminal `scp` transfer information to and from virtual and local computers.
+- R studio remote interface allows transfer information between virtual and local computers.
 ---
 
 <script language="javascript" type="text/javascript">
