@@ -361,7 +361,7 @@ We will follow the next five steps to download files with the RStudio interface.
   <img src="{{ page.root }}/fig/02-05-03.png" alt="Download data with R Studio." 
      width="826" 
      height="235"
-     alt="Bottom right panel where the file-menu is displayed. The file to download is selected." />
+     alt="Bottom right panel where the file menu is displayed. The file to download is selected." />
 </a>
     
 2. Then, we choose “More” to display more actions for the selected file.  
@@ -369,7 +369,7 @@ We will follow the next five steps to download files with the RStudio interface.
   <img src="{{ page.root }}/fig/02-05-04.png" alt="Download data with R studio." 
      width="826" 
      height="235"
-     alt="More menu displays more actions for the selected file." />
+     alt="More button highlighted." />
 </a>
 
 3. Within the "More" menu, the “export” button should become available.  
@@ -386,16 +386,11 @@ We will follow the next five steps to download files with the RStudio interface.
   <img src="{{ page.root }}/fig/02-05-06.png" alt="Download data with R studio." 
      width="729" 
      height="399"
-     alt="An emergent window is displayed on your local screen where you can select the “Download” option." />
+     alt="emergent window where you write the name of the file and click download." />
 </a>  
  
 5. Your file should now be downloaded to your local computer.  
-<a href="{{ page.root }}/fig/02-05-07.png">
-  <img src="{{ page.root }}/fig/02-05-07.png" alt="Download data with R studio." 
-     width="826" 
-     height="235"
-       alt="Your fileis shown in your local computer"  />
-</a>
+
 
 ### Upload files to AWS in RStudio  
     
@@ -408,7 +403,7 @@ to your remote AWS machine.
   <img src="{{ page.root }}/fig/02-05-08.png" alt="Upload data with R studio." 
      width="826" 
      height="235"
-     alt="A menu with the option Upload selected is shown in the R studio interface" />
+     alt="The Upload button is highlighted." />
 </a>
     
 2. After an emergent window is displayed on your screen, select “Select file”.
@@ -416,7 +411,7 @@ to your remote AWS machine.
   <img src="{{ page.root }}/fig/02-05-09.png" alt="Upload data with R studio." 
      width="636" 
      height="418"
-       alt="An emergent window is displayed and the option Select File is chosen" />
+       alt="Select filed button highlighted in the emergent window" />
 </a>
     
 3. A new screen is displayed on your computer where you should choose the file to upload. 
@@ -425,16 +420,10 @@ to your remote AWS machine.
   <img src="{{ page.root }}/fig/02-05-10.png" alt="Upload data with R studio." 
      width="682" 
      height="460"
-       alt="An emergent window is displayed, and a local file is selected" />
+       alt="file to upload and open button are highlighted in the window of the local filesystem" />
 </a>
     
 4. Finally, if the file is correct, click “ok,” and the uploading will start.
-<a href="{{ page.root }}/fig/02-05-11.png">
-  <img src="{{ page.root }}/fig/02-05-11.png" alt="Upload data with R studio."
-     width="636" 
-     height="418"
-       alt="Clicking ok will start the uploading" />
-</a>
     
 5. Now, you can view a new file in your RStudio interface.
 <a href="{{ page.root }}/fig/02-05-12.png">
