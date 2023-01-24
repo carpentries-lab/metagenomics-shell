@@ -377,7 +377,7 @@ We will follow the next five steps to download files with the RStudio interface.
 <a href="{{ page.root }}/fig/02-05-05.png">
   <img src="{{ page.root }}/fig/02-05-05.png" alt="Download data with R studio." 
      width="826" 
-     height="235"
+     height="555"
      alt="Export button highlighted." />
 </a>
     
