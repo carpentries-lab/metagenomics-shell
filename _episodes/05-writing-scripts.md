@@ -352,7 +352,8 @@ to start the transfer locally. **If you are typing into a terminal, the terminal
 {: .callout}
     
 
-### Downloading files in RStudio
+### Downloading files in RStudio  
+    
 We will follow the next five steps to download files with the RStudio interface. 
     
 1. First, we select the file to download from the bottom right panel.  
@@ -379,7 +380,7 @@ We will follow the next five steps to download files with the RStudio interface.
      alt="Within the "More" menu, the “export” button becomes available." />
 </a>
 
-4. An emergent window should be displayed on your screen where you can select the “Download” option.
+4. An emergent window should be displayed on your screen where you can select the “Download” option.  
 <a href="{{ page.root }}/fig/02-05-06.png">
   <img src="{{ page.root }}/fig/02-05-06.png" alt="Download data with R studio." 
      width="729" 
@@ -387,7 +388,7 @@ We will follow the next five steps to download files with the RStudio interface.
      alt="An emergent window is displayed on your local screen where you can select the “Download” option." />
 </a>  
  
-5. Your file should now be downloaded to your local computer.
+5. Your file should now be downloaded to your local computer.  
 <a href="{{ page.root }}/fig/02-05-07.png">
   <img src="{{ page.root }}/fig/02-05-07.png" alt="Download data with R studio." 
      width="826" 
@@ -395,7 +396,8 @@ We will follow the next five steps to download files with the RStudio interface.
        alt="Your fileis shown in your local computer"  />
 </a>
 
-### Upload files to AWS in RStudio
+### Upload files to AWS in RStudio  
+    
 Now that we learned how to download files from the RStudio interface, 
 we will learn the opposite action, uploading files from your local computer
 to your remote AWS machine.  
