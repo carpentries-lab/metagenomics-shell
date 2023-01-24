@@ -371,9 +371,8 @@ We will follow the next five steps to download files with the RStudio interface.
      height="235"
      alt="More button highlighted." />
 </a>
-
+    
 3. Within the "More" menu, the “export” button should become available.  
-
 <a href="{{ page.root }}/fig/02-05-05.png">
   <img src="{{ page.root }}/fig/02-05-05.png" alt="Download data with R studio." 
      width="826" 
@@ -388,7 +387,7 @@ We will follow the next five steps to download files with the RStudio interface.
      height="399"
      alt="emergent window where you write the name of the file and click download." />
 </a>  
- 
+    
 5. Your file should now be downloaded to your local computer.  
 
 
