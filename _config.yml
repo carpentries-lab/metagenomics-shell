@@ -3,12 +3,14 @@
 #------------------------------------------------------------
 
 # Which carpentry is this ("swc", "dc", or "lc")?
-carpentry: "incubator"
+carpentry: "lab"
 
 # Overall title for pages.
 title: "Introduction to the Command Line for Metagenomics"
 
-life_cycle: "beta"
+life_cycle: "stable"
+
+doi: "https://doi.org/10.5281/zenodo.4285900"
 
 # Contact.  This *must* include the protocol: if it's an email
 # address, it must look like "mailto:lessons@software-carpentry.org",
