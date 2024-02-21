@@ -36,3 +36,11 @@ This is the second lesson of the [Metagenomics Workshop](https://carpentries-lab
 
 ## Lesson Reference
 This page and the six episodes in this lesson are adapted from [Introduction to the Command Line for Genomics](https://datacarpentry.org/shell-genomics/) lesson.
+
+## Citation
+
+Please cite as:
+[![DOI](https://jose.theoj.org/papers/10.21105/jose.00209/status.svg)](https://doi.org/10.21105/jose.00209)
+
+Claudia Zirión Martínez; Diego Garfias Gallegos; Tania Vanessa Arellano Fernández; Aarón Espinosa Jaime; Edder D Bustos Díaz; José Abel Lovaco Flores; Luis Gerardo Tejero Gómez; J Abraham Avelar Rivas; Nelly Sélem (March , 2023) A Data Carpentry- Style Metagenomics Workshop
+
